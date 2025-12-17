@@ -51,7 +51,7 @@
     "id": "prod0007",
     "name": "Italian Cappuccino",
     "description": "Italian cappuccino",
-    "price": "5200",
+    "price": "5100",
     "image": "img/Capuchino.jpg",
     "category": "COFFEE SHOP"
   },
@@ -59,7 +59,7 @@
     "id": "prod0008",
     "name": "Mocha Coffee",
     "description": "Intense cocoa, coffee, frothed milk",
-    "price": "5600",
+    "price": "5500",
     "image": "img/moka.jpg",
     "category": "COFFEE SHOP"
   },
@@ -67,7 +67,7 @@
     "id": "prod0009",
     "name": "Caramel Coffee",
     "description": "Caramel, coffee, frothed milk",
-    "price": "5500",
+    "price": "5400",
     "image": "img/caramel.jpg",
     "category": "COFFEE SHOP"
   },
@@ -75,7 +75,7 @@
     "id": "prod0010",
     "name": "Tea with Milk",
     "description": "Inti Zen tea",
-    "price": "4300",
+    "price": "4200",
     "image": "img/te.jpg",
     "category": "COFFEE SHOP"
   },
@@ -83,7 +83,7 @@
     "id": "prod0011",
     "name": "Submarino",
     "description": "Frothed milk and chocolate bar",
-    "price": "4800",
+    "price": "4700",
     "image": "img/subma.jpg",
     "category": "COFFEE SHOP"
   },
@@ -91,7 +91,7 @@
     "id": "prod0012",
     "name": "Hot Chocolate Served in Copper",
     "description": "Hot chocolate served in copper",
-    "price": "4900",
+    "price": "4800",
     "image": "img/cobre.jpg",
     "category": "COFFEE SHOP"
   },
@@ -99,7 +99,7 @@
     "id": "prod0013",
     "name": "Hot or Cold Milk",
     "description": "Skim milk",
-    "price": "3000",
+    "price": "2900",
     "image": "img/leche.jpg",
     "category": "COFFEE SHOP"
   },
@@ -107,7 +107,7 @@
     "id": "prod0014",
     "name": "Tilo Coffee",
     "description": "Coffee, Baileys, evaporated milk and grated chocolate",
-    "price": "6100",
+    "price": "6000",
     "image": "img/ctilo.jpg",
     "category": "COFFEE SHOP"
   },
@@ -115,7 +115,7 @@
     "id": "prod0015",
     "name": "Iced Coffee 🥶",
     "description": "Double shot with ice ❄️",
-    "price": "4900",
+    "price": "4800",
     "image": "img/aiccofi.jpg",
     "category": "COFFEE SHOP"
   },
@@ -123,7 +123,7 @@
     "id": "prod0016",
     "name": "Iced Latte Coffee 🥶",
     "description": "Cold milk with double coffee shot and ice ❄️",
-    "price": "4900",
+    "price": "4800",
     "image": "img/aiclate.jpg",
     "category": "COFFEE SHOP"
   },
@@ -131,7 +131,7 @@
     "id": "prod0017",
     "name": "Milk & Oreo Frappuccino 🥶",
     "description": "Milk-based ❄️",
-    "price": "6600",
+    "price": "6500",
     "image": "img/miloreo.jpg",
     "category": "COFFEE SHOP"
   },
@@ -139,7 +139,7 @@
     "id": "prod0018",
     "name": "Oreo Frappuccino 🥶",
     "description": "Coffee-based ❄️",
-    "price": "6600",
+    "price": "6500",
     "image": "img/FRAPPUCCINOOREO.jpg",
     "category": "COFFEE SHOP"
   },
@@ -235,7 +235,7 @@
     "id": "prod0030",
     "name": "Pound Cake",
     "description": "Carrot & cinnamon, lemon & poppy seeds, chocolate & coffee",
-    "price": "5500",
+    "price": "5600",
     "image": "img/budi.jpg",
     "category": "COFFEE SHOP"
   },
@@ -387,7 +387,7 @@
     "id": "prod0049",
     "name": "Pumpkin Tart",
     "description": "Vegetables and pumpkin with ratatouille, topped with gratinated cheese",
-    "price": "18500",
+    "price": "18000",
     "image": "img/tartacala.jpg",
     "category": "FOOD"
   },
@@ -395,7 +395,7 @@
     "id": "prod0050",
     "name": "Chicken Tart",
     "description": "Chicken breast, leek, mozzarella, onion",
-    "price": "18500",
+    "price": "18000",
     "image": "img/Tartapollo.jpg",
     "category": "FOOD"
   },
@@ -403,7 +403,7 @@
     "id": "prod0051",
     "name": "Garden Burritos (hot)",
     "description": "Wheat tortilla with zucchini, eggplant, peppers, tomatoes, mushrooms, Tybo cheese",
-    "price": "18700",
+    "price": "18200",
     "image": "img/huerta.jpg",
     "category": "FOOD"
   },
@@ -411,7 +411,7 @@
     "id": "prod0052",
     "name": "Chicken Caesar Burritos",
     "description": "Cold: Wheat tortilla, lettuce mix, classic Caesar dressing, chicken breast, Parmesan and croutons",
-    "price": "19000",
+    "price": "18500",
     "image": "img/caesarpollo.jpg",
     "category": "FOOD"
   },
@@ -419,7 +419,7 @@
     "id": "prod0053",
     "name": "Mexican-Style Burritos",
     "description": "Hot: Wheat tortilla with chicken sauce, beef tenderloin filling, vegetables and cheddar",
-    "price": "22500",
+    "price": "21500",
     "image": "img//Lomi.jpg",
     "category": "FOOD"
   },
@@ -427,7 +427,7 @@
     "id": "prod0054",
     "name": "Ham & Cheese Omelette",
     "description": "Ham and cheese omelette",
-    "price": "17000",
+    "price": "15000",
     "image": "img/20250804_132736.jpg",
     "category": "FOOD"
   },
@@ -435,7 +435,7 @@
     "id": "prod0055",
     "name": "Potato & Onion Tortilla",
     "description": "Potato and onion tortilla",
-    "price": "17500",
+    "price": "15500",
     "image": "img/tortillapapa.jpg",
     "category": "FOOD"
   },
@@ -443,7 +443,7 @@
     "id": "prod0056",
     "name": "Cheese & Mushroom Omelette",
     "description": "Cheese and mushroom omelette",
-    "price": "19000",
+    "price": "17000",
     "image": "img/Omecham.jpg",
     "category": "FOOD"
   },
@@ -451,7 +451,7 @@
     "id": "prod0057",
     "name": "Spinach Tortilla",
     "description": "Spinach tortilla",
-    "price": "17700",
+    "price": "15700",
     "image": "img/20250813_131026 (1).jpg",
     "category": "FOOD"
   },
@@ -491,7 +491,7 @@
     "id": "prod0062",
     "name": "Chicken or Beef Milanesa",
     "description": "Served with mashed potatoes, pasta, salad or fries",
-    "price": "20000",
+    "price": "19000",
     "image": "img/20250721_132438.jpg",
     "category": "FOOD"
   },
@@ -499,7 +499,7 @@
     "id": "prod0063",
     "name": "Spinach Milanesa (beef or chicken)",
     "description": "Spinach cream and gratinated cheese. Served with mashed potatoes, pasta, salad or fries",
-    "price": "20000",
+    "price": "21000",
     "image": "img/Esp.jpg",
     "category": "FOOD"
   },
@@ -515,7 +515,7 @@
     "id": "prod0065",
     "name": "Chicken Risotto",
     "description": "With chicken, pumpkin and vegetables",
-    "price": "23000",
+    "price": "22000",
     "image": "img/tortillapapa.jpg",
     "category": "FOOD"
   },
@@ -523,7 +523,7 @@
     "id": "prod0066",
     "name": "Nut & Vegetable Risotto",
     "description": "With vegetables, walnuts and almonds",
-    "price": "25000",
+    "price": "24000",
     "image": "img/Risotolangos.jpg",
     "category": "FOOD"
   },
@@ -531,7 +531,7 @@
     "id": "prod0067",
     "name": "Beef Tenderloin Risotto",
     "description": "With vegetables",
-    "price": "27000",
+    "price": "26000",
     "image": "img/Risotolomo.jpg",
     "category": "FOOD"
   },
@@ -635,7 +635,7 @@
     "id": "prod0080",
     "name": "Chicken (breast)",
     "description": "With fries, mashed potatoes, salad or rice",
-    "price": "20000",
+    "price": "19000",
     "image": "img/pollogri.jpg",
     "category": "FOOD"
   },
@@ -643,7 +643,7 @@
     "id": "prod0081",
     "name": "Ribeye Steak",
     "description": "With fries, mashed potatoes, salad or rice",
-    "price": "32000",
+    "price": "31000",
     "image": "img/20250815_1.jpg",
     "category": "FOOD"
   },
@@ -651,7 +651,7 @@
     "id": "prod0082",
     "name": "Tenderloin Steak",
     "description": "With fries, mashed potatoes, salad or rice",
-    "price": "34000",
+    "price": "33000",
     "image": "img/Bifedelomo.jpg",
     "category": "FOOD"
   },
@@ -659,7 +659,7 @@
     "id": "prod0083",
     "name": "Mini Ribeye Steak",
     "description": "With fries, mashed potatoes, salad or rice",
-    "price": "28000",
+    "price": "27000",
     "image": "img/minibi.jpg",
     "category": "FOOD"
   },
@@ -691,7 +691,7 @@
     "id": "prod0087",
     "name": "Pesto Milanesa",
     "description": "Beef milanesa with gnocchi in pesto sauce",
-    "price": "20000",
+    "price": "19000",
     "image": "img/Milapesto.jpg",
     "category": "FOOD"
   },
@@ -699,7 +699,7 @@
     "id": "prod0088",
     "name": "Chicken with Mushrooms",
     "description": "In mushroom sauce with fries",
-    "price": "23500",
+    "price": "22500",
     "image": "img/Pechuchapi.jpg",
     "category": "FOOD"
   },
@@ -707,7 +707,7 @@
     "id": "prod0089",
     "name": "Ribeye Steak a Caballo",
     "description": "With two fried eggs and fries",
-    "price": "33000",
+    "price": "32000",
     "image": "img/Taripg",
     "category": "FOOD"
   },
@@ -715,7 +715,7 @@
     "id": "prod0090",
     "name": "Riojana Tenderloin",
     "description": "With onions, peppers and fried egg, served with fries",
-    "price": "35000",
+    "price": "34000",
     "image": "img/Matrio.jpg",
     "category": "FOOD"
   },
@@ -723,7 +723,7 @@
     "id": "prod0091",
     "name": "Tenderloin Cacio e Pepe",
     "description": "Grilled tenderloin with spaghetti in pepper and cheese",
-    "price": "34000",
+    "price": "33000",
     "image": "img/Pepe.jpg",
     "category": "FOOD"
   },
@@ -731,7 +731,7 @@
     "id": "prod0092",
     "name": "Tenderloin with Mushrooms",
     "description": "Grilled tenderloin in mushroom sauce with fries",
-    "price": "36000",
+    "price": "35000",
     "image": "img/Lochapi.jpg",
     "category": "FOOD"
   },
@@ -739,7 +739,7 @@
     "id": "prod0093",
     "name": "Milanesa Spaghetti",
     "description": "Beef milanesa with spaghetti in pink sauce",
-    "price": "20000",
+    "price": "19000",
     "image": "img//Tortasnueva.jpg",
     "category": "FOOD"
   },
@@ -747,7 +747,7 @@
     "id": "prod0094",
     "name": "Teriyaki Chicken",
     "description": "Chicken breast in sweet sauce with sautéed rice and vegetables",
-    "price": "22500",
+    "price": "21500",
     "image": "img/Tortasnueva.jpg",
     "category": "FOOD"
   },
@@ -1059,7 +1059,7 @@
     "id": "prod0133",
     "name": "Jack Daniel's",
     "description": "Jack Daniel's",
-    "price": "14500",
+    "price": "13500",
     "image": "img/Daniel’s.jpg",
     "category": "DRINKS"
   },
@@ -1067,7 +1067,7 @@
     "id": "prod0134",
     "name": "Johnny Walker Black",
     "description": "Johnny Walker Black",
-    "price": "15400",
+    "price": "14400",
     "image": "img/Black.jpg",
     "category": "DRINKS"
   },
@@ -1075,7 +1075,7 @@
     "id": "prod0135",
     "name": "Johnny Walker Red",
     "description": "Johnny Walker Red",
-    "price": "13400",
+    "price": "12400",
     "image": "img/Ret.jpg",
     "category": "DRINKS"
   },
@@ -1083,7 +1083,7 @@
     "id": "prod0136",
     "name": "Baileys Liqueur",
     "description": "Baileys Liqueur",
-    "price": "12000",
+    "price": "95000",
     "image": "img/bailes.jpg",
     "category": "DRINKS"
   },
@@ -1091,7 +1091,7 @@
     "id": "prod0137",
     "name": "Fernet with Coca-Cola",
     "description": "Fernet with Coca-Cola",
-    "price": "11000",
+    "price": "9000",
     "image": "img/Ferne.jpg",
     "category": "DRINKS"
   },
@@ -1099,7 +1099,7 @@
     "id": "prod0138",
     "name": "Beefeater Gin Tonic",
     "description": "Beefeater Gin Tonic",
-    "price": "11000",
+    "price": "9000",
     "image": "img/Ginton.jpg",
     "category": "DRINKS"
   },
@@ -1107,7 +1107,7 @@
     "id": "prod0139",
     "name": "Gancia Shake",
     "description": "Gancia Shake",
-    "price": "10000",
+    "price": "8000",
     "image": "img/Gancia.jpg",
     "category": "DRINKS"
   },
@@ -1115,7 +1115,7 @@
     "id": "prod0140",
     "name": "Aperol with Orange",
     "description": "Aperol with orange",
-    "price": "10000",
+    "price": "8000",
     "image": "img/Api.jpg",
     "category": "DRINKS"
   },
@@ -1123,7 +1123,7 @@
     "id": "prod0141",
     "name": "HAPPY HOUR",
     "description": "Aperol with orange $10000 OR BEER $7000 every day from 19:00 to 21:00",
-    "price": "",
+    "price": "0000",
     "image": "img/Api.jpg",
     "category": "DRINKS"
   },
