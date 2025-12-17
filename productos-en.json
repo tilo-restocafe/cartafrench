@@ -3,7 +3,7 @@
     "id": "prod0001",
     "name": "Espresso Coffee",
     "description": "Small coffee",
-    "price": "3300",
+    "price": "3200",
     "image": "img/20250806_112815.jpg",
     "category": "COFFEE SHOP"
   },
@@ -19,7 +19,7 @@
     "id": "prod0003",
     "name": "Decaffeinated Coffee",
     "description": "Decaffeinated coffee",
-    "price": "3700",
+    "price": "3600",
     "image": "img/20250813_094842.jpg",
     "category": "COFFEE SHOP"
   },
@@ -27,7 +27,7 @@
     "id": "prod0004",
     "name": "Traditional Coffee with Milk",
     "description": "Traditional coffee with milk",
-    "price": "4200",
+    "price": "4100",
     "image": "img/cal.jpg",
     "category": "COFFEE SHOP"
   },
@@ -35,7 +35,7 @@
     "id": "prod0005",
     "name": "Double Espresso Coffee",
     "description": "Double espresso coffee",
-    "price": "4900",
+    "price": "4800",
     "image": "img/cafedo.jpg",
     "category": "COFFEE SHOP"
   },
@@ -43,7 +43,7 @@
     "id": "prod0006",
     "name": "Cappuccino",
     "description": "Coffee, milk, cinnamon and cocoa",
-    "price": "5100",
+    "price": "5000",
     "image": "img/Capuchino.jpg",
     "category": "COFFEE SHOP"
   },
