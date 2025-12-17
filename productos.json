@@ -50,7 +50,7 @@
   {
     "nombre": "Capuccino italiana",
     "descripcion": "Capuccino italiana",
-    "precio": "5200",
+    "precio": "5100",
     "imagen": "img/Capuchino.jpg",
     "categoria": "CAFETERÍA",
     "id": "prod0007"
@@ -58,7 +58,7 @@
   {
     "nombre": "Café MOKA",
     "descripcion": "cacao intenso, café, leche espumada",
-    "precio": "5600",
+    "precio": "5500",
     "imagen": "img/moka.jpg",
     "categoria": "CAFETERÍA",
     "id": "prod0008"
@@ -66,7 +66,7 @@
   {
     "nombre": "Café CARAMEL",
     "descripcion": "caramelo, café, leche espumada",
-    "precio": "5500",
+    "precio": "5400",
     "imagen": "img/caramel.jpg",
     "categoria": "CAFETERÍA",
     "id": "prod0009"
@@ -74,7 +74,7 @@
   {
     "nombre": "Té con leche",
     "descripcion": "te inti zen",
-    "precio": "4300",
+    "precio": "4200",
     "imagen": "img/te.jpg",
     "categoria": "CAFETERÍA",
     "id": "prod0010"
@@ -82,7 +82,7 @@
   {
     "nombre": "Submarino",
     "descripcion": "leche espumada y barra de chocolate",
-    "precio": "4800",
+    "precio": "4700",
     "imagen": "img/subma.jpg",
     "categoria": "CAFETERÍA",
     "id": "prod0011"
@@ -90,7 +90,7 @@
   {
     "nombre": "Chocolate caliente, sevido en cobre",
     "descripcion": "Chocolate caliente, sevido en cobre",
-    "precio": "4900",
+    "precio": "4800",
     "imagen": "img/cobre.jpg",
     "categoria": "CAFETERÍA",
     "id": "prod0012"
@@ -98,7 +98,7 @@
   {
     "nombre": "Leche caliente o fría",
     "descripcion": "leche descremada",
-    "precio": "3000",
+    "precio": "2900",
     "imagen": "img/leche.jpg",
     "categoria": "CAFETERÍA",
     "id": "prod0013"
@@ -106,7 +106,7 @@
   {
     "nombre": "CAFE TILO",
     "descripcion": "café, baileys, leche evaporada y chocolate rallado",
-    "precio": "6100",
+    "precio": "6000",
     "imagen": "img/ctilo.jpg",
     "categoria": "CAFETERÍA",
     "id": "prod0014"
@@ -114,7 +114,7 @@
   {
     "nombre": "ICE COFFE🥶",
     "descripcion": "doble shot con hielo❄️",
-    "precio": "4900",
+    "precio": "4800",
     "imagen": "img/aiccofi.jpg",
     "categoria": "CAFETERÍA",
     "id": "prod0015"
@@ -122,7 +122,7 @@
   {
     "nombre": "LATTE ICE COFFE🥶",
     "descripcion": "leche fría con doble shot de café y hielo❄️",
-    "precio": "4900",
+    "precio": "4800",
     "imagen": "img/aiclate.jpg",
     "categoria": "CAFETERÍA",
     "id": "prod0016"
@@ -130,7 +130,7 @@
   {
     "nombre": "FRAPPUCCINO con Leche y OREO🥶",
     "descripcion": "base de leche ❄️",
-    "precio": "6600",
+    "precio": "6500",
     "imagen": "img/miloreo.jpg",
     "categoria": "CAFETERÍA",
     "id": "prod0017"
@@ -138,7 +138,7 @@
   {
     "nombre": "FRAPPUCCINO OREO🥶",
     "descripcion": "base de Café❄️",
-    "precio": "6600",
+    "precio": "6500",
     "imagen": "img/FRAPPUCCINOOREO.jpg",
     "categoria": "CAFETERÍA",
     "id": "prod0018"
@@ -174,14 +174,6 @@
     "imagen": "img/Lumas.jpg",
     "categoria": "CAFETERÍA",
     "id": "prod0022"
-  },
-  {
-    "nombre": "factura",
-    "descripcion": "Pasteleras o membrillo",
-    "precio": "2300",
-    "imagen": "img/20250902_085539(1).jpg",
-    "categoria": "CAFETERÍA",
-    "id": "prod0023"
   },
   {
     "nombre": "Cinamon Roll(rol de canela)",
@@ -234,7 +226,7 @@
   {
     "nombre": "Budín",
     "descripcion": "zanahoria y canela, limón y amapolas, chocolate y cafe",
-    "precio": "5500",
+    "precio": "5600",
     "imagen": "img/budi.jpg",
     "categoria": "CAFETERÍA",
     "id": "prod0030"
@@ -386,7 +378,7 @@
   {
     "nombre": "Tarta de calabaza",
     "descripcion": "Verdura y calabaza ratatouille de verduras y termina con queso gratinado",
-    "precio": "18500",
+    "precio": "18000",
     "imagen": "img/tartacala.jpg",
     "categoria": "COMIDAS",
     "id": "prod0049"
@@ -394,7 +386,7 @@
   {
     "nombre": "Tarta de POLLO",
     "descripcion": "Pechuga de pollo, puerro, muzzarella, cebolla",
-    "precio": "18500",
+    "precio": "18000",
     "imagen": "img/Tartapollo.jpg",
     "categoria": "COMIDAS",
     "id": "prod0050"
@@ -402,7 +394,7 @@
   {
     "nombre": "Burritos De la Huerta (caliente)",
     "descripcion": "Tortilla de trigo,con zuccinni, berengenas, morrones, tomates\n hongos, queso tybo",
-    "precio": "18700",
+    "precio": "18200",
     "imagen": "img/huerta.jpg",
     "categoria": "COMIDAS",
     "id": "prod0051"
@@ -410,7 +402,7 @@
   {
     "nombre": "Burritos de CESAR de POLLO",
     "descripcion": "(fría): Tortilla de trigo, mix de lechugas, clásico aderezo cesar, pechuga, queso parmesano y croutons",
-    "precio": "19000",
+    "precio": "18500",
     "imagen": "img/caesarpollo.jpg",
     "categoria": "COMIDAS",
     "id": "prod0052"
@@ -418,7 +410,7 @@
   {
     "nombre": "Burritos COMO MEXICANO",
     "descripcion": "(caliente): Tortilla de trigo con salsa de pollo, relleno de lomo, vegetales y cheddar",
-    "precio": "22500",
+    "precio": "21500",
     "imagen": "img//Lomi.jpg",
     "categoria": "COMIDAS",
     "id": "prod0053"
@@ -426,7 +418,7 @@
   {
     "nombre": "Omelette de jamón y queso",
     "descripcion": "Omelette de jamón y queso",
-    "precio": "17000",
+    "precio": "15000",
     "imagen": "img/20250804_132736.jpg",
     "categoria": "COMIDAS",
     "id": "prod0054"
@@ -434,7 +426,7 @@
   {
     "nombre": "Tortilla de papa y cebolla",
     "descripcion": "Tortilla de papa y cebolla",
-    "precio": "17500",
+    "precio": "15500",
     "imagen": "img/tortillapapa.jpg",
     "categoria": "COMIDAS",
     "id": "prod0055"
@@ -442,7 +434,7 @@
   {
     "nombre": "Omelette de queso y champignones",
     "descripcion": "Omelette de queso y champignones",
-    "precio": "19000",
+    "precio": "17000",
     "imagen": "img/Omecham.jpg",
     "categoria": "COMIDAS",
     "id": "prod0056"
@@ -450,7 +442,7 @@
   {
     "nombre": "Tortilla de espinaca",
     "descripcion": "Tortilla de espinaca",
-    "precio": "17700",
+    "precio": "15700",
     "imagen": "img/20250813_131026 (1).jpg",
     "categoria": "COMIDAS",
     "id": "prod0057"
@@ -490,7 +482,7 @@
   {
     "nombre": "MILA SOLA de POLLO o CARNE",
     "descripcion": "Acompañadas con puré, fideos, ensalada o papas fritas",
-    "precio": "20000",
+    "precio": "19000",
     "imagen": "img/20250721_132438.jpg",
     "categoria": "COMIDAS",
     "id": "prod0062"
@@ -498,7 +490,7 @@
   {
     "nombre": "MILA ESPINACA carne o pollo",
     "descripcion": "Crema de espinaca y queso gratinado Acompañadas con puré, fideos, ensalada o papas fritas",
-    "precio": "20000",
+    "precio": "21000",
     "imagen": "img/Esp.jpg",
     "categoria": "COMIDAS",
     "id": "prod0063"
@@ -514,7 +506,7 @@
   {
     "nombre": "RISOTTOS de pollo!",
     "descripcion": "con pollo, calabaza y verduras.",
-    "precio": "23000",
+    "precio": "22000",
     "imagen": "img/tortillapapa.jpg",
     "categoria": "COMIDAS",
     "id": "prod0065"
@@ -522,7 +514,7 @@
   {
     "nombre": "RISOTTOS FRUTOS SECOS",
     "descripcion": "con verdura, nueces y almendras.",
-    "precio": "25000",
+    "precio": "24000",
     "imagen": "img/Risotolangos.jpg",
     "categoria": "COMIDAS",
     "id": "prod0066"
@@ -530,7 +522,7 @@
   {
     "nombre": "RISOTTOS Lomo!",
     "descripcion": "con verduras.",
-    "precio": "27000",
+    "precio": "26000",
     "imagen": "img/Risotolomo.jpg",
     "categoria": "COMIDAS",
     "id": "prod0067"
@@ -634,7 +626,7 @@
   {
     "nombre": "Pollo (pechuga)",
     "descripcion": "Con frita, pure, ensalada o arroz",
-    "precio": "20000",
+    "precio": "19000",
     "imagen": "img/pollogri.jpg",
     "categoria": "COMIDAS",
     "id": "prod0080"
@@ -642,7 +634,7 @@
   {
     "nombre": "Bife de chorizo",
     "descripcion": "Con frita, pure, ensalada o arroz",
-    "precio": "32000",
+    "precio": "31000",
     "imagen": "img/20250815_1.jpg",
     "categoria": "COMIDAS",
     "id": "prod0081"
@@ -650,7 +642,7 @@
   {
     "nombre": "Bife de lomo",
     "descripcion": "Con frita, pure, ensalada o arroz",
-    "precio": "34000",
+    "precio": "33000",
     "imagen": "img/Bifedelomo.jpg",
     "categoria": "COMIDAS",
     "id": "prod0082"
@@ -658,7 +650,7 @@
   {
     "nombre": "MINI BIFE DE CHORISO",
     "descripcion": "Con frita, pure, ensalada o arroz",
-    "precio": "28000",
+    "precio": "27000",
     "imagen": "img/minibi.jpg",
     "categoria": "COMIDAS",
     "id": "prod0083"
@@ -690,7 +682,7 @@
   {
     "nombre": "Mila PESTO",
     "descripcion": "Milanesa de carne con ñoquis al pesto",
-    "precio": "20000",
+    "precio": "19000",
     "imagen": "img/Milapesto.jpg",
     "categoria": "COMIDAS",
     "id": "prod0087"
@@ -698,7 +690,7 @@
   {
     "nombre": "Pollo al CHAMPI",
     "descripcion": "En salsa de hongos con papas fritas",
-    "precio": "23500",
+    "precio": "22500",
     "imagen": "img/Pechuchapi.jpg",
     "categoria": "COMIDAS",
     "id": "prod0088"
@@ -706,7 +698,7 @@
   {
     "nombre": "BIFE DE CHORISO A CABALLO",
     "descripcion": "CON DOS HUEVOS FRITOS, PAPAS FREITAS",
-    "precio": "33000",
+    "precio": "32000",
     "imagen": "img/Taripg",
     "categoria": "COMIDAS",
     "id": "prod0089"
@@ -714,7 +706,7 @@
   {
     "nombre": "LOMO A LA RIOJANA",
     "descripcion": "CON CEBOLLA, MORRONES Y HUEVO FRITOS CON FRITAS",
-    "precio": "35000",
+    "precio": "34000",
     "imagen": "img/Matrio.jpg",
     "categoria": "COMIDAS",
     "id": "prod0090"
@@ -722,7 +714,7 @@
   {
     "nombre": "Lomo CACIO E PEPE",
     "descripcion": "Bife de lomo grillado con spaghetti en pimienta y queso",
-    "precio": "34000",
+    "precio": "33000",
     "imagen": "img/Pepe.jpg",
     "categoria": "COMIDAS",
     "id": "prod0091"
@@ -730,7 +722,7 @@
   {
     "nombre": "Lomo AL CHAMPI",
     "descripcion": "Bife de lomo grillado en salsa de hongos con papas fritas",
-    "precio": "36000",
+    "precio": "35000",
     "imagen": "img/Lochapi.jpg",
     "categoria": "COMIDAS",
     "id": "prod0092"
@@ -738,7 +730,7 @@
   {
     "nombre": "mila spaguetti",
     "descripcion": "MILA DE CARNE SPAGUETTI CON SALSA ROSA",
-    "precio": "20000",
+    "precio": "19000",
     "imagen": "img//Tortasnueva.jpg",
     "categoria": "COMIDAS",
     "id": "prod0093"
@@ -746,7 +738,7 @@
   {
     "nombre": "pollo tariyaki",
     "descripcion": "POLLO TERIYAKI\nPechuga en salsa dulce con arroz salteado y verduras",
-    "precio": "22500",
+    "precio": "21500",
     "imagen": "img/Tortasnueva.jpg",
     "categoria": "COMIDAS",
     "id": "prod0094"
@@ -1058,7 +1050,7 @@
   {
     "nombre": "Jack Daniel's",
     "descripcion": "Jack Daniel's",
-    "precio": "14500",
+    "precio": "13500",
     "imagen": "img/Daniel’s.jpg",
     "categoria": "TRAGOS",
     "id": "prod0133"
@@ -1066,7 +1058,7 @@
   {
     "nombre": "Johnny Walker Black",
     "descripcion": "Johnny Walker Black",
-    "precio": "15400",
+    "precio": "14400",
     "imagen": "img/Black.jpg",
     "categoria": "TRAGOS",
     "id": "prod0134"
@@ -1074,7 +1066,7 @@
   {
     "nombre": "Johnny Walker Red",
     "descripcion": "Johnny Walker Red",
-    "precio": "13400",
+    "precio": "12400",
     "imagen": "img/Ret.jpg",
     "categoria": "TRAGOS",
     "id": "prod0135"
@@ -1082,7 +1074,7 @@
   {
     "nombre": "Licor Baileys",
     "descripcion": "Licor Baileys",
-    "precio": "12000",
+    "precio": "95000",
     "imagen": "img/bailes.jpg",
     "categoria": "TRAGOS",
     "id": "prod0136"
@@ -1090,7 +1082,7 @@
   {
     "nombre": "Fernet con Coca-Cola",
     "descripcion": "Fernet con Coca-Cola",
-    "precio": "11000",
+    "precio": "9000",
     "imagen": "img/Ferne.jpg",
     "categoria": "TRAGOS",
     "id": "prod0137"
@@ -1098,7 +1090,7 @@
   {
     "nombre": "Gin Tonic Beefeater",
     "descripcion": "Gin Tonic Beefeater",
-    "precio": "11000",
+    "precio": "9000",
     "imagen": "img/Ginton.jpg",
     "categoria": "TRAGOS",
     "id": "prod0138"
@@ -1106,7 +1098,7 @@
   {
     "nombre": "Batido Gancia",
     "descripcion": "Batido Gancia",
-    "precio": "10000",
+    "precio": "8000",
     "imagen": "img/Gancia.jpg",
     "categoria": "TRAGOS",
     "id": "prod0139"
@@ -1114,7 +1106,7 @@
   {
     "nombre": "Aperol con naranja",
     "descripcion": "Aperol con naranja",
-    "precio": "10000",
+    "precio": "8000",
     "imagen": "img/Api.jpg",
     "categoria": "TRAGOS",
     "id": "prod0140"
@@ -1122,7 +1114,7 @@
   {
     "nombre": "HAPPY HOUR",
     "descripcion": "Aperol naranja $10000 O CERVEZA $7000 todos los dias de 19 a 21:00",
-    "precio": "",
+    "precio": "0000",
     "imagen": "img/Api.jpg",
     "categoria": "TRAGOS",
     "id": "prod0141"
