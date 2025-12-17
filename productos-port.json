@@ -2,8 +2,8 @@
   {
     "nome": "Café expresso",
     "descricao": "Café pequeno",
-    "preco": "3300",
-    "imagen": "img/20250806_112815.jpg",
+    "preco": "3200",
+    "imagem": "img/20250806_112815.jpg",
     "categoria": "Cafeteria",
     "id": "prod0001"
   },
@@ -11,14 +11,14 @@
     "nome": "Café expresso em caneca",
     "descricao": "Café americano",
     "preco": "3500",
-    "imagen": "img/cj.jpg",
+    "imagem": "img/cj.jpg",
     "categoria": "Cafeteria",
     "id": "prod0002"
   },
   {
     "nome": "Café descafeinado",
     "descricao": "Café descafeinado",
-    "preco": "3700",
+    "preco": "3600",
     "imagem": "img/20250813_094842.jpg",
     "categoria": "Cafeteria",
     "id": "prod0003"
@@ -26,7 +26,7 @@
   {
     "nome": "Café com leite tradicional",
     "descricao": "Café com leite tradicional",
-    "preco": "4200",
+    "preco": "4100",
     "imagem": "img/cal.jpg",
     "categoria": "Cafeteria",
     "id": "prod0004"
@@ -34,7 +34,7 @@
   {
     "nome": "Café expresso duplo",
     "descricao": "Café expresso duplo",
-    "preco": "4900",
+    "preco": "4800",
     "imagem": "img/cafedo.jpg",
     "categoria": "Cafeteria",
     "id": "prod0005"
@@ -42,7 +42,7 @@
   {
     "nome": "Capuccino",
     "descricao": "Café, leite, canela e cacau",
-    "preco": "5100",
+    "preco": "5000",
     "imagem": "img/Capuchino.jpg",
     "categoria": "Cafeteria",
     "id": "prod0006"
