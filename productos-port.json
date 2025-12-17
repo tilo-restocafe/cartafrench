@@ -50,7 +50,7 @@
   {
     "nome": "Capuccino italiano",
     "descricao": "Capuccino italiano",
-    "preco": "5200",
+    "preco": "5100",
     "imagem": "img/Capuchino.jpg",
     "categoria": "Cafeteria",
     "id": "prod0007"
@@ -58,7 +58,7 @@
   {
     "nome": "Café moka",
     "descricao": "Cacau intenso, café e leite espumado",
-    "preco": "5600",
+    "preco": "5500",
     "imagem": "img/moka.jpg",
     "categoria": "Cafeteria",
     "id": "prod0008"
@@ -66,7 +66,7 @@
   {
     "nome": "Café caramelo",
     "descricao": "Caramelo, café e leite espumado",
-    "preco": "5500",
+    "preco": "5400",
     "imagem": "img/caramel.jpg",
     "categoria": "Cafeteria",
     "id": "prod0009"
@@ -74,7 +74,7 @@
   {
     "nome": "Chá com leite",
     "descricao": "Chá Inti Zen",
-    "preco": "4300",
+    "preco": "4200",
     "imagem": "img/te.jpg",
     "categoria": "Cafeteria",
     "id": "prod0010"
@@ -82,7 +82,7 @@
   {
     "nome": "Submarino",
     "descricao": "Leite espumado com barra de chocolate",
-    "preco": "4800",
+    "preco": "4700",
     "imagem": "img/subma.jpg",
     "categoria": "Cafeteria",
     "id": "prod0011"
@@ -90,7 +90,7 @@
   {
     "nome": "Chocolate quente servido em cobre",
     "descricao": "Chocolate quente servido em cobre",
-    "preco": "4900",
+    "preco": "4800",
     "imagem": "img/cobre.jpg",
     "categoria": "Cafeteria",
     "id": "prod0012"
@@ -98,7 +98,7 @@
   {
     "nome": "Leite quente ou frio",
     "descricao": "Leite desnatado",
-    "preco": "3000",
+    "preco": "2900",
     "imagem": "img/leche.jpg",
     "categoria": "Cafeteria",
     "id": "prod0013"
@@ -106,7 +106,7 @@
   {
     "nome": "Café Tilo",
     "descricao": "Café, Baileys, leite evaporado e chocolate ralado",
-    "preco": "6100",
+    "preco": "6000",
     "imagem": "img/ctilo.jpg",
     "categoria": "Cafeteria",
     "id": "prod0014"
@@ -114,7 +114,7 @@
   {
     "nome": "Ice Coffee 🥶",
     "descricao": "Dose dupla com gelo ❄️",
-    "preco": "4900",
+    "preco": "4800",
     "imagem": "img/aiccofi.jpg",
     "categoria": "Cafeteria",
     "id": "prod0015"
@@ -122,7 +122,7 @@
   {
     "nome": "Latte Ice Coffee 🥶",
     "descricao": "Leite frio com dose dupla de café e gelo ❄️",
-    "preco": "4900",
+    "preco": "4800",
     "imagem": "img/aiclate.jpg",
     "categoria": "Cafeteria",
     "id": "prod0016"
@@ -130,7 +130,7 @@
   {
     "nome": "Frappuccino com leite e Oreo 🥶",
     "descricao": "Base de leite ❄️",
-    "preco": "6600",
+    "preco": "6500",
     "imagem": "img/miloreo.jpg",
     "categoria": "Cafeteria",
     "id": "prod0017"
@@ -138,7 +138,7 @@
   {
     "nome": "Frappuccino Oreo 🥶",
     "descricao": "Base de café ❄️",
-    "preco": "6600",
+    "preco": "6500",
     "imagem": "img/FRAPPUCCINOOREO.jpg",
     "categoria": "Cafeteria",
     "id": "prod0018"
@@ -234,7 +234,7 @@
   {
     "nome": "Bolo",
     "descricao": "Cenoura e canela, limão com sementes de papoula, chocolate e café",
-    "preco": "5500",
+    "preco": "5600",
     "imagem": "img/budi.jpg",
     "categoria": "Cafeteria",
     "id": "prod0030"
@@ -386,7 +386,7 @@
   {
     "nome": "Torta de abóbora",
     "descricao": "Legumes e abóbora, ratatouille de legumes finalizado com queijo gratinado",
-    "preco": "18500",
+    "preco": "18000",
     "imagem": "img/tartacala.jpg",
     "categoria": "Comidas",
     "id": "prod0049"
@@ -394,7 +394,7 @@
   {
     "nome": "Torta de frango",
     "descricao": "Peito de frango, alho-poró, muçarela e cebola",
-    "preco": "18500",
+    "preco": "18000",
     "imagem": "img/Tartapollo.jpg",
     "categoria": "Comidas",
     "id": "prod0050"
@@ -402,7 +402,7 @@
   {
     "nome": "Burritos da horta (quente)",
     "descricao": "Tortilha de trigo com abobrinha, berinjela, pimentões, tomates, cogumelos e queijo tybo",
-    "preco": "18700",
+    "preco": "18200",
     "imagem": "img/huerta.jpg",
     "categoria": "Comidas",
     "id": "prod0051"
@@ -410,7 +410,7 @@
   {
     "nome": "Burritos César de frango",
     "descricao": "(frio): Tortilha de trigo, mix de folhas, molho César clássico, peito de frango, parmesão e croutons",
-    "preco": "19000",
+    "preco": "18500",
     "imagem": "img/caesarpollo.jpg",
     "categoria": "Comidas",
     "id": "prod0052"
@@ -418,7 +418,7 @@
   {
     "nome": "Burritos estilo mexicano",
     "descricao": "(quente): Tortilha de trigo com molho de frango, recheio de lombo, vegetais e cheddar",
-    "preco": "22500",
+    "preco": "21500",
     "imagem": "img//Lomi.jpg",
     "categoria": "Comidas",
     "id": "prod0053"
@@ -426,7 +426,7 @@
   {
     "nome": "Omelete de presunto e queijo",
     "descricao": "Omelete de presunto e queijo",
-    "preco": "17000",
+    "preco": "15000",
     "imagem": "img/20250804_132736.jpg",
     "categoria": "Comidas",
     "id": "prod0054"
@@ -434,7 +434,7 @@
   {
     "nome": "Tortilha de batata e cebola",
     "descricao": "Tortilha de batata e cebola",
-    "preco": "17500",
+    "preco": "15500",
     "imagem": "img/tortillapapa.jpg",
     "categoria": "Comidas",
     "id": "prod0055"
@@ -442,7 +442,7 @@
   {
     "nome": "Omelete de queijo e cogumelos",
     "descricao": "Omelete de queijo e cogumelos",
-    "preco": "19000",
+    "preco": "17000",
     "imagem": "img/Omecham.jpg",
     "categoria": "Comidas",
     "id": "prod0056"
@@ -450,7 +450,7 @@
   {
     "nome": "Tortilha de espinafre",
     "descricao": "Tortilha de espinafre",
-    "preco": "17700",
+    "preco": "15700",
     "imagem": "img/20250813_131026 (1).jpg",
     "categoria": "Comidas",
     "id": "prod0057"
@@ -490,7 +490,7 @@
   {
     "nome": "Milanesa simples de frango ou carne",
     "descricao": "Acompanhada de purê, massa, salada ou batatas fritas",
-    "preco": "20000",
+    "preco": "19000",
     "imagem": "img/20250721_132438.jpg",
     "categoria": "Comidas",
     "id": "prod0062"
@@ -498,7 +498,7 @@
   {
     "nome": "Milanesa de espinafre (carne ou frango)",
     "descricao": "Creme de espinafre e queijo gratinado. Acompanhada de purê, massa, salada ou batatas fritas",
-    "preco": "20000",
+    "preco": "21000",
     "imagem": "img/Esp.jpg",
     "categoria": "Comidas",
     "id": "prod0063"
@@ -514,7 +514,7 @@
   {
     "nome": "Risoto de frango",
     "descricao": "Com frango, abóbora e legumes",
-    "preco": "23000",
+    "preco": "22000",
     "imagem": "img/tortillapapa.jpg",
     "categoria": "Comidas",
     "id": "prod0065"
@@ -522,7 +522,7 @@
   {
     "nome": "Risoto de frutas secas",
     "descricao": "Com legumes, nozes e amêndoas",
-    "preco": "25000",
+    "preco": "24000",
     "imagem": "img/Risotolangos.jpg",
     "categoria": "Comidas",
     "id": "prod0066"
@@ -530,7 +530,7 @@
   {
     "nome": "Risoto de lombo",
     "descricao": "Com legumes",
-    "preco": "27000",
+    "preco": "26000",
     "imagem": "img/Risotolomo.jpg",
     "categoria": "Comidas",
     "id": "prod0067"
@@ -634,7 +634,7 @@
   {
     "nome": "Frango (peito)",
     "descricao": "Com batata frita, purê, salada ou arroz",
-    "preco": "20000",
+    "preco": "19000",
     "imagem": "img/pollogri.jpg",
     "categoria": "Comidas",
     "id": "prod0080"
@@ -642,7 +642,7 @@
   {
     "nome": "Bife de chorizo",
     "descricao": "Com batata frita, purê, salada ou arroz",
-    "preco": "32000",
+    "preco": "31000",
     "imagem": "img/20250815_1.jpg",
     "categoria": "Comidas",
     "id": "prod0081"
@@ -650,7 +650,7 @@
   {
     "nome": "Bife de lombo",
     "descricao": "Com batata frita, purê, salada ou arroz",
-    "preco": "34000",
+    "preco": "33000",
     "imagem": "img/Bifedelomo.jpg",
     "categoria": "Comidas",
     "id": "prod0082"
@@ -658,7 +658,7 @@
   {
     "nome": "Mini bife de chorizo",
     "descricao": "Com batata frita, purê, salada ou arroz",
-    "preco": "28000",
+    "preco": "27000",
     "imagem": "img/minibi.jpg",
     "categoria": "Comidas",
     "id": "prod0083"
@@ -690,7 +690,7 @@
   {
     "nome": "Milanesa pesto",
     "descricao": "Milanesa de carne com nhoque ao pesto",
-    "preco": "20000",
+    "preco": "19000",
     "imagem": "img/Milapesto.jpg",
     "categoria": "Comidas",
     "id": "prod0087"
@@ -698,7 +698,7 @@
   {
     "nome": "Frango ao champignon",
     "descricao": "Em molho de cogumelos com batatas fritas",
-    "preco": "23500",
+    "preco": "22500",
     "imagem": "img/Pechuchapi.jpg",
     "categoria": "Comidas",
     "id": "prod0088"
@@ -706,7 +706,7 @@
   {
     "nome": "Bife de chorizo a cavalo",
     "descricao": "Com dois ovos fritos e batatas fritas",
-    "preco": "33000",
+    "preco": "32000",
     "imagem": "img/Taripg",
     "categoria": "Comidas",
     "id": "prod0089"
@@ -714,7 +714,7 @@
   {
     "nome": "Lombo à riojana",
     "descricao": "Com cebola, pimentões e ovos fritos, acompanhado de batatas fritas",
-    "preco": "35000",
+    "preco": "34000",
     "imagem": "img/Matrio.jpg",
     "categoria": "Comidas",
     "id": "prod0090"
@@ -722,7 +722,7 @@
   {
     "nome": "Lombo cacio e pepe",
     "descricao": "Bife de lombo grelhado com spaghetti, pimenta e queijo",
-    "preco": "34000",
+    "preco": "33000",
     "imagem": "img/Pepe.jpg",
     "categoria": "Comidas",
     "id": "prod0091"
@@ -730,7 +730,7 @@
   {
     "nome": "Lombo ao champignon",
     "descricao": "Bife de lombo grelhado em molho de cogumelos com batatas fritas",
-    "preco": "36000",
+    "preco": "35000",
     "imagem": "img/Lochapi.jpg",
     "categoria": "Comidas",
     "id": "prod0092"
@@ -738,7 +738,7 @@
   {
     "nome": "Milanesa com spaghetti",
     "descricao": "Milanesa de carne com spaghetti ao molho rosé",
-    "preco": "20000",
+    "preco": "19000",
     "imagem": "img//Tortasnueva.jpg",
     "categoria": "Comidas",
     "id": "prod0093"
@@ -746,7 +746,7 @@
   {
     "nome": "Frango teriyaki",
     "descricao": "Peito de frango em molho doce com arroz salteado e legumes",
-    "preco": "22500",
+    "preco": "21500",
     "imagem": "img/Tortasnueva.jpg",
     "categoria": "Comidas",
     "id": "prod0094"
@@ -1058,7 +1058,7 @@
   {
     "nome": "Jack Daniel's",
     "descricao": "Jack Daniel's",
-    "preco": "14500",
+    "preco": "13500",
     "imagem": "img/Daniels.jpg",
     "categoria": "Drinks",
     "id": "prod0133"
@@ -1066,7 +1066,7 @@
   {
     "nome": "Johnny Walker Black",
     "descricao": "Johnny Walker Black",
-    "preco": "15400",
+    "preco": "14400",
     "imagem": "img/Black.jpg",
     "categoria": "Drinks",
     "id": "prod0134"
@@ -1074,7 +1074,7 @@
   {
     "nome": "Johnny Walker Red",
     "descricao": "Johnny Walker Red",
-    "preco": "13400",
+    "preco": "12400",
     "imagem": "img/Ret.jpg",
     "categoria": "Drinks",
     "id": "prod0135"
@@ -1082,7 +1082,7 @@
   {
     "nome": "Licor Baileys",
     "descricao": "Licor Baileys",
-    "preco": "12000",
+    "preco": "95000",
     "imagem": "img/bailes.jpg",
     "categoria": "Drinks",
     "id": "prod0136"
@@ -1090,7 +1090,7 @@
   {
     "nome": "Fernet com Coca-Cola",
     "descricao": "Fernet com Coca-Cola",
-    "preco": "11000",
+    "preco": "9000",
     "imagem": "img/Ferne.jpg",
     "categoria": "Drinks",
     "id": "prod0137"
@@ -1098,7 +1098,7 @@
   {
     "nome": "Gin Tônica Beefeater",
     "descricao": "Gin Tônica Beefeater",
-    "preco": "11000",
+    "preco": "9000",
     "imagem": "img/Ginton.jpg",
     "categoria": "Drinks",
     "id": "prod0138"
@@ -1106,7 +1106,7 @@
   {
     "nome": "Batida Gancia",
     "descricao": "Batida Gancia",
-    "preco": "10000",
+    "preco": "8000",
     "imagem": "img/Gancia.jpg",
     "categoria": "Drinks",
     "id": "prod0139"
@@ -1114,7 +1114,7 @@
   {
     "nome": "Aperol com laranja",
     "descricao": "Aperol com laranja",
-    "preco": "10000",
+    "preco": "8000",
     "imagem": "img/Api.jpg",
     "categoria": "Drinks",
     "id": "prod0140"
@@ -1122,7 +1122,7 @@
   {
     "nome": "Happy Hour",
     "descricao": "Aperol com laranja 10.000 ou cerveja 7.000 todos os dias das 19h às 21h",
-    "preco": "",
+    "preco": "0000",
     "imagem": "img/Api.jpg",
     "categoria": "Drinks",
     "id": "prod0141"
