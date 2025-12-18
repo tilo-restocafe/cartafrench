@@ -241,24 +241,24 @@
   },
   {
     "nombre": "Alfajor de chocolate",
-    "descripcion": "Alfajor de chocolate",
-    "precio": "4600",
+    "descripcion": "Alfajor de chocolate negro",
+    "precio": "46000",
     "imagen": "img/lafch.jpg",
     "categoria": "CAFETERÍA",
     "id": "prod0031"
   },
   {
     "nombre": "Alfajor de maicena",
-    "descripcion": "Alfajor de maicena (sin TACC)",
-    "precio": "4600",
+    "descripcion": "Alfajor de maicena (sin TACC) con dulce de leche",
+    "precio": "46000",
     "imagen": "img/almealfa.jpg",
     "categoria": "CAFETERÍA",
     "id": "prod0032"
   },
   {
     "nombre": "Alfajor de almendras",
-    "descripcion": "Alfajor de almendras",
-    "precio": "5500",
+    "descripcion": "Alfajor de almendras con dulce",
+    "precio": "55000",
     "imagen": "img/maisena.jpg",
     "categoria": "CAFETERÍA",
     "id": "prod0033"
