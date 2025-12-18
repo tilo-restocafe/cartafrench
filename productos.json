@@ -265,7 +265,7 @@
   },
   {
     "nombre": "Mini tarta",
-    "descripcion": "Mini tarta dulces a eleccion",
+    "descripcion": "Mini tarta dulces ",
     "precio": "9200",
     "imagen": "img/Minitor.jpg",
     "categoria": "CAFETERÍA",
@@ -657,7 +657,7 @@
   },
   {
     "nombre": "MINI BIFE DE CHORIZO",
-    "descripcion": "Con frita, pure, ensalada o arroz a eleccion",
+    "descripcion": "Con frita, pure, ensalada o arroz ",
     "precio": "28000",
     "imagen": "img/minibi.jpg",
     "categoria": "COMIDAS",
