@@ -456,13 +456,22 @@ async function guardarFilaPorId(id){
  **********************************************************/
 async function guardarTodosLosPrecios(){
   try{
-    refrescarArrayDesdeTabla();
-    productos = productos.map(p => ({ ...p, precio: sanitizePrice(p.precio) }));
+    // NO reconstruir productos desde la tabla
+    productos = productos.map(p => ({
+      ...p,
+      precio: sanitizePrice(p.precio)
+    }));
+
     await saveMainJson(productos, `Guardar TODOS los productos - sincronizando precios a EN/PT`);
     await syncPricesToLangs();
+
     showToast('Todos los cambios guardados y sincronizados (ES/EN/PT)', 'ok', 3000);
     render(productos);
-  }catch(e){ console.error(e); showToast('Error al guardar todos: ' + (e.message||e), 'err', 6000); }
+
+  }catch(e){
+    console.error(e);
+    showToast('Error al guardar todos: ' + (e.message||e), 'err', 6000);
+  }
 }
 
 /**********************************************************
