@@ -242,7 +242,7 @@
   {
     "nome": "Alfajor de chocolate",
     "descricao": "Alfajor de chocolate",
-    "preco": "46000",
+    "preco": "4600",
     "imagem": "img/lafch.jpg",
     "categoria": "Cafeteria",
     "id": "prod0031"
@@ -250,7 +250,7 @@
   {
     "nome": "Alfajor de maizena",
     "descricao": "Alfajor de maizena (sem glúten)",
-    "preco": "46000",
+    "preco": "4600",
     "imagem": "img/almealfa.jpg",
     "categoria": "Cafeteria",
     "id": "prod0032"
@@ -258,7 +258,7 @@
   {
     "nome": "Alfajor de amêndoas",
     "descricao": "Alfajor de amêndoas",
-    "preco": "55000",
+    "preco": "5500",
     "imagem": "img/maisena.jpg",
     "categoria": "Cafeteria",
     "id": "prod0033"
