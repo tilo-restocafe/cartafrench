@@ -53,7 +53,7 @@
     <div class="controls">
       <input id="search" placeholder="Buscar..." oninput="filterProducts()" style="min-width:180px;max-width:360px">
       <button id="toggleFormBtn" onclick="toggleForm()">+ Agregar producto</button>
-      <button class="secondary" onclick="toggleMultiForm()">➕ Agregar VARIOS</button>
+      <button class="secondary" onclick="irWhatsApp()">📲 Ayuda por WhatsApp</button>
     </div>
   </div>
 
@@ -92,17 +92,6 @@
     <div style="margin-top:10px;display:flex;gap:8px">
       <button type="button" onclick="guardarFormulario()">Guardar</button>
       <button type="button" onclick="cancelForm()" style="background:#999">Cancelar</button>
-    </div>
-  </form>
-
-  <!-- Formulario múltiple -->
-  <form id="multiForm" style="display:none">
-    <h3></h3>
-    <p class="small">Un producto por línea con formato: <b>nombre | descripcion | precio | imagen | categoria</b></p>
-    <textarea id="multiInput" rows="8" placeholder="Ej: Café expresso | Café chico | 3400 | img/cafe.jpg | Cafetería"></textarea>
-    <div style="margin-top:8px;display:flex;gap:8px">
-      <button type="button" onclick="procesarMulti()">Guardar varios</button>
-      <button type="button" onclick="toggleMultiForm()" style="background:#999">Cerrar</button>
     </div>
   </form>
 
@@ -305,7 +294,6 @@ function guardarFormulario(){ const nombre=document.getElementById('nombre').val
   document.getElementById('form').style.display='none';
   showToast('Producto agregado/actualizado localmente','ok',1800);
 }
-function toggleMultiForm(){ const f=document.getElementById('multiForm'); f.style.display = f.style.display === 'none' || f.style.display === '' ? 'block' : 'none'; if(f.style.display==='block') f.scrollIntoView({behavior:'smooth', block:'center'}); }
 function procesarMulti(){ const raw=document.getElementById('multiInput').value.trim(); if(!raw){ showToast('Nada para procesar','err'); return;} const lines=raw.split('\n').map(l=>l.trim()).filter(Boolean); for(const ln of lines){ const parts=ln.split('|').map(p=>p.trim()); const nombre=parts[0]||'Sin nombre'; const descripcion=parts[1]||''; const precio=sanitizePrice(parts[2]||''); const imagen=parts[3]||''; const categoria=parts[4]||''; const id=generateNextProdId(); productos.push({ id, nombre, descripcion, precio, imagen, categoria }); } document.getElementById('multiInput').value=''; render(productos); showToast('Productos agregados localmente. Presioná "Guardar TODOS los cambios".','info',3500); }
 
 function eliminarProductoPorId(id){ if(!confirm('Eliminar producto?')) return; const idx = findIndexById(id); if(idx !== -1){ productos.splice(idx,1); render(productos); showToast('Producto eliminado localmente','info',1600); } else { showToast('Producto no encontrado','err'); } }
@@ -486,6 +474,13 @@ function filterProducts(){
     (p.categoria||'').toLowerCase().includes(q)
   );
   render(filtered);
+}
+function irWhatsApp(){
+  const numero = "5491123140119"; // ← poné tu número real
+  const mensaje = encodeURIComponent(
+    "Hola, necesito ayuda con el admin de la carta digital"
+  );
+  window.open(`https://wa.me/${numero}?text=${mensaje}`, "_blank");
 }
 
 /**********************************************************
