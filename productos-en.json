@@ -243,7 +243,7 @@
     "id": "prod0031",
     "name": "Chocolate Alfajor",
     "description": "Chocolate alfajor",
-    "price": "46000",
+    "price": "4600",
     "image": "img/lafch.jpg",
     "category": "COFFEE SHOP"
   },
@@ -251,7 +251,7 @@
     "id": "prod0032",
     "name": "Cornstarch Alfajor",
     "description": "Cornstarch alfajor (gluten-free)",
-    "price": "46000",
+    "price": "4600",
     "image": "img/almealfa.jpg",
     "category": "COFFEE SHOP"
   },
@@ -259,7 +259,7 @@
     "id": "prod0033",
     "name": "Almond Alfajor",
     "description": "Almond alfajor",
-    "price": "55000",
+    "price": "5500",
     "image": "img/maisena.jpg",
     "category": "COFFEE SHOP"
   },
