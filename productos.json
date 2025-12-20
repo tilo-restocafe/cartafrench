@@ -2,7 +2,7 @@
   {
     "nombre": "Café expresso",
     "descripcion": "Café chico",
-    "precio": "330000",
+    "precio": "3300",
     "imagen": "img/20250806_112815.jpg",
     "categoria": "CAFETERÍA",
     "id": "prod0001"
