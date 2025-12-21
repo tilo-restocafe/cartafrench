@@ -403,7 +403,7 @@
     "id": "prod0051",
     "name": "Garden Burritos (hot)",
     "description": "Wheat tortilla with zucchini, eggplant, peppers, tomatoes, mushrooms, Tybo cheese",
-    "price": "18700",
+    "price": "19200",
     "image": "img/huerta.jpg",
     "category": "FOOD"
   },
@@ -411,7 +411,7 @@
     "id": "prod0052",
     "name": "Chicken Caesar Burritos",
     "description": "Cold: Wheat tortilla, lettuce mix, classic Caesar dressing, chicken breast, Parmesan and croutons",
-    "price": "19000",
+    "price": "19500",
     "image": "img/caesarpollo.jpg",
     "category": "FOOD"
   },
@@ -419,7 +419,7 @@
     "id": "prod0053",
     "name": "Mexican-Style Burritos",
     "description": "Hot: Wheat tortilla with chicken sauce, beef tenderloin filling, vegetables and cheddar",
-    "price": "22500",
+    "price": "23000",
     "image": "img//Lomi.jpg",
     "category": "FOOD"
   },
@@ -459,7 +459,7 @@
     "id": "prod0058",
     "name": "Fresh Salad",
     "description": "Arugula, green apple, cucumber, cherry tomatoes, walnuts, Reggianito cheese",
-    "price": "21000",
+    "price": "21500",
     "image": "img/Fresca.jpg",
     "category": "FOOD"
   },
@@ -467,7 +467,7 @@
     "id": "prod0059",
     "name": "Caesar Salad with Chicken",
     "description": "Mixed greens, croutons, chicken, Parmesan and Caesar dressing",
-    "price": "17500",
+    "price": "18000",
     "image": "img/Caesarpollo.jpg",
     "category": "FOOD"
   },
@@ -475,7 +475,7 @@
     "id": "prod0060",
     "name": "Crunchy Chicken Salad",
     "description": "Mixed greens, croutons, crispy chicken, Parmesan and Caesar dressing",
-    "price": "18500",
+    "price": "19000",
     "image": "img/Cranch.jpg",
     "category": "FOOD"
   },
@@ -483,7 +483,7 @@
     "id": "prod0061",
     "name": "Parma Salad",
     "description": "Mixed greens, Reggianito cheese, cherry tomatoes, cured ham and tortilla strips",
-    "price": "27800",
+    "price": "28300",
     "image": "img/20250813_135926 (1).jpg",
     "category": "FOOD"
   },
@@ -491,7 +491,7 @@
     "id": "prod0062",
     "name": "Chicken or Beef Milanesa",
     "description": "Served with mashed potatoes, pasta, salad or fries",
-    "price": "20000",
+    "price": "20500",
     "image": "img/20250721_132438.jpg",
     "category": "FOOD"
   },
@@ -499,7 +499,7 @@
     "id": "prod0063",
     "name": "Spinach Milanesa (beef or chicken)",
     "description": "Spinach cream and gratinated cheese. Served with mashed potatoes, pasta, salad or fries",
-    "price": "20000",
+    "price": "22500",
     "image": "img/Esp.jpg",
     "category": "FOOD"
   },
@@ -507,7 +507,7 @@
     "id": "prod0064",
     "name": "Napolitan Milanesa (beef or chicken)",
     "description": "Tomato sauce, ham and cheese. Served with mashed potatoes, pasta, salad or fries",
-    "price": "21000",
+    "price": "22500",
     "image": "img/20250813_125845 (1).jpg",
     "category": "FOOD"
   },
@@ -515,7 +515,7 @@
     "id": "prod0065",
     "name": "Chicken Risotto",
     "description": "With chicken, pumpkin and vegetables",
-    "price": "23000",
+    "price": "23500",
     "image": "img/tortillapapa.jpg",
     "category": "FOOD"
   },
@@ -523,7 +523,7 @@
     "id": "prod0066",
     "name": "Nut & Vegetable Risotto",
     "description": "With vegetables, walnuts and almonds",
-    "price": "25000",
+    "price": "25500",
     "image": "img/Risotolangos.jpg",
     "category": "FOOD"
   },
@@ -531,7 +531,7 @@
     "id": "prod0067",
     "name": "Beef Tenderloin Risotto",
     "description": "With vegetables",
-    "price": "27000",
+    "price": "27500",
     "image": "img/Risotolomo.jpg",
     "category": "FOOD"
   },
@@ -635,7 +635,7 @@
     "id": "prod0080",
     "name": "Chicken (breast)",
     "description": "With fries, mashed potatoes, salad or rice",
-    "price": "20000",
+    "price": "20500",
     "image": "img/pollogri.jpg",
     "category": "FOOD"
   },
@@ -643,7 +643,7 @@
     "id": "prod0081",
     "name": "Ribeye Steak",
     "description": "With fries, mashed potatoes, salad or rice",
-    "price": "32000",
+    "price": "32500",
     "image": "img/20250815_1.jpg",
     "category": "FOOD"
   },
@@ -651,7 +651,7 @@
     "id": "prod0082",
     "name": "Tenderloin Steak",
     "description": "With fries, mashed potatoes, salad or rice",
-    "price": "34000",
+    "price": "34500",
     "image": "img/Bifedelomo.jpg",
     "category": "FOOD"
   },
@@ -659,7 +659,7 @@
     "id": "prod0083",
     "name": "Mini Ribeye Steak",
     "description": "With fries, mashed potatoes, salad or rice",
-    "price": "28000",
+    "price": "28500",
     "image": "img/minibi.jpg",
     "category": "FOOD"
   },
@@ -691,7 +691,7 @@
     "id": "prod0087",
     "name": "Pesto Milanesa",
     "description": "Beef milanesa with gnocchi in pesto sauce",
-    "price": "20000",
+    "price": "20500",
     "image": "img/Milapesto.jpg",
     "category": "FOOD"
   },
@@ -699,7 +699,7 @@
     "id": "prod0088",
     "name": "Chicken with Mushrooms",
     "description": "In mushroom sauce with fries",
-    "price": "23500",
+    "price": "24000",
     "image": "img/Pechuchapi.jpg",
     "category": "FOOD"
   },
@@ -707,7 +707,7 @@
     "id": "prod0089",
     "name": "Ribeye Steak a Caballo",
     "description": "With two fried eggs and fries",
-    "price": "33000",
+    "price": "33500",
     "image": "img/Taripg",
     "category": "FOOD"
   },
@@ -715,7 +715,7 @@
     "id": "prod0090",
     "name": "Riojana Tenderloin",
     "description": "With onions, peppers and fried egg, served with fries",
-    "price": "35000",
+    "price": "35500",
     "image": "img/Matrio.jpg",
     "category": "FOOD"
   },
@@ -723,7 +723,7 @@
     "id": "prod0091",
     "name": "Tenderloin Cacio e Pepe",
     "description": "Grilled tenderloin with spaghetti in pepper and cheese",
-    "price": "34000",
+    "price": "34500",
     "image": "img/Pepe.jpg",
     "category": "FOOD"
   },
@@ -731,7 +731,7 @@
     "id": "prod0092",
     "name": "Tenderloin with Mushrooms",
     "description": "Grilled tenderloin in mushroom sauce with fries",
-    "price": "36000",
+    "price": "36500",
     "image": "img/Lochapi.jpg",
     "category": "FOOD"
   },
@@ -739,7 +739,7 @@
     "id": "prod0093",
     "name": "Milanesa Spaghetti",
     "description": "Beef milanesa with spaghetti in pink sauce",
-    "price": "20000",
+    "price": "20500",
     "image": "img//Tortasnueva.jpg",
     "category": "FOOD"
   },
@@ -747,7 +747,7 @@
     "id": "prod0094",
     "name": "Teriyaki Chicken",
     "description": "Chicken breast in sweet sauce with sautéed rice and vegetables",
-    "price": "22500",
+    "price": "23000",
     "image": "img/Tortasnueva.jpg",
     "category": "FOOD"
   },
@@ -755,7 +755,7 @@
     "id": "prod0095",
     "name": "Coca-Cola Line",
     "description": "Zero and classic",
-    "price": "4000",
+    "price": "4200",
     "image": "img/bebidas.jpg",
     "category": "DRINKS"
   },
@@ -779,7 +779,7 @@
     "id": "prod0098",
     "name": "Fresh Orange Juice",
     "description": "Fresh-squeezed orange juice",
-    "price": "6600",
+    "price": "6700",
     "image": "img/Exprimido.jpg",
     "category": "DRINKS"
   },
@@ -787,7 +787,7 @@
     "id": "prod0099",
     "name": "OREO Milkshake",
     "description": "Cream ice cream with Oreos and whipped cream",
-    "price": "9400",
+    "price": "9500",
     "image": "img/miloreo.jpg",
     "category": "DRINKS"
   },
@@ -795,7 +795,7 @@
     "id": "prod0100",
     "name": "Smoothies",
     "description": "With seasonal fruits (water base, milk or orange juice)",
-    "price": "7700",
+    "price": "7800",
     "image": "img/licuado.jpg",
     "category": "DRINKS"
   },
@@ -803,7 +803,7 @@
     "id": "prod0101",
     "name": "Mint Ginger Lemonade",
     "description": "Mint ginger lemonade",
-    "price": "6800",
+    "price": "6900",
     "image": "img/limo.jpg",
     "category": "DRINKS"
   },
@@ -811,7 +811,7 @@
     "id": "prod0102",
     "name": "Lemonade",
     "description": "Simple lemonade",
-    "price": "6600",
+    "price": "6700",
     "image": "img/Limosim.jpg",
     "category": "DRINKS"
   },
@@ -819,7 +819,7 @@
     "id": "prod0103",
     "name": "STELLA ARTOIS (410cc - Bottle)",
     "description": "Bottle",
-    "price": "7000",
+    "price": "7200",
     "image": "img/Coroa.jpg",
     "category": "DRINKS"
   },
@@ -899,7 +899,7 @@
     "id": "prod0113",
     "name": "Cooked Ham and Cheese",
     "description": "Ciabatta or arabic bread",
-    "price": "13500",
+    "price": "14000",
     "image": "img/20250806_102519.jpg",
     "category": "SANDWICHES"
   },
@@ -907,7 +907,7 @@
     "id": "prod0114",
     "name": "Mixed Toasted Sandwich",
     "description": "4 ham and cheese triangles",
-    "price": "14000",
+    "price": "14500",
     "image": "img/tm.jpg",
     "category": "SANDWICHES"
   },
@@ -915,7 +915,7 @@
     "id": "prod0115",
     "name": "Cured Ham, Cheese and Tomato",
     "description": "Cured ham, cheese and tomato",
-    "price": "18000",
+    "price": "18500",
     "image": "img/Jqyt.jpg",
     "category": "SANDWICHES"
   },
@@ -923,7 +923,7 @@
     "id": "prod0116",
     "name": "Toasted Chipa",
     "description": "With ham & cheese 15,000 / cheddar & ham 16,000",
-    "price": "15000",
+    "price": "15500",
     "image": "img/chipjyq.jpg",
     "category": "SANDWICHES"
   },
@@ -931,7 +931,7 @@
     "id": "prod0117",
     "name": "Lomito Sandwich (Simple)",
     "description": "Simple in ciabatta bread, with fries",
-    "price": "21500",
+    "price": "22500",
     "image": "img/lomito.jpg",
     "category": "SANDWICHES"
   },
@@ -939,7 +939,7 @@
     "id": "prod0118",
     "name": "Lomito Sandwich CLASSIC",
     "description": "Classic (lettuce, tomato, ham and cheese) in ciabatta bread, with fries",
-    "price": "23500",
+    "price": "24500",
     "image": "img/loclacico.jpg",
     "category": "SANDWICHES"
   },
@@ -947,7 +947,7 @@
     "id": "prod0119",
     "name": "Lomito Sandwich BACON",
     "description": "Bacon (cheddar cheese, bacon and tomato) in ciabatta bread, with fries",
-    "price": "25500",
+    "price": "26500",
     "image": "img/lombaco.jpg",
     "category": "SANDWICHES"
   },
