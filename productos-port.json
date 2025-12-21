@@ -402,7 +402,7 @@
   {
     "nome": "Burritos da horta (quente)",
     "descricao": "Tortilha de trigo com abobrinha, berinjela, pimentões, tomates, cogumelos e queijo tybo",
-    "preco": "18700",
+    "preco": "19200",
     "imagem": "img/huerta.jpg",
     "categoria": "Comidas",
     "id": "prod0051"
@@ -410,7 +410,7 @@
   {
     "nome": "Burritos César de frango",
     "descricao": "(frio): Tortilha de trigo, mix de folhas, molho César clássico, peito de frango, parmesão e croutons",
-    "preco": "19000",
+    "preco": "19500",
     "imagem": "img/caesarpollo.jpg",
     "categoria": "Comidas",
     "id": "prod0052"
@@ -418,7 +418,7 @@
   {
     "nome": "Burritos estilo mexicano",
     "descricao": "(quente): Tortilha de trigo com molho de frango, recheio de lombo, vegetais e cheddar",
-    "preco": "22500",
+    "preco": "23000",
     "imagem": "img//Lomi.jpg",
     "categoria": "Comidas",
     "id": "prod0053"
@@ -458,7 +458,7 @@
   {
     "nome": "Salada fresca",
     "descricao": "Rúcula, maçã verde, pepino, tomate cereja, nozes e queijo regianito",
-    "preco": "21000",
+    "preco": "21500",
     "imagem": "img/Fresca.jpg",
     "categoria": "Comidas",
     "id": "prod0058"
@@ -466,7 +466,7 @@
   {
     "nome": "Salada Caesar com frango",
     "descricao": "Mix de folhas verdes, croutons, frango, parmesão e molho Caesar",
-    "preco": "17500",
+    "preco": "18000",
     "imagem": "img/Caesarpollo.jpg",
     "categoria": "Comidas",
     "id": "prod0059"
@@ -474,7 +474,7 @@
   {
     "nome": "Salada frango crocante",
     "descricao": "Mix de folhas verdes, croutons, frango crocante, parmesão e molho Caesar",
-    "preco": "18500",
+    "preco": "19000",
     "imagem": "img/Cranch.jpg",
     "categoria": "Comidas",
     "id": "prod0060"
@@ -482,7 +482,7 @@
   {
     "nome": "Salada Parma",
     "descricao": "Mix de folhas verdes, queijo regianito, tomates cereja, presunto cru e tiras de tortilha",
-    "preco": "27800",
+    "preco": "28300",
     "imagem": "img/20250813_135926 (1).jpg",
     "categoria": "Comidas",
     "id": "prod0061"
@@ -490,7 +490,7 @@
   {
     "nome": "Milanesa simples de frango ou carne",
     "descricao": "Acompanhada de purê, massa, salada ou batatas fritas",
-    "preco": "20000",
+    "preco": "20500",
     "imagem": "img/20250721_132438.jpg",
     "categoria": "Comidas",
     "id": "prod0062"
@@ -498,7 +498,7 @@
   {
     "nome": "Milanesa de espinafre (carne ou frango)",
     "descricao": "Creme de espinafre e queijo gratinado. Acompanhada de purê, massa, salada ou batatas fritas",
-    "preco": "20000",
+    "preco": "22500",
     "imagem": "img/Esp.jpg",
     "categoria": "Comidas",
     "id": "prod0063"
@@ -506,7 +506,7 @@
   {
     "nome": "Milanesa napolitana (carne ou frango)",
     "descricao": "Molho de tomate, presunto e queijo. Acompanhada de purê, massa, salada ou batatas fritas",
-    "preco": "21000",
+    "preco": "22500",
     "imagem": "img/20250813_125845 (1).jpg",
     "categoria": "Comidas",
     "id": "prod0064"
@@ -514,7 +514,7 @@
   {
     "nome": "Risoto de frango",
     "descricao": "Com frango, abóbora e legumes",
-    "preco": "23000",
+    "preco": "23500",
     "imagem": "img/tortillapapa.jpg",
     "categoria": "Comidas",
     "id": "prod0065"
@@ -522,7 +522,7 @@
   {
     "nome": "Risoto de frutas secas",
     "descricao": "Com legumes, nozes e amêndoas",
-    "preco": "25000",
+    "preco": "25500",
     "imagem": "img/Risotolangos.jpg",
     "categoria": "Comidas",
     "id": "prod0066"
@@ -530,7 +530,7 @@
   {
     "nome": "Risoto de lombo",
     "descricao": "Com legumes",
-    "preco": "27000",
+    "preco": "27500",
     "imagem": "img/Risotolomo.jpg",
     "categoria": "Comidas",
     "id": "prod0067"
@@ -634,7 +634,7 @@
   {
     "nome": "Frango (peito)",
     "descricao": "Com batata frita, purê, salada ou arroz",
-    "preco": "20000",
+    "preco": "20500",
     "imagem": "img/pollogri.jpg",
     "categoria": "Comidas",
     "id": "prod0080"
@@ -642,7 +642,7 @@
   {
     "nome": "Bife de chorizo",
     "descricao": "Com batata frita, purê, salada ou arroz",
-    "preco": "32000",
+    "preco": "32500",
     "imagem": "img/20250815_1.jpg",
     "categoria": "Comidas",
     "id": "prod0081"
@@ -650,7 +650,7 @@
   {
     "nome": "Bife de lombo",
     "descricao": "Com batata frita, purê, salada ou arroz",
-    "preco": "34000",
+    "preco": "34500",
     "imagem": "img/Bifedelomo.jpg",
     "categoria": "Comidas",
     "id": "prod0082"
@@ -658,7 +658,7 @@
   {
     "nome": "Mini bife de chorizo",
     "descricao": "Com batata frita, purê, salada ou arroz",
-    "preco": "28000",
+    "preco": "28500",
     "imagem": "img/minibi.jpg",
     "categoria": "Comidas",
     "id": "prod0083"
@@ -690,7 +690,7 @@
   {
     "nome": "Milanesa pesto",
     "descricao": "Milanesa de carne com nhoque ao pesto",
-    "preco": "20000",
+    "preco": "20500",
     "imagem": "img/Milapesto.jpg",
     "categoria": "Comidas",
     "id": "prod0087"
@@ -698,7 +698,7 @@
   {
     "nome": "Frango ao champignon",
     "descricao": "Em molho de cogumelos com batatas fritas",
-    "preco": "23500",
+    "preco": "24000",
     "imagem": "img/Pechuchapi.jpg",
     "categoria": "Comidas",
     "id": "prod0088"
@@ -706,7 +706,7 @@
   {
     "nome": "Bife de chorizo a cavalo",
     "descricao": "Com dois ovos fritos e batatas fritas",
-    "preco": "33000",
+    "preco": "33500",
     "imagem": "img/Taripg",
     "categoria": "Comidas",
     "id": "prod0089"
@@ -714,7 +714,7 @@
   {
     "nome": "Lombo à riojana",
     "descricao": "Com cebola, pimentões e ovos fritos, acompanhado de batatas fritas",
-    "preco": "35000",
+    "preco": "35500",
     "imagem": "img/Matrio.jpg",
     "categoria": "Comidas",
     "id": "prod0090"
@@ -722,7 +722,7 @@
   {
     "nome": "Lombo cacio e pepe",
     "descricao": "Bife de lombo grelhado com spaghetti, pimenta e queijo",
-    "preco": "34000",
+    "preco": "34500",
     "imagem": "img/Pepe.jpg",
     "categoria": "Comidas",
     "id": "prod0091"
@@ -730,7 +730,7 @@
   {
     "nome": "Lombo ao champignon",
     "descricao": "Bife de lombo grelhado em molho de cogumelos com batatas fritas",
-    "preco": "36000",
+    "preco": "36500",
     "imagem": "img/Lochapi.jpg",
     "categoria": "Comidas",
     "id": "prod0092"
@@ -738,7 +738,7 @@
   {
     "nome": "Milanesa com spaghetti",
     "descricao": "Milanesa de carne com spaghetti ao molho rosé",
-    "preco": "20000",
+    "preco": "20500",
     "imagem": "img//Tortasnueva.jpg",
     "categoria": "Comidas",
     "id": "prod0093"
@@ -746,7 +746,7 @@
   {
     "nome": "Frango teriyaki",
     "descricao": "Peito de frango em molho doce com arroz salteado e legumes",
-    "preco": "22500",
+    "preco": "23000",
     "imagem": "img/Tortasnueva.jpg",
     "categoria": "Comidas",
     "id": "prod0094"
@@ -754,7 +754,7 @@
   {
     "nome": "Linha Coca-Cola",
     "descricao": "Zero e clássica",
-    "preco": "4000",
+    "preco": "4200",
     "imagem": "img/bebidas.jpg",
     "categoria": "Refrigerantes",
     "id": "prod0095"
@@ -778,7 +778,7 @@
   {
     "nome": "Suco de laranja natural",
     "descricao": "Suco de laranja espremido",
-    "preco": "6600",
+    "preco": "6700",
     "imagem": "img/Exprimido.jpg",
     "categoria": "Refrigerantes",
     "id": "prod0098"
@@ -786,7 +786,7 @@
   {
     "nome": "Milkshake Oreo",
     "descricao": "Sorvete de creme com Oreo e chantilly",
-    "preco": "9400",
+    "preco": "9500",
     "imagem": "img/miloreo.jpg",
     "categoria": "Refrigerantes",
     "id": "prod0099"
@@ -794,7 +794,7 @@
   {
     "nome": "Vitaminas",
     "descricao": "Com frutas da estação (base de água, leite ou suco)",
-    "preco": "7700",
+    "preco": "7800",
     "imagem": "img/licuado.jpg",
     "categoria": "Refrigerantes",
     "id": "prod0100"
@@ -802,7 +802,7 @@
   {
     "nome": "Limonada com hortelã e gengibre",
     "descricao": "Limonada com hortelã e gengibre",
-    "preco": "6800",
+    "preco": "6900",
     "imagem": "img/limo.jpg",
     "categoria": "Refrigerantes",
     "id": "prod0101"
@@ -810,7 +810,7 @@
   {
     "nome": "Limonada",
     "descricao": "Limonada simples",
-    "preco": "6600",
+    "preco": "6700",
     "imagem": "img/Limosim.jpg",
     "categoria": "Refrigerantes",
     "id": "prod0102"
@@ -818,7 +818,7 @@
   {
     "nome": "Stella Artois (410cc)",
     "descricao": "Garrafa",
-    "preco": "7000",
+    "preco": "7200",
     "imagem": "img/Coroa.jpg",
     "categoria": "Refrigerantes",
     "id": "prod0103"
@@ -898,7 +898,7 @@
   {
     "nome": "Presunto cozido e queijo",
     "descricao": "Ciabatta ou pão árabe",
-    "preco": "13500",
+    "preco": "14000",
     "imagem": "img/20250806_102519.jpg",
     "categoria": "Sanduíches",
     "id": "prod0113"
@@ -906,7 +906,7 @@
   {
     "nome": "Tostado misto",
     "descricao": "4 triângulos de presunto e queijo",
-    "preco": "14000",
+    "preco": "14500",
     "imagem": "img/tm.jpg",
     "categoria": "Sanduíches",
     "id": "prod0114"
@@ -914,7 +914,7 @@
   {
     "nome": "Presunto cru, queijo e tomate",
     "descricao": "Presunto cru, queijo e tomate",
-    "preco": "18000",
+    "preco": "18500",
     "imagem": "img/Jqyt.jpg",
     "categoria": "Sanduíches",
     "id": "prod0115"
@@ -922,7 +922,7 @@
   {
     "nome": "Chipa tostada",
     "descricao": "Com presunto e queijo 15.000, cheddar e presunto 16.000",
-    "preco": "15000",
+    "preco": "15500",
     "imagem": "img/chipjyq.jpg",
     "categoria": "Sanduíches",
     "id": "prod0116"
@@ -930,7 +930,7 @@
   {
     "nome": "Sanduíche de lomito simples",
     "descricao": "Simples no pão ciabatta, com batatas fritas",
-    "preco": "21500",
+    "preco": "22500",
     "imagem": "img/lomito.jpg",
     "categoria": "Sanduíches",
     "id": "prod0117"
@@ -938,7 +938,7 @@
   {
     "nome": "Sanduíche de lomito clássico",
     "descricao": "Clássico (alface, tomate, presunto e queijo) no pão ciabatta, com batatas fritas",
-    "preco": "23500",
+    "preco": "24500",
     "imagem": "img/loclacico.jpg",
     "categoria": "Sanduíches",
     "id": "prod0118"
@@ -946,7 +946,7 @@
   {
     "nome": "Sanduíche de lomito bacon",
     "descricao": "Bacon (queijo cheddar, panceta e tomate) no pão ciabatta, com batatas fritas",
-    "preco": "25500",
+    "preco": "26500",
     "imagem": "img/lombaco.jpg",
     "categoria": "Sanduíches",
     "id": "prod0119"
