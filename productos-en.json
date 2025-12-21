@@ -19,7 +19,7 @@
     "id": "prod0003",
     "name": "Decaffeinated Coffee",
     "description": "Decaffeinated coffee",
-    "price": "3700",
+    "price": "3800",
     "image": "img/20250813_094842.jpg",
     "category": "COFFEE SHOP"
   },
@@ -27,7 +27,7 @@
     "id": "prod0004",
     "name": "Traditional Coffee with Milk",
     "description": "Traditional coffee with milk",
-    "price": "4200",
+    "price": "4300",
     "image": "img/cal.jpg",
     "category": "COFFEE SHOP"
   },
@@ -35,7 +35,7 @@
     "id": "prod0005",
     "name": "Double Espresso Coffee",
     "description": "Double espresso coffee",
-    "price": "4900",
+    "price": "5000",
     "image": "img/cafedo.jpg",
     "category": "COFFEE SHOP"
   },
@@ -43,7 +43,7 @@
     "id": "prod0006",
     "name": "Cappuccino",
     "description": "Coffee, milk, cinnamon and cocoa",
-    "price": "5100",
+    "price": "5200",
     "image": "img/Capuchino.jpg",
     "category": "COFFEE SHOP"
   },
@@ -51,7 +51,7 @@
     "id": "prod0007",
     "name": "Italian Cappuccino",
     "description": "Italian cappuccino",
-    "price": "5200",
+    "price": "5400",
     "image": "img/Capuchino.jpg",
     "category": "COFFEE SHOP"
   },
@@ -59,7 +59,7 @@
     "id": "prod0008",
     "name": "Mocha Coffee",
     "description": "Intense cocoa, coffee, frothed milk",
-    "price": "5600",
+    "price": "5700",
     "image": "img/moka.jpg",
     "category": "COFFEE SHOP"
   },
@@ -67,7 +67,7 @@
     "id": "prod0009",
     "name": "Caramel Coffee",
     "description": "Caramel, coffee, frothed milk",
-    "price": "5500",
+    "price": "5600",
     "image": "img/caramel.jpg",
     "category": "COFFEE SHOP"
   },
@@ -75,7 +75,7 @@
     "id": "prod0010",
     "name": "Tea with Milk",
     "description": "Inti Zen tea",
-    "price": "4300",
+    "price": "4400",
     "image": "img/te.jpg",
     "category": "COFFEE SHOP"
   },
@@ -83,7 +83,7 @@
     "id": "prod0011",
     "name": "Submarino",
     "description": "Frothed milk and chocolate bar",
-    "price": "4800",
+    "price": "4900",
     "image": "img/subma.jpg",
     "category": "COFFEE SHOP"
   },
@@ -91,7 +91,7 @@
     "id": "prod0012",
     "name": "Hot Chocolate Served in Copper",
     "description": "Hot chocolate served in copper",
-    "price": "4900",
+    "price": "5000",
     "image": "img/cobre.jpg",
     "category": "COFFEE SHOP"
   },
@@ -107,7 +107,7 @@
     "id": "prod0014",
     "name": "Tilo Coffee",
     "description": "Coffee, Baileys, evaporated milk and grated chocolate",
-    "price": "6100",
+    "price": "6500",
     "image": "img/ctilo.jpg",
     "category": "COFFEE SHOP"
   },
@@ -115,7 +115,7 @@
     "id": "prod0015",
     "name": "Iced Coffee 🥶",
     "description": "Double shot with ice ❄️",
-    "price": "4900",
+    "price": "5000",
     "image": "img/aiccofi.jpg",
     "category": "COFFEE SHOP"
   },
@@ -123,7 +123,7 @@
     "id": "prod0016",
     "name": "Iced Latte Coffee 🥶",
     "description": "Cold milk with double coffee shot and ice ❄️",
-    "price": "4900",
+    "price": "5000",
     "image": "img/aiclate.jpg",
     "category": "COFFEE SHOP"
   },
@@ -131,7 +131,7 @@
     "id": "prod0017",
     "name": "Milk & Oreo Frappuccino 🥶",
     "description": "Milk-based ❄️",
-    "price": "6600",
+    "price": "6800",
     "image": "img/miloreo.jpg",
     "category": "COFFEE SHOP"
   },
@@ -139,7 +139,7 @@
     "id": "prod0018",
     "name": "Oreo Frappuccino 🥶",
     "description": "Coffee-based ❄️",
-    "price": "6600",
+    "price": "6800",
     "image": "img/FRAPPUCCINOOREO.jpg",
     "category": "COFFEE SHOP"
   },
