@@ -3,7 +3,7 @@
     "id": "prod0001",
     "name": "Espresso Coffee",
     "description": "Small coffee",
-    "price": "3300",
+    "price": "3400",
     "image": "img/20250806_112815.jpg",
     "category": "COFFEE SHOP"
   },
@@ -11,7 +11,7 @@
     "id": "prod0002",
     "name": "Espresso Coffee in Small Cup",
     "description": "American coffee",
-    "price": "3500",
+    "price": "3600",
     "image": "img/cj.jpg",
     "category": "COFFEE SHOP"
   },
