@@ -402,7 +402,7 @@
   {
     "nombre": "Burritos De la Huerta (caliente)",
     "descripcion": "Tortilla de trigo,con zuccinni, berengenas, morrones, tomates\n hongos, queso tybo",
-    "precio": "18700",
+    "precio": "19200",
     "imagen": "img/huerta.jpg",
     "categoria": "COMIDAS",
     "id": "prod0051"
@@ -410,7 +410,7 @@
   {
     "nombre": "Burritos de CESAR de POLLO",
     "descripcion": "(fría): Tortilla de trigo, mix de lechugas, clásico aderezo cesar, pechuga, queso parmesano y croutons",
-    "precio": "19000",
+    "precio": "19500",
     "imagen": "img/caesarpollo.jpg",
     "categoria": "COMIDAS",
     "id": "prod0052"
@@ -418,7 +418,7 @@
   {
     "nombre": "Burritos COMO MEXICANO",
     "descripcion": "(caliente): Tortilla de trigo con salsa de pollo, relleno de lomo, vegetales y cheddar",
-    "precio": "22500",
+    "precio": "23000",
     "imagen": "img//Lomi.jpg",
     "categoria": "COMIDAS",
     "id": "prod0053"
@@ -458,7 +458,7 @@
   {
     "nombre": "ENSALADA FRESCA",
     "descripcion": "Rúcula, manzana verde, pepino, tomates cherries, nueces, regianito",
-    "precio": "21000",
+    "precio": "21500",
     "imagen": "img/Fresca.jpg",
     "categoria": "COMIDAS",
     "id": "prod0058"
@@ -466,7 +466,7 @@
   {
     "nombre": "ENSALADA CAESAR CON POLLO",
     "descripcion": "Mix de verdes, croutones, pollo, parmesano y aderezo Caesar",
-    "precio": "17500",
+    "precio": "18000",
     "imagen": "img/Caesarpollo.jpg",
     "categoria": "COMIDAS",
     "id": "prod0059"
@@ -474,7 +474,7 @@
   {
     "nombre": "ENSALADA POLLO CRUNCH",
     "descripcion": "Mix de verdes, croutons, pollo crujiente, parmesano y aderezo Caesar.",
-    "precio": "18500",
+    "precio": "19000",
     "imagen": "img/Cranch.jpg",
     "categoria": "COMIDAS",
     "id": "prod0060"
@@ -482,7 +482,7 @@
   {
     "nombre": "ESALADA PARMA",
     "descripcion": "Mix con hojas verdes, queso regianito\n tomates cherries,jamon crudo y tiras de tortilla",
-    "precio": "27800",
+    "precio": "28300",
     "imagen": "img/20250813_135926 (1).jpg",
     "categoria": "COMIDAS",
     "id": "prod0061"
@@ -490,7 +490,7 @@
   {
     "nombre": "MILA SOLA de POLLO o CARNE",
     "descripcion": "Acompañadas con puré, fideos, ensalada o papas fritas",
-    "precio": "20000",
+    "precio": "20500",
     "imagen": "img/20250721_132438.jpg",
     "categoria": "COMIDAS",
     "id": "prod0062"
@@ -498,7 +498,7 @@
   {
     "nombre": "MILA ESPINACA carne o pollo",
     "descripcion": "Crema de espinaca y queso gratinado Acompañadas con puré, fideos, ensalada o papas fritas",
-    "precio": "20000",
+    "precio": "22500",
     "imagen": "img/Esp.jpg",
     "categoria": "COMIDAS",
     "id": "prod0063"
@@ -506,7 +506,7 @@
   {
     "nombre": "MILA NAPOLITANA CARNR O POLLO",
     "descripcion": "Salsa de tomate, jamón y queso Acompañadas con puré, fideos, ensalada o papas fritas",
-    "precio": "21000",
+    "precio": "22500",
     "imagen": "img/20250813_125845 (1).jpg",
     "categoria": "COMIDAS",
     "id": "prod0064"
@@ -514,7 +514,7 @@
   {
     "nombre": "RISOTTOS de pollo!",
     "descripcion": "con pollo, calabaza y verduras.",
-    "precio": "23000",
+    "precio": "23500",
     "imagen": "img/tortillapapa.jpg",
     "categoria": "COMIDAS",
     "id": "prod0065"
@@ -522,7 +522,7 @@
   {
     "nombre": "RISOTTOS FRUTOS SECOS",
     "descripcion": "con verdura, nueces y almendras.",
-    "precio": "25000",
+    "precio": "25500",
     "imagen": "img/Risotolangos.jpg",
     "categoria": "COMIDAS",
     "id": "prod0066"
@@ -530,7 +530,7 @@
   {
     "nombre": "RISOTTOS Lomo!",
     "descripcion": "con verduras.",
-    "precio": "27000",
+    "precio": "27500",
     "imagen": "img/Risotolomo.jpg",
     "categoria": "COMIDAS",
     "id": "prod0067"
@@ -634,7 +634,7 @@
   {
     "nombre": "Pollo (pechuga)",
     "descripcion": "Con frita, pure, ensalada o arroz",
-    "precio": "20000",
+    "precio": "20500",
     "imagen": "img/pollogri.jpg",
     "categoria": "COMIDAS",
     "id": "prod0080"
@@ -642,7 +642,7 @@
   {
     "nombre": "Bife de chorizo",
     "descripcion": "Con frita, pure, ensalada o arroz",
-    "precio": "32000",
+    "precio": "32500",
     "imagen": "img/20250815_1.jpg",
     "categoria": "COMIDAS",
     "id": "prod0081"
@@ -650,7 +650,7 @@
   {
     "nombre": "Bife de lomo",
     "descripcion": "Con frita, pure, ensalada o arroz",
-    "precio": "34000",
+    "precio": "34500",
     "imagen": "img/Bifedelomo.jpg",
     "categoria": "COMIDAS",
     "id": "prod0082"
@@ -658,7 +658,7 @@
   {
     "nombre": "MINI BIFE DE CHORIZO",
     "descripcion": "Con frita, pure, ensalada o arroz ",
-    "precio": "28000",
+    "precio": "28500",
     "imagen": "img/minibi.jpg",
     "categoria": "COMIDAS",
     "id": "prod0083"
@@ -690,7 +690,7 @@
   {
     "nombre": "Mila PESTO",
     "descripcion": "Milanesa de carne con ñoquis al pesto",
-    "precio": "20000",
+    "precio": "20500",
     "imagen": "img/Milapesto.jpg",
     "categoria": "COMIDAS",
     "id": "prod0087"
@@ -698,7 +698,7 @@
   {
     "nombre": "Pollo al CHAMPI",
     "descripcion": "En salsa de hongos con papas fritas",
-    "precio": "23500",
+    "precio": "24000",
     "imagen": "img/Pechuchapi.jpg",
     "categoria": "COMIDAS",
     "id": "prod0088"
@@ -706,7 +706,7 @@
   {
     "nombre": "BIFE DE CHORISO A CABALLO",
     "descripcion": "CON DOS HUEVOS FRITOS, PAPAS FREITAS",
-    "precio": "33000",
+    "precio": "33500",
     "imagen": "img/Taripg",
     "categoria": "COMIDAS",
     "id": "prod0089"
@@ -714,7 +714,7 @@
   {
     "nombre": "LOMO A LA RIOJANA",
     "descripcion": "CON CEBOLLA, MORRONES Y HUEVO FRITOS CON FRITAS",
-    "precio": "35000",
+    "precio": "35500",
     "imagen": "img/Matrio.jpg",
     "categoria": "COMIDAS",
     "id": "prod0090"
@@ -722,7 +722,7 @@
   {
     "nombre": "Lomo CACIO E PEPE",
     "descripcion": "Bife de lomo grillado con spaghetti en pimienta y queso",
-    "precio": "34000",
+    "precio": "34500",
     "imagen": "img/Pepe.jpg",
     "categoria": "COMIDAS",
     "id": "prod0091"
@@ -730,7 +730,7 @@
   {
     "nombre": "Lomo AL CHAMPI",
     "descripcion": "Bife de lomo grillado en salsa de hongos con papas fritas",
-    "precio": "36000",
+    "precio": "36500",
     "imagen": "img/Lochapi.jpg",
     "categoria": "COMIDAS",
     "id": "prod0092"
@@ -738,7 +738,7 @@
   {
     "nombre": "mila spaguetti",
     "descripcion": "MILA DE CARNE SPAGUETTI CON SALSA ROSA",
-    "precio": "20000",
+    "precio": "20500",
     "imagen": "img//Tortasnueva.jpg",
     "categoria": "COMIDAS",
     "id": "prod0093"
@@ -746,7 +746,7 @@
   {
     "nombre": "pollo tariyaki",
     "descripcion": "POLLO TERIYAKI\nPechuga en salsa dulce con arroz salteado y verduras",
-    "precio": "22500",
+    "precio": "23000",
     "imagen": "img/Tortasnueva.jpg",
     "categoria": "COMIDAS",
     "id": "prod0094"
@@ -754,7 +754,7 @@
   {
     "nombre": "línea Coca-Cola",
     "descripcion": "zeros y clásicas",
-    "precio": "4000",
+    "precio": "4200",
     "imagen": "img/bebidas.jpg",
     "categoria": "REFRESCOS",
     "id": "prod0095"
@@ -778,7 +778,7 @@
   {
     "nombre": "Jugo exprimido de naranja",
     "descripcion": "exprimido de naranja",
-    "precio": "6600",
+    "precio": "6700",
     "imagen": "img/Exprimido.jpg",
     "categoria": "REFRESCOS",
     "id": "prod0098"
@@ -786,7 +786,7 @@
   {
     "nombre": "Milkshake OREO",
     "descripcion": "helado de crema, con oreos y crema batida",
-    "precio": "9400",
+    "precio": "9500",
     "imagen": "img/miloreo.jpg",
     "categoria": "REFRESCOS",
     "id": "prod0099"
@@ -794,7 +794,7 @@
   {
     "nombre": "Licuadas",
     "descripcion": "con frutas de estacion(base de agua, leche o exprimido",
-    "precio": "7700",
+    "precio": "7800",
     "imagen": "img/licuado.jpg",
     "categoria": "REFRESCOS",
     "id": "prod0100"
@@ -802,7 +802,7 @@
   {
     "nombre": "Limonada a la menta con jengibre",
     "descripcion": "Limonada a la menta con jengibre",
-    "precio": "6800",
+    "precio": "6900",
     "imagen": "img/limo.jpg",
     "categoria": "REFRESCOS",
     "id": "prod0101"
@@ -810,7 +810,7 @@
   {
     "nombre": "Limonada",
     "descripcion": "Limonada simple",
-    "precio": "6600",
+    "precio": "6700",
     "imagen": "img/Limosim.jpg",
     "categoria": "REFRESCOS",
     "id": "prod0102"
@@ -818,7 +818,7 @@
   {
     "nombre": "STELLA ARTOIS (410cc - Porrón)",
     "descripcion": "porron",
-    "precio": "7000",
+    "precio": "7200",
     "imagen": "img/Coroa.jpg",
     "categoria": "REFRESCOS",
     "id": "prod0103"
@@ -898,7 +898,7 @@
   {
     "nombre": "Jamón cocido y queso",
     "descripcion": "ciabatta, árabe",
-    "precio": "13500",
+    "precio": "14000",
     "imagen": "img/20250806_102519.jpg",
     "categoria": "SÁNDWICHES",
     "id": "prod0113"
@@ -906,7 +906,7 @@
   {
     "nombre": "tostado mixto",
     "descripcion": "4 triangulos de j y q",
-    "precio": "14000",
+    "precio": "14500",
     "imagen": "img/tm.jpg",
     "categoria": "SÁNDWICHES",
     "id": "prod0114"
@@ -914,15 +914,15 @@
   {
     "nombre": "Jamón crudo, queo y tomate",
     "descripcion": "Jamón crudo, queo y tomate",
-    "precio": "18000",
+    "precio": "18500",
     "imagen": "img/Jqyt.jpg",
     "categoria": "SÁNDWICHES",
     "id": "prod0115"
   },
   {
     "nombre": "Chipa tostado",
-    "descripcion": "con j y Q 15.000, chedar y J 16.000",
-    "precio": "15000",
+    "descripcion": "con j y Q 15.500, chedar y J 16.500",
+    "precio": "15500",
     "imagen": "img/chipjyq.jpg",
     "categoria": "SÁNDWICHES",
     "id": "prod0116"
@@ -930,7 +930,7 @@
   {
     "nombre": "Sandwiches Lomito solo",
     "descripcion": "SIMPLE en pan de ciabatta, con papas fritas",
-    "precio": "21500",
+    "precio": "22500",
     "imagen": "img/lomito.jpg",
     "categoria": "SÁNDWICHES",
     "id": "prod0117"
@@ -938,7 +938,7 @@
   {
     "nombre": "Sandwiches Lomito CLÁSICO",
     "descripcion": "CLÁSICO (lechuga, tomate, jamón y queso)en pan de ciabatta, con papas fritas",
-    "precio": "23500",
+    "precio": "24500",
     "imagen": "img/loclacico.jpg",
     "categoria": "SÁNDWICHES",
     "id": "prod0118"
@@ -946,7 +946,7 @@
   {
     "nombre": "Sandwiches Lomito BACON",
     "descripcion": "BACON (queso cheddar, panceta y tomate)en pan de ciabatta, con papas fritas",
-    "precio": "25500",
+    "precio": "26500",
     "imagen": "img/lombaco.jpg",
     "categoria": "SÁNDWICHES",
     "id": "prod0119"
