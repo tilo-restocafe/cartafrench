@@ -18,7 +18,7 @@
   {
     "nome": "Café descafeinado",
     "descricao": "Café descafeinado",
-    "preco": "3700",
+    "preco": "3800",
     "imagem": "img/20250813_094842.jpg",
     "categoria": "Cafeteria",
     "id": "prod0003"
@@ -26,7 +26,7 @@
   {
     "nome": "Café com leite tradicional",
     "descricao": "Café com leite tradicional",
-    "preco": "4200",
+    "preco": "4300",
     "imagem": "img/cal.jpg",
     "categoria": "Cafeteria",
     "id": "prod0004"
@@ -34,7 +34,7 @@
   {
     "nome": "Café expresso duplo",
     "descricao": "Café expresso duplo",
-    "preco": "4900",
+    "preco": "5000",
     "imagem": "img/cafedo.jpg",
     "categoria": "Cafeteria",
     "id": "prod0005"
@@ -42,7 +42,7 @@
   {
     "nome": "Capuccino",
     "descricao": "Café, leite, canela e cacau",
-    "preco": "5100",
+    "preco": "5200",
     "imagem": "img/Capuchino.jpg",
     "categoria": "Cafeteria",
     "id": "prod0006"
@@ -50,7 +50,7 @@
   {
     "nome": "Capuccino italiano",
     "descricao": "Capuccino italiano",
-    "preco": "5200",
+    "preco": "5400",
     "imagem": "img/Capuchino.jpg",
     "categoria": "Cafeteria",
     "id": "prod0007"
@@ -58,7 +58,7 @@
   {
     "nome": "Café moka",
     "descricao": "Cacau intenso, café e leite espumado",
-    "preco": "5600",
+    "preco": "5700",
     "imagem": "img/moka.jpg",
     "categoria": "Cafeteria",
     "id": "prod0008"
@@ -66,7 +66,7 @@
   {
     "nome": "Café caramelo",
     "descricao": "Caramelo, café e leite espumado",
-    "preco": "5500",
+    "preco": "5600",
     "imagem": "img/caramel.jpg",
     "categoria": "Cafeteria",
     "id": "prod0009"
@@ -74,7 +74,7 @@
   {
     "nome": "Chá com leite",
     "descricao": "Chá Inti Zen",
-    "preco": "4300",
+    "preco": "4400",
     "imagem": "img/te.jpg",
     "categoria": "Cafeteria",
     "id": "prod0010"
@@ -82,7 +82,7 @@
   {
     "nome": "Submarino",
     "descricao": "Leite espumado com barra de chocolate",
-    "preco": "4800",
+    "preco": "4900",
     "imagem": "img/subma.jpg",
     "categoria": "Cafeteria",
     "id": "prod0011"
@@ -90,7 +90,7 @@
   {
     "nome": "Chocolate quente servido em cobre",
     "descricao": "Chocolate quente servido em cobre",
-    "preco": "4900",
+    "preco": "5000",
     "imagem": "img/cobre.jpg",
     "categoria": "Cafeteria",
     "id": "prod0012"
@@ -106,7 +106,7 @@
   {
     "nome": "Café Tilo",
     "descricao": "Café, Baileys, leite evaporado e chocolate ralado",
-    "preco": "6100",
+    "preco": "6500",
     "imagem": "img/ctilo.jpg",
     "categoria": "Cafeteria",
     "id": "prod0014"
@@ -114,7 +114,7 @@
   {
     "nome": "Ice Coffee 🥶",
     "descricao": "Dose dupla com gelo ❄️",
-    "preco": "4900",
+    "preco": "5000",
     "imagem": "img/aiccofi.jpg",
     "categoria": "Cafeteria",
     "id": "prod0015"
@@ -122,7 +122,7 @@
   {
     "nome": "Latte Ice Coffee 🥶",
     "descricao": "Leite frio com dose dupla de café e gelo ❄️",
-    "preco": "4900",
+    "preco": "5000",
     "imagem": "img/aiclate.jpg",
     "categoria": "Cafeteria",
     "id": "prod0016"
@@ -130,7 +130,7 @@
   {
     "nome": "Frappuccino com leite e Oreo 🥶",
     "descricao": "Base de leite ❄️",
-    "preco": "6600",
+    "preco": "6800",
     "imagem": "img/miloreo.jpg",
     "categoria": "Cafeteria",
     "id": "prod0017"
@@ -138,7 +138,7 @@
   {
     "nome": "Frappuccino Oreo 🥶",
     "descricao": "Base de café ❄️",
-    "preco": "6600",
+    "preco": "6800",
     "imagem": "img/FRAPPUCCINOOREO.jpg",
     "categoria": "Cafeteria",
     "id": "prod0018"
