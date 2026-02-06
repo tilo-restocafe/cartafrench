@@ -3,7 +3,7 @@
     "id": "prod0001",
     "name": "Espresso Coffee",
     "description": "Small coffee",
-    "price": "340000",
+    "price": "3400",
     "image": "img/20250806_112815.jpg",
     "category": "COFFEE SHOP"
   },
@@ -171,7 +171,7 @@
     "id": "prod0022",
     "name": "Croissants",
     "description": "100% butter croissants",
-    "price": "2300",
+    "price": "2500",
     "image": "img/Lumas.jpg",
     "category": "COFFEE SHOP"
   },
@@ -179,7 +179,7 @@
     "id": "prod0023",
     "name": "Pastry",
     "description": "Custard or quince pastries",
-    "price": "2300",
+    "price": "2500",
     "image": "img/20250902_085539(1).jpg",
     "category": "COFFEE SHOP"
   },
@@ -315,7 +315,7 @@
     "id": "prod0040",
     "name": "Croissant Promo",
     "description": "3 homemade croissants",
-    "price": "9200",
+    "price": "9500",
     "image": "img/proluna.jpg",
     "category": "PROMOTIONS"
   },
@@ -755,7 +755,7 @@
     "id": "prod0095",
     "name": "Coca-Cola Line",
     "description": "Zero and classic",
-    "price": "4200",
+    "price": "4500",
     "image": "img/bebidas.jpg",
     "category": "DRINKS"
   },
@@ -907,7 +907,7 @@
     "id": "prod0114",
     "name": "Mixed Toasted Sandwich",
     "description": "4 ham and cheese triangles",
-    "price": "14500",
+    "price": "15000",
     "image": "img/tm.jpg",
     "category": "SANDWICHES"
   },
@@ -923,7 +923,7 @@
     "id": "prod0116",
     "name": "Toasted Chipa",
     "description": "With ham & cheese 15,000 / cheddar & ham 16,000",
-    "price": "15500",
+    "price": "17000",
     "image": "img/chipjyq.jpg",
     "category": "SANDWICHES"
   },
@@ -931,7 +931,7 @@
     "id": "prod0117",
     "name": "Lomito Sandwich (Simple)",
     "description": "Simple in ciabatta bread, with fries",
-    "price": "22500",
+    "price": "21000",
     "image": "img/lomito.jpg",
     "category": "SANDWICHES"
   },
@@ -939,7 +939,7 @@
     "id": "prod0118",
     "name": "Lomito Sandwich CLASSIC",
     "description": "Classic (lettuce, tomato, ham and cheese) in ciabatta bread, with fries",
-    "price": "24500",
+    "price": "23000",
     "image": "img/loclacico.jpg",
     "category": "SANDWICHES"
   },
@@ -947,7 +947,7 @@
     "id": "prod0119",
     "name": "Lomito Sandwich BACON",
     "description": "Bacon (cheddar cheese, bacon and tomato) in ciabatta bread, with fries",
-    "price": "26500",
+    "price": "23000",
     "image": "img/lombaco.jpg",
     "category": "SANDWICHES"
   },
