@@ -2,7 +2,7 @@
   {
     "nome": "Café expresso",
     "descricao": "Café pequeno",
-    "preco": "340000",
+    "preco": "3400",
     "imagem": "img/20250806_112815.jpg",
     "categoria": "Cafeteria",
     "id": "prod0001"
@@ -170,7 +170,7 @@
   {
     "nome": "Croissants",
     "descricao": "Croissants 100% manteiga",
-    "preco": "2300",
+    "preco": "2500",
     "imagem": "img/Lumas.jpg",
     "categoria": "Cafeteria",
     "id": "prod0022"
@@ -178,7 +178,7 @@
   {
     "nome": "Fatura",
     "descricao": "Creme ou goiabada",
-    "preco": "2300",
+    "preco": "2500",
     "imagem": "img/20250902_085539(1).jpg",
     "categoria": "Cafeteria",
     "id": "prod0023"
@@ -314,7 +314,7 @@
   {
     "nome": "Promoção de croissants",
     "descricao": "3 croissants caseiros",
-    "preco": "9200",
+    "preco": "9500",
     "imagem": "img/proluna.jpg",
     "categoria": "Promoções",
     "id": "prod0040"
@@ -754,7 +754,7 @@
   {
     "nome": "Linha Coca-Cola",
     "descricao": "Zero e clássica",
-    "preco": "4200",
+    "preco": "4500",
     "imagem": "img/bebidas.jpg",
     "categoria": "Refrigerantes",
     "id": "prod0095"
@@ -906,7 +906,7 @@
   {
     "nome": "Tostado misto",
     "descricao": "4 triângulos de presunto e queijo",
-    "preco": "14500",
+    "preco": "15000",
     "imagem": "img/tm.jpg",
     "categoria": "Sanduíches",
     "id": "prod0114"
@@ -922,7 +922,7 @@
   {
     "nome": "Chipa tostada",
     "descricao": "Com presunto e queijo 15.000, cheddar e presunto 16.000",
-    "preco": "15500",
+    "preco": "17000",
     "imagem": "img/chipjyq.jpg",
     "categoria": "Sanduíches",
     "id": "prod0116"
@@ -930,7 +930,7 @@
   {
     "nome": "Sanduíche de lomito simples",
     "descricao": "Simples no pão ciabatta, com batatas fritas",
-    "preco": "22500",
+    "preco": "21000",
     "imagem": "img/lomito.jpg",
     "categoria": "Sanduíches",
     "id": "prod0117"
@@ -938,7 +938,7 @@
   {
     "nome": "Sanduíche de lomito clássico",
     "descricao": "Clássico (alface, tomate, presunto e queijo) no pão ciabatta, com batatas fritas",
-    "preco": "24500",
+    "preco": "23000",
     "imagem": "img/loclacico.jpg",
     "categoria": "Sanduíches",
     "id": "prod0118"
@@ -946,7 +946,7 @@
   {
     "nome": "Sanduíche de lomito bacon",
     "descricao": "Bacon (queijo cheddar, panceta e tomate) no pão ciabatta, com batatas fritas",
-    "preco": "26500",
+    "preco": "23000",
     "imagem": "img/lombaco.jpg",
     "categoria": "Sanduíches",
     "id": "prod0119"
