@@ -2,7 +2,7 @@
   {
     "nombre": "Café expresso",
     "descripcion": "Café chico",
-    "precio": "340000",
+    "precio": "3400",
     "imagen": "img/20250806_112815.jpg",
     "categoria": "CAFETERÍA",
     "id": "prod0001"
@@ -170,7 +170,7 @@
   {
     "nombre": "Medialunas",
     "descripcion": "Medialunas 100% manteca",
-    "precio": "2300",
+    "precio": "2500",
     "imagen": "img/Lumas.jpg",
     "categoria": "CAFETERÍA",
     "id": "prod0022"
@@ -178,7 +178,7 @@
   {
     "nombre": "factura",
     "descripcion": "Pasteleras o membrillo",
-    "precio": "2300",
+    "precio": "2500",
     "imagen": "img/20250902_085539(1).jpg",
     "categoria": "CAFETERÍA",
     "id": "prod0023"
@@ -314,7 +314,7 @@
   {
     "nombre": "Medialunas promo",
     "descripcion": "3 medialunas caseras",
-    "precio": "9200",
+    "precio": "9500",
     "imagen": "img/proluna.jpg",
     "categoria": "PROMOCIONES",
     "id": "prod0040"
@@ -754,7 +754,7 @@
   {
     "nombre": "línea Coca-Cola",
     "descripcion": "zeros y clásicas",
-    "precio": "4200",
+    "precio": "4500",
     "imagen": "img/bebidas.jpg",
     "categoria": "REFRESCOS",
     "id": "prod0095"
@@ -906,7 +906,7 @@
   {
     "nombre": "tostado mixto",
     "descripcion": "4 triangulos de j y q",
-    "precio": "14500",
+    "precio": "15000",
     "imagen": "img/tm.jpg",
     "categoria": "SÁNDWICHES",
     "id": "prod0114"
@@ -921,8 +921,8 @@
   },
   {
     "nombre": "Chipa tostado",
-    "descripcion": "con j y Q 15.500, chedar y J 16.500",
-    "precio": "15500",
+    "descripcion": "con j y Q 15.500, chedar y J 17000",
+    "precio": "17000",
     "imagen": "img/chipjyq.jpg",
     "categoria": "SÁNDWICHES",
     "id": "prod0116"
@@ -930,7 +930,7 @@
   {
     "nombre": "Sandwiches Lomito solo",
     "descripcion": "SIMPLE en pan de ciabatta, con papas fritas",
-    "precio": "22500",
+    "precio": "21000",
     "imagen": "img/lomito.jpg",
     "categoria": "SÁNDWICHES",
     "id": "prod0117"
@@ -938,7 +938,7 @@
   {
     "nombre": "Sandwiches Lomito CLÁSICO",
     "descripcion": "CLÁSICO (lechuga, tomate, jamón y queso)en pan de ciabatta, con papas fritas",
-    "precio": "24500",
+    "precio": "23000",
     "imagen": "img/loclacico.jpg",
     "categoria": "SÁNDWICHES",
     "id": "prod0118"
@@ -946,7 +946,7 @@
   {
     "nombre": "Sandwiches Lomito BACON",
     "descripcion": "BACON (queso cheddar, panceta y tomate)en pan de ciabatta, con papas fritas",
-    "precio": "26500",
+    "precio": "23000",
     "imagen": "img/lombaco.jpg",
     "categoria": "SÁNDWICHES",
     "id": "prod0119"
