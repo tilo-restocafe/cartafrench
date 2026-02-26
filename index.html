@@ -15,7 +15,15 @@ body{
   text-align:center;
   color:#45270a;
 }
+function scrollToProducts() {
+  const yOffset = -70; // compensación por el teleprompter fijo
+  const y = productList.getBoundingClientRect().top + window.pageYOffset + yOffset;
 
+  window.scrollTo({
+    top: y,
+    behavior: "smooth"
+  });
+}
 /* ================= TELEPROMPTER ================= */
 
 #teleprompter{
