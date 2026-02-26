@@ -201,21 +201,184 @@ header img{
 <button id="btnUp">⬆️</button>
 
 <script>
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener('DOMContentLoaded', () => {
 
-  /* ================= AUTO DETECCIÓN ================= */
+  /* ================= AUTO DETECCIÓN UNIVERSAL ================= */
 
-  const USER   = location.hostname.split('.')[0];      // usuario github
-  const REPO   = location.pathname.split('/')[1];      // nombre repo
+  const USER   = location.hostname.split('.')[0];
+  const REPO   = location.pathname.split('/')[1];
   const BRANCH = "main";
-  const FILE   = "sugerencias.json";
 
-  const idiomaActual = localStorage.getItem("idioma") || "es";
+  let idiomaActual = localStorage.getItem('idioma') || 'es';
 
-  const tele = document.getElementById("tele-track");
-  let sugerencias = [];
+  const btnEs = document.getElementById('btn-es');
+  const btnEn = document.getElementById('btn-en');
+  const btnPt = document.getElementById('btn-pt');
+  const banner = document.getElementById('banner-text');
+  const categoryContainer = document.getElementById('category-buttons');
+  const productList = document.getElementById('product-list');
+  const searchInput = document.getElementById('search');
+  const btnSearch = document.getElementById('btnSearch');
+  const btnUp = document.getElementById('btnUp');
 
-  const URL = `https://raw.githubusercontent.com/${USER}/${REPO}/${BRANCH}/${FILE}`;
+  let productos = [];
+
+  function actualizarBotones() {
+    btnEs.classList.toggle('active', idiomaActual === 'es');
+    btnEn.classList.toggle('active', idiomaActual === 'en');
+    btnPt.classList.toggle('active', idiomaActual === 'pt');
+
+    if (idiomaActual === 'es') banner.textContent = "¡Bienvenidos a Tilo Café French!";
+    if (idiomaActual === 'en') banner.textContent = "Welcome to Tilo Café French!";
+    if (idiomaActual === 'pt') banner.textContent = "Bem-vindo ao Tilo Café French!";
+  }
+
+  async function load() {
+    actualizarBotones();
+
+    let filename = "productos.json";
+    if (idiomaActual === "en") filename = "productos-en.json";
+    if (idiomaActual === "pt") filename = "productos-port.json";
+
+    /* ================= URL DINÁMICA ================= */
+
+    const RAW_URL = `https://raw.githubusercontent.com/${USER}/${REPO}/${BRANCH}/${filename}`;
+
+    try {
+      const res = await fetch(RAW_URL, { cache: "no-store" });
+      if (!res.ok) throw new Error("Error cargando productos");
+
+      const data = await res.json();
+
+      productos = data.map(p => ({
+        nombre:
+          idiomaActual === "es" ? (p.nombre || p.nome) :
+          idiomaActual === "en" ? (p.name || p.nome) :
+          p.nome,
+
+        descripcion:
+          idiomaActual === "es" ? (p.descripcion || p.descricao) :
+          idiomaActual === "en" ? (p.description || p.descricao) :
+          p.descricao,
+
+        precio: p.precio || p.preco || p.price,
+        imagen: p.imagen || p.imagem || p.image,
+
+        categoria:
+          idiomaActual === "es" ? p.categoria :
+          idiomaActual === "en" ? (p.category || p.categoria) :
+          p.categoria
+      }));
+
+      renderCategories();
+      renderProducts("Todos");
+
+    } catch (e) {
+      console.error(e);
+      productList.innerHTML = `<div class="msg">⚠️ No se pudieron cargar los productos.</div>`;
+    }
+  }
+
+  function renderCategories() {
+    const categorias = ["Todos", ...new Set(productos.map(p => p.categoria).filter(Boolean))];
+    categoryContainer.innerHTML = "";
+    categorias.forEach(cat => {
+      const btn = document.createElement("button");
+      btn.textContent = cat;
+      btn.addEventListener("click", () => {
+        renderProducts(cat);
+        scrollToProducts();
+      });
+      categoryContainer.appendChild(btn);
+    });
+  }
+
+  function renderProducts(categoria) {
+    productList.innerHTML = "";
+    const lista = categoria === "Todos"
+      ? productos
+      : productos.filter(p => p.categoria === categoria);
+
+    if (lista.length === 0) {
+      productList.innerHTML = `<div class="msg">No hay productos disponibles.</div>`;
+      return;
+    }
+
+    lista.forEach(p => {
+      const div = document.createElement("div");
+      div.className = "item";
+      div.innerHTML = `
+        <img src="${p.imagen}" alt="${p.nombre}">
+        <h3>${p.nombre}</h3>
+        <p>${p.descripcion || ""}</p>
+        <span class="price">$${p.precio}</span>`;
+      productList.appendChild(div);
+    });
+  }
+
+  function buscar() {
+    const q = searchInput.value.toLowerCase().trim();
+    const res = productos.filter(p =>
+      p.nombre.toLowerCase().includes(q) ||
+      (p.descripcion || "").toLowerCase().includes(q) ||
+      p.categoria.toLowerCase().includes(q)
+    );
+
+    if (res.length === 0) {
+      productList.innerHTML = `<div class="msg">🔍 No se encontraron resultados.</div>`;
+      return;
+    }
+
+    productList.innerHTML = "";
+    res.forEach(p => {
+      const div = document.createElement("div");
+      div.className = "item";
+      div.innerHTML = `
+        <img src="${p.imagen}" alt="${p.nombre}">
+        <h3>${p.nombre}</h3>
+        <p>${p.descripcion || ""}</p>
+        <span class="price">$${p.precio}</span>`;
+      productList.appendChild(div);
+    });
+
+    scrollToProducts();
+  }
+
+  /* ================= EVENTOS ================= */
+
+  btnEs.addEventListener("click", () => {
+    idiomaActual = "es";
+    localStorage.setItem("idioma", "es");
+    load();
+  });
+
+  btnEn.addEventListener("click", () => {
+    idiomaActual = "en";
+    localStorage.setItem("idioma", "en");
+    load();
+  });
+
+  btnPt.addEventListener("click", () => {
+    idiomaActual = "pt";
+    localStorage.setItem("idioma", "pt");
+    load();
+  });
+
+  btnSearch.addEventListener("click", buscar);
+  searchInput.addEventListener("keydown", e => {
+    if (e.key === "Enter") buscar();
+  });
+
+  window.addEventListener("scroll", () => {
+    btnUp.style.display = window.scrollY > 300 ? "block" : "none";
+  });
+
+  btnUp.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
+  load();
+});
 
   /* ================= TELEPROMPTER ================= */
 
