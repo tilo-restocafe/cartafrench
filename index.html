@@ -203,46 +203,56 @@ header img{
 <script>
 document.addEventListener("DOMContentLoaded", () => {
 
-/* ================= TELEPROMPTER ================= */
+  /* ================= AUTO DETECCIÓN ================= */
 
-const tele = document.getElementById("tele-track");
-let sugerencias = [];
-let idiomaActual = localStorage.getItem("idioma") || "es";
+  const USER   = location.hostname.split('.')[0];      // usuario github
+  const REPO   = location.pathname.split('/')[1];      // nombre repo
+  const BRANCH = "main";
+  const FILE   = "sugerencias.json";
 
-function iniciarTeleprompter(){
-  if(!sugerencias.length) return;
+  const idiomaActual = localStorage.getItem("idioma") || "es";
 
-  const separador = "   ✦   ";
-  const texto = sugerencias.join(separador) + separador;
+  const tele = document.getElementById("tele-track");
+  let sugerencias = [];
 
-  tele.textContent = texto + texto;
+  const URL = `https://raw.githubusercontent.com/${USER}/${REPO}/${BRANCH}/${FILE}`;
 
-  requestAnimationFrame(()=>{
-    const ancho = tele.scrollWidth / 2;
-    const velocidad = 75;
-    const duracion = ancho / velocidad;
+  /* ================= TELEPROMPTER ================= */
 
-    tele.style.animation = "scrollText linear infinite";
-    tele.style.animationDuration = duracion + "s";
-  });
-}
+  function iniciarTeleprompter() {
+    if (!sugerencias.length) return;
 
-function loadSugerencias(){
-  fetch("https://raw.githubusercontent.com/sequispe/carta/main/sugerencias.json",{cache:"no-store"})
-  .then(r=>r.json())
-  .then(data=>{
-    sugerencias = data[idiomaActual] || ["Bienvenidos ☕"];
-    iniciarTeleprompter();
-  })
-  .catch(()=>{
-    sugerencias=["Bienvenidos ☕"];
-    iniciarTeleprompter();
-  });
-}
+    const separador = "   ✦   ";
+    const texto = sugerencias.join(separador) + separador;
 
-loadSugerencias();
+    tele.textContent = texto + texto;
 
-/* ================= RESTO CARTA (tu lógica original simplificada) ================= */
+    requestAnimationFrame(() => {
+      const ancho = tele.scrollWidth / 2;
+      const velocidad = 75; // px por segundo
+      const duracion = ancho / velocidad;
+
+      tele.style.animation = "scrollText linear infinite";
+      tele.style.animationDuration = duracion + "s";
+    });
+  }
+
+  /* ================= CARGAR JSON ================= */
+
+  fetch(URL, { cache: "no-store" })
+    .then(res => {
+      if (!res.ok) throw new Error("No se encontró sugerencias.json");
+      return res.json();
+    })
+    .then(data => {
+      sugerencias = data[idiomaActual] || ["Bienvenidos ☕"];
+      iniciarTeleprompter();
+    })
+    .catch(err => {
+      console.warn("Teleprompter fallback:", err);
+      sugerencias = ["Bienvenidos ☕"];
+      iniciarTeleprompter();
+    });
 
 });
 </script>
