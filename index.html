@@ -203,7 +203,7 @@ header img{
 <script>
 document.addEventListener('DOMContentLoaded', () => {
 
-  /* ================= AUTO DETECCIÓN UNIVERSAL ================= */
+  /* ================= AUTO DETECCIÓN ================= */
 
   const USER   = location.hostname.split('.')[0];
   const REPO   = location.pathname.split('/')[1];
@@ -214,12 +214,54 @@ document.addEventListener('DOMContentLoaded', () => {
   const btnEs = document.getElementById('btn-es');
   const btnEn = document.getElementById('btn-en');
   const btnPt = document.getElementById('btn-pt');
-  const banner = document.getElementById('banner-text');
+  const banner = document.querySelector('.banner');
   const categoryContainer = document.getElementById('category-buttons');
   const productList = document.getElementById('product-list');
   const searchInput = document.getElementById('search');
   const btnSearch = document.getElementById('btnSearch');
   const btnUp = document.getElementById('btnUp');
+
+  /* ================= TELEPROMPTER ================= */
+
+  const tele = document.getElementById("tele-track");
+  let sugerencias = [];
+
+  function iniciarTeleprompter() {
+    if (!sugerencias.length) return;
+
+    const separador = "   ✦   ";
+    const texto = sugerencias.join(separador) + separador;
+
+    tele.textContent = texto + texto;
+
+    requestAnimationFrame(() => {
+      const ancho = tele.scrollWidth / 2;
+      const velocidad = 75;
+      const duracion = ancho / velocidad;
+
+      tele.style.animation = "scrollText linear infinite";
+      tele.style.animationDuration = duracion + "s";
+    });
+  }
+
+  async function cargarSugerencias() {
+    const URL = `https://raw.githubusercontent.com/${USER}/${REPO}/${BRANCH}/sugerencias.json`;
+
+    try {
+      const res = await fetch(URL, { cache: "no-store" });
+      if (!res.ok) throw new Error();
+
+      const data = await res.json();
+      sugerencias = data[idiomaActual] || ["Bienvenidos ☕"];
+      iniciarTeleprompter();
+
+    } catch {
+      sugerencias = ["Bienvenidos ☕"];
+      iniciarTeleprompter();
+    }
+  }
+
+  /* ================= PRODUCTOS ================= */
 
   let productos = [];
 
@@ -235,18 +277,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
   async function load() {
     actualizarBotones();
+    cargarSugerencias(); // 🔥 ahora se actualiza también el teleprompter
 
     let filename = "productos.json";
     if (idiomaActual === "en") filename = "productos-en.json";
     if (idiomaActual === "pt") filename = "productos-port.json";
 
-    /* ================= URL DINÁMICA ================= */
-
     const RAW_URL = `https://raw.githubusercontent.com/${USER}/${REPO}/${BRANCH}/${filename}`;
 
     try {
       const res = await fetch(RAW_URL, { cache: "no-store" });
-      if (!res.ok) throw new Error("Error cargando productos");
+      if (!res.ok) throw new Error();
 
       const data = await res.json();
 
@@ -263,7 +304,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         precio: p.precio || p.preco || p.price,
         imagen: p.imagen || p.imagem || p.image,
-
         categoria:
           idiomaActual === "es" ? p.categoria :
           idiomaActual === "en" ? (p.category || p.categoria) :
@@ -273,8 +313,7 @@ document.addEventListener('DOMContentLoaded', () => {
       renderCategories();
       renderProducts("Todos");
 
-    } catch (e) {
-      console.error(e);
+    } catch {
       productList.innerHTML = `<div class="msg">⚠️ No se pudieron cargar los productos.</div>`;
     }
   }
@@ -285,10 +324,7 @@ document.addEventListener('DOMContentLoaded', () => {
     categorias.forEach(cat => {
       const btn = document.createElement("button");
       btn.textContent = cat;
-      btn.addEventListener("click", () => {
-        renderProducts(cat);
-        scrollToProducts();
-      });
+      btn.addEventListener("click", () => renderProducts(cat));
       categoryContainer.appendChild(btn);
     });
   }
@@ -298,11 +334,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const lista = categoria === "Todos"
       ? productos
       : productos.filter(p => p.categoria === categoria);
-
-    if (lista.length === 0) {
-      productList.innerHTML = `<div class="msg">No hay productos disponibles.</div>`;
-      return;
-    }
 
     lista.forEach(p => {
       const div = document.createElement("div");
@@ -320,102 +351,28 @@ document.addEventListener('DOMContentLoaded', () => {
     const q = searchInput.value.toLowerCase().trim();
     const res = productos.filter(p =>
       p.nombre.toLowerCase().includes(q) ||
-      (p.descripcion || "").toLowerCase().includes(q) ||
-      p.categoria.toLowerCase().includes(q)
+      (p.descripcion || "").toLowerCase().includes(q)
     );
-
-    if (res.length === 0) {
-      productList.innerHTML = `<div class="msg">🔍 No se encontraron resultados.</div>`;
-      return;
-    }
-
-    productList.innerHTML = "";
-    res.forEach(p => {
-      const div = document.createElement("div");
-      div.className = "item";
-      div.innerHTML = `
-        <img src="${p.imagen}" alt="${p.nombre}">
-        <h3>${p.nombre}</h3>
-        <p>${p.descripcion || ""}</p>
-        <span class="price">$${p.precio}</span>`;
-      productList.appendChild(div);
-    });
-
-    scrollToProducts();
+    renderProducts("Todos");
   }
 
   /* ================= EVENTOS ================= */
 
-  btnEs.addEventListener("click", () => {
-    idiomaActual = "es";
-    localStorage.setItem("idioma", "es");
-    load();
-  });
+  btnEs.onclick = () => { idiomaActual = "es"; localStorage.setItem("idioma","es"); load(); };
+  btnEn.onclick = () => { idiomaActual = "en"; localStorage.setItem("idioma","en"); load(); };
+  btnPt.onclick = () => { idiomaActual = "pt"; localStorage.setItem("idioma","pt"); load(); };
 
-  btnEn.addEventListener("click", () => {
-    idiomaActual = "en";
-    localStorage.setItem("idioma", "en");
-    load();
-  });
-
-  btnPt.addEventListener("click", () => {
-    idiomaActual = "pt";
-    localStorage.setItem("idioma", "pt");
-    load();
-  });
-
-  btnSearch.addEventListener("click", buscar);
-  searchInput.addEventListener("keydown", e => {
-    if (e.key === "Enter") buscar();
-  });
+  btnSearch.onclick = buscar;
 
   window.addEventListener("scroll", () => {
     btnUp.style.display = window.scrollY > 300 ? "block" : "none";
   });
 
-  btnUp.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
+  btnUp.onclick = () => window.scrollTo({ top:0, behavior:"smooth" });
+
+  /* ================= INICIAR ================= */
 
   load();
-});
-
-  /* ================= TELEPROMPTER ================= */
-
-  function iniciarTeleprompter() {
-    if (!sugerencias.length) return;
-
-    const separador = "   ✦   ";
-    const texto = sugerencias.join(separador) + separador;
-
-    tele.textContent = texto + texto;
-
-    requestAnimationFrame(() => {
-      const ancho = tele.scrollWidth / 2;
-      const velocidad = 75; // px por segundo
-      const duracion = ancho / velocidad;
-
-      tele.style.animation = "scrollText linear infinite";
-      tele.style.animationDuration = duracion + "s";
-    });
-  }
-
-  /* ================= CARGAR JSON ================= */
-
-  fetch(URL, { cache: "no-store" })
-    .then(res => {
-      if (!res.ok) throw new Error("No se encontró sugerencias.json");
-      return res.json();
-    })
-    .then(data => {
-      sugerencias = data[idiomaActual] || ["Bienvenidos ☕"];
-      iniciarTeleprompter();
-    })
-    .catch(err => {
-      console.warn("Teleprompter fallback:", err);
-      sugerencias = ["Bienvenidos ☕"];
-      iniciarTeleprompter();
-    });
 
 });
 </script>
