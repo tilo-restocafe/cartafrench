@@ -1,0 +1,26 @@
+{
+  "config": {
+    "nombreLocal": "Tilo Café"
+  },
+  "es": [
+    "🙋‍♂️ Hola, soy tu mozo digital.",
+    "🥐 El desayuno premium incluye café ☕ y jugo de naranja 🍊.",
+    "🍽 El menú del dia 1:mila escalope con pure mixto 2:ensalasa tilo com lomo saltiad.",
+    "🍻 Hoy tenemos happy hour de 18 a 20hs.",
+    "😊 ¡Te esperamos en tilo {{cholo}}!❤️"
+  ],
+  "en": [
+    "🙋‍♂️ Hi, I'm your digital waiter.",
+    "🥐 Our premium breakfast includes coffee ☕ and orange juice 🍊.",
+    "🍽 Today's special is breaded steak with rustic potatoes.",
+    "🍻 Happy hour from 6pm to 8pm.",
+    "😊 We’re waiting for you at {{cholo}}!"
+  ],
+  "pt": [
+    "🙋‍♂️ Olá, sou seu garçom digital.",
+    "🥐 Nosso café da manhã premium inclui café ☕ e suco de laranja 🍊.",
+    "🍽 O prato do dia é filé à milanesa com batatas rústicas.",
+    "🍻 Happy hour das 18h às 20h.",
+    "😊 Esperamos você no {{cholo}}!"
+  ]
+}
