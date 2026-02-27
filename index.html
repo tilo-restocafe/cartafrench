@@ -1,228 +1,338 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Carta Digital</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tilo Café French</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: url("img/Fondo1.jpg") repeat;
+      background-size: cover;
+      margin: 0;
+      padding: 0;
+      color: #45270a;
+      text-align: center;
+      scroll-behavior: smooth;
+    }
 
-<style>
-body{
-  margin:0;
-  font-family:Arial, sans-serif;
-  background:#f5f5f5;
-}
+    header img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+    }
 
-header{
-  background:#111;
-  color:white;
-  padding:15px;
-  text-align:center;
-}
+    .banner {
+      background: rgba(255,255,255,0.85);
+      padding: 10px;
+      font-size: 1.3em;
+      border-radius: 8px;
+      display: inline-block;
+      margin: 10px auto;
+    }
 
-.search-box{
-  display:flex;
-  gap:10px;
-  padding:15px;
-  background:white;
-  position:sticky;
-  top:0;
-  z-index:10;
-}
+    #languageSwitcher {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin: 10px 0;
+    }
 
-.search-box input{
-  flex:1;
-  padding:10px;
-  border-radius:8px;
-  border:1px solid #ccc;
-}
+    .lang-btn {
+      background: #806250;
+      color: white;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
 
-.search-box button{
-  padding:10px 15px;
-  border:none;
-  background:#111;
-  color:white;
-  border-radius:8px;
-  cursor:pointer;
-}
+    .lang-btn.active {
+      background: #a07b68;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    }
 
-.categorias{
-  display:flex;
-  gap:10px;
-  padding:10px;
-  overflow-x:auto;
-  background:#eee;
-}
+    .search-box {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin: 15px;
+    }
 
-.categorias button{
-  padding:8px 12px;
-  border:none;
-  background:#111;
-  color:white;
-  border-radius:20px;
-  cursor:pointer;
-  white-space:nowrap;
-}
+    .search-box input {
+      padding: 10px;
+      width: 60%;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
 
-.productos{
-  padding:20px;
-  display:grid;
-  grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
-  gap:15px;
-}
+    .search-box button {
+      background: #806250;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 16px;
+      cursor: pointer;
+    }
 
-.card{
-  background:white;
-  border-radius:12px;
-  padding:15px;
-  box-shadow:0 2px 8px rgba(0,0,0,0.1);
-}
+    #category-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin: 15px;
+    }
 
-.card img{
-  width:100%;
-  border-radius:10px;
-}
+    #category-buttons button {
+      background: #8c6954;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      padding: 8px 14px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
 
-.card h3{
-  margin:10px 0 5px;
-}
+    #category-buttons button:hover {
+      background: #6b4e3d;
+      transform: scale(1.05);
+    }
 
-.card p{
-  margin:0;
-  font-size:14px;
-  color:#555;
-}
+    /* 🟢 NUEVO DISEÑO RESPONSIVE AUTOMÁTICO */
+    #product-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 15px;
+      padding: 15px;
+    }
 
-.precio{
-  margin-top:10px;
-  font-weight:bold;
-}
-</style>
+    .item {
+      background: rgba(255,255,255,0.95);
+      border-radius: 12px;
+      width: 100%;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      overflow: hidden;
+    }
+
+    .item img {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 1 / 1; /* Imagen cuadrada auto */
+      object-fit: cover;
+    }
+
+    .item h3 { margin: 8px; }
+    .item p { margin: 0 8px 10px; }
+    .price { font-weight: bold; margin: 0 8px 10px; display: block; }
+    .msg { padding: 20px; color: #a00; }
+
+    /* Flecha subir */
+    #btnUp {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background: #8c6954;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 45px;
+      height: 45px;
+      font-size: 22px;
+      cursor: pointer;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+      display: none;
+      transition: 0.3s;
+    }
+
+    #btnUp:hover {
+      background: #6b4e3d;
+      transform: scale(1.1);
+    }
+  </style>
 </head>
 <body>
 
-<header>
-  <h1>Nuestra Carta</h1>
-</header>
+  <header>
+    <img src="img/french99.jpg" alt="Tilo Café">
+  </header>
 
-<div class="search-box">
-  <input id="search" type="text" placeholder="Buscar...">
-  <button id="btnSearch">Buscar</button>
-</div>
+  <div class="banner" id="banner-text">¡Bienvenidos a Tilo Café French!</div>
 
-<div class="categorias" id="categorias"></div>
+  <!-- 🌍 Selector de idioma -->
+  <div id="languageSwitcher">
+    <button id="btn-es" class="lang-btn">🇪🇸 Español</button>
+    <button id="btn-en" class="lang-btn">🇬🇧 English</button>
+    <button id="btn-pt" class="lang-btn">🇧🇷 Português</button>
+  </div>
 
-<div class="productos" id="productos"></div>
+  <!-- 🔍 Buscador -->
+  <div class="search-box">
+    <input id="search" type="text" placeholder="Buscar por nombre, descripción o categoría...">
+    <button id="btnSearch">Buscar</button>
+  </div>
+
+  <!-- 🔘 Categorías -->
+  <div id="category-buttons"></div>
+
+  <!-- 🛒 Productos -->
+  <div id="product-list"></div>
+
+  <!-- ⬆️ Flecha para subir -->
+  <button id="btnUp">⬆️</button>
 
 <script>
-document.addEventListener("DOMContentLoaded", async () => {
+  document.addEventListener('DOMContentLoaded', () => {
+    const USER = 'tilo-restocafe';
+    const REPO = 'cartafrench';
+    let idiomaActual = localStorage.getItem('idioma') || 'es';
 
-  /* UNIVERSAL GITHUB */
-  const USER = location.hostname.split('.')[0];
-  const REPO = location.pathname.split('/')[1];
+    const btnEs = document.getElementById('btn-es');
+    const btnEn = document.getElementById('btn-en');
+    const btnPt = document.getElementById('btn-pt');
+    const banner = document.getElementById('banner-text');
+    const categoryContainer = document.getElementById('category-buttons');
+    const productList = document.getElementById('product-list');
+    const searchInput = document.getElementById('search');
+    const btnSearch = document.getElementById('btnSearch');
+    const btnUp = document.getElementById('btnUp');
 
-  const DATA_URL = `https://${USER}.github.io/${REPO}/productos.json`;
+    let productos = [];
 
-  const contenedor = document.getElementById("productos");
-  const contCategorias = document.getElementById("categorias");
-  const searchInput = document.getElementById("search");
-  const btnSearch = document.getElementById("btnSearch");
+    function actualizarBotones() {
+      btnEs.classList.toggle('active', idiomaActual === 'es');
+      btnEn.classList.toggle('active', idiomaActual === 'en');
+      btnPt.classList.toggle('active', idiomaActual === 'pt');
 
-  let productos = [];
+      if (idiomaActual === 'es') banner.textContent = "¡Bienvenidos a Tilo Café French!";
+      if (idiomaActual === 'en') banner.textContent = "Welcome to Tilo Café French!";
+      if (idiomaActual === 'pt') banner.textContent = "Bem-vindo ao Tilo Café French!";
+    }
 
-  function normalizar(texto){
-    return texto
-      .toLowerCase()
-      .normalize("NFD")
-      .replace(/[\u0300-\u036f]/g,"");
+    async function load() {
+    actualizarBotones();
+
+    let filename = "productos.json";
+    if (idiomaActual === "en") filename = "productos-en.json";
+    if (idiomaActual === "pt") filename = "productos-port.json";
+
+    /* 🚀 URL SIN BLOQUEO (jsDelivr) */
+    const RAW_URL = `https://raw.githubusercontent.com/${USER}/${REPO}/main/${filename}`;
+
+    try {
+      const res = await fetch(RAW_URL, { cache: "no-store" });
+      if (!res.ok) throw new Error("Error cargando productos");
+
+      const data = await res.json();
+
+      productos = data.map(p => ({
+        nombre:
+          idiomaActual === "es" ? (p.nombre || p.nome) :
+          idiomaActual === "en" ? (p.name || p.nome) :
+          p.nome,
+
+        descripcion:
+          idiomaActual === "es" ? (p.descripcion || p.descricao) :
+          idiomaActual === "en" ? (p.description || p.descricao) :
+          p.descricao,
+
+        precio: p.precio || p.preco || p.price,
+        imagen: p.imagen || p.imagem || p.image,
+
+        categoria:
+          idiomaActual === "es" ? p.categoria :
+          idiomaActual === "en" ? (p.category || p.categoria) :
+          p.categoria
+      }));
+
+      renderCategories();
+      renderProducts("Todos");
+
+    } catch (e) {
+      console.error(e);
+      productList.innerHTML = `<div class="msg">⚠️ No se pudieron cargar los productos.</div>`;
+    }
   }
 
-  function scrollToProducts(){
-    contenedor.scrollIntoView({behavior:"smooth"});
+  function renderCategories() {
+    const categorias = ["Todos", ...new Set(productos.map(p => p.categoria).filter(Boolean))];
+    categoryContainer.innerHTML = "";
+    categorias.forEach(cat => {
+      const btn = document.createElement("button");
+      btn.textContent = cat;
+      btn.addEventListener("click", () => {
+        renderProducts(cat);
+        scrollToProducts();
+      });
+      categoryContainer.appendChild(btn);
+    });
   }
 
-  function render(lista){
+  function renderProducts(categoria) {
+    productList.innerHTML = "";
+    const lista = categoria === "Todos" ? productos : productos.filter(p => p.categoria === categoria);
 
-    contenedor.innerHTML="";
-
-    if(lista.length===0){
-      contenedor.innerHTML="<p>No se encontraron productos</p>";
+    if (lista.length === 0) {
+      productList.innerHTML = `<div class="msg">No hay productos disponibles.</div>`;
       return;
     }
 
-    lista.forEach(p=>{
-
-      const card=document.createElement("div");
-      card.className="card";
-
-      card.innerHTML=`
-        ${p.imagen ? `<img src="${p.imagen}" alt="${p.nombre}">` : ""}
+    lista.forEach(p => {
+      const div = document.createElement("div");
+      div.className = "item";
+      div.innerHTML = `
+        <img src="${p.imagen}" alt="${p.nombre}">
         <h3>${p.nombre}</h3>
         <p>${p.descripcion || ""}</p>
-        <div class="precio">$${p.precio}</div>
-      `;
-
-      contenedor.appendChild(card);
+        <span class="price">$${p.precio}</span>`;
+      productList.appendChild(div);
     });
   }
 
-  function crearCategorias(){
-    const categoriasUnicas=[...new Set(productos.map(p=>p.categoria))];
+  function buscar() {
+    const q = searchInput.value.toLowerCase().trim();
+    const res = productos.filter(p =>
+      p.nombre.toLowerCase().includes(q) ||
+      (p.descripcion || "").toLowerCase().includes(q) ||
+      p.categoria.toLowerCase().includes(q)
+    );
 
-    contCategorias.innerHTML="";
-
-    categoriasUnicas.forEach(cat=>{
-      const btn=document.createElement("button");
-      btn.textContent=cat;
-      btn.onclick=()=>{
-        const filtrados=productos.filter(p=>p.categoria===cat);
-        render(filtrados);
-        scrollToProducts();
-      };
-      contCategorias.appendChild(btn);
-    });
-  }
-
-  function filtrar(){
-    const texto=normalizar(searchInput.value);
-
-    return productos.filter(p=>{
-      return (
-        normalizar(p.nombre||"").includes(texto) ||
-        normalizar(p.descripcion||"").includes(texto) ||
-        normalizar(p.categoria||"").includes(texto)
-      );
-    });
-  }
-
-  /* Buscar mientras escribe (NO baja) */
-  searchInput.addEventListener("input",()=>{
-    render(filtrar());
-  });
-
-  /* Botón Buscar (baja) */
-  btnSearch.addEventListener("click",()=>{
-    render(filtrar());
-    scrollToProducts();
-  });
-
-  /* Enter baja */
-  searchInput.addEventListener("keydown",(e)=>{
-    if(e.key==="Enter"){
-      render(filtrar());
-      scrollToProducts();
+    if (res.length === 0) {
+      productList.innerHTML = `<div class="msg">🔍 No se encontraron resultados.</div>`;
+      return;
     }
-  });
 
-  try{
-    const res=await fetch(DATA_URL);
-    productos=await res.json();
-    render(productos);
-    crearCategorias();
-  }catch(error){
-    contenedor.innerHTML="<p>Error cargando productos</p>";
-    console.error(error);
+    productList.innerHTML = "";
+    res.forEach(p => {
+      const div = document.createElement("div");
+      div.className = "item";
+      div.innerHTML = `
+        <img src="${p.imagen}" alt="${p.nombre}">
+        <h3>${p.nombre}</h3>
+        <p>${p.descripcion || ""}</p>
+        <span class="price">$${p.precio}</span>`;
+      productList.appendChild(div);
+    });
+
+    scrollToProducts();
   }
 
+  btnEs.addEventListener("click", () => { idiomaActual = "es"; localStorage.setItem("idioma", "es"); load(); });
+  btnEn.addEventListener("click", () => { idiomaActual = "en"; localStorage.setItem("idioma", "en"); load(); });
+  btnPt.addEventListener("click", () => { idiomaActual = "pt"; localStorage.setItem("idioma", "pt"); load(); });
+
+  btnSearch.addEventListener("click", buscar);
+  searchInput.addEventListener("keydown", e => { if (e.key === "Enter") buscar(); });
+
+  window.addEventListener("scroll", () => {
+    btnUp.style.display = window.scrollY > 300 ? "block" : "none";
+  });
+
+  btnUp.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
+  load();
 });
 </script>
 
