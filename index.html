@@ -560,28 +560,61 @@ function render(arr){
 }
 
 /* BUSCADOR PRO */
-searchInput.addEventListener("input",()=>{
-  const texto=searchInput.value.toLowerCase()
-  .normalize("NFD").replace(/[\u0300-\u036f]/g,"");
+const btnSearch = document.getElementById("btnSearch");
 
-  const filtrados=productos.filter(p=>{
-    const nombre=(p.nombre||"").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"");
-    const desc=(p.descripcion||"").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"");
-    const cat=(p.categoria||"").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"");
-    return nombre.includes(texto)||desc.includes(texto)||cat.includes(texto);
+/* FUNCIÓN QUE FILTRA */
+function filtrarProductos() {
+
+  const texto = searchInput.value
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "");
+
+  return productos.filter(p => {
+
+    const nombre = (p.nombre || "")
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "");
+
+    const descripcion = (p.descripcion || "")
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "");
+
+    const categoria = (p.categoria || "")
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "");
+
+    return (
+      nombre.includes(texto) ||
+      descripcion.includes(texto) ||
+      categoria.includes(texto)
+    );
   });
+}
 
+/* 🔎 BUSCA MIENTRAS ESCRIBE (NO BAJA) */
+searchInput.addEventListener("input", () => {
+  const filtrados = filtrarProductos();
+  render(filtrados);
+});
+
+/* 🔽 SOLO BAJA CUANDO TOCA BUSCAR */
+btnSearch.addEventListener("click", () => {
+  const filtrados = filtrarProductos();
   render(filtrados);
   scrollToProducts();
 });
 
-window.addEventListener("scroll",()=>{
-  btnUp.style.display=window.scrollY>300?"block":"none";
-});
-btnUp.onclick=()=>window.scrollTo({top:0,behavior:"smooth"});
-
-load();
-
+/* ⌨ ENTER TAMBIÉN BAJA */
+searchInput.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") {
+    const filtrados = filtrarProductos();
+    render(filtrados);
+    scrollToProducts();
+  }
 });
 </script>
 </body>
