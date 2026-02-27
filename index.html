@@ -1,338 +1,313 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tilo Café French</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background: url("img/Fondo1.jpg") repeat;
-      background-size: cover;
-      margin: 0;
-      padding: 0;
-      color: #45270a;
-      text-align: center;
-      scroll-behavior: smooth;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tilo Café French</title>
 
-    header img {
-      width: 100%;
-      height: 250px;
-      object-fit: cover;
-    }
+<style>
+body{
+  font-family:'Segoe UI',sans-serif;
+  background:url("img/Fondo1.jpg") repeat;
+  background-size:cover;
+  margin:0;
+  color:#45270a;
+  text-align:center;
+}
 
-    .banner {
-      background: rgba(255,255,255,0.85);
-      padding: 10px;
-      font-size: 1.3em;
-      border-radius: 8px;
-      display: inline-block;
-      margin: 10px auto;
-    }
+header img{
+  width:100%;
+  height:250px;
+  object-fit:cover;
+}
 
-    #languageSwitcher {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      margin: 10px 0;
-    }
+.banner{
+  background:rgba(255,255,255,.85);
+  padding:10px;
+  font-size:1.3em;
+  border-radius:8px;
+  display:inline-block;
+  margin:10px auto;
+}
 
-    .lang-btn {
-      background: #806250;
-      color: white;
-      border: none;
-      padding: 8px 14px;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
+#languageSwitcher{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  margin:10px 0;
+}
 
-    .lang-btn.active {
-      background: #a07b68;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-    }
+.lang-btn{
+  background:#806250;
+  color:white;
+  border:none;
+  padding:8px 14px;
+  border-radius:8px;
+  cursor:pointer;
+}
 
-    .search-box {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      margin: 15px;
-    }
+.lang-btn.active{
+  background:#a07b68;
+}
 
-    .search-box input {
-      padding: 10px;
-      width: 60%;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-    }
+.search-box{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  margin:15px;
+}
 
-    .search-box button {
-      background: #806250;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      padding: 10px 16px;
-      cursor: pointer;
-    }
+.search-box input{
+  padding:10px;
+  width:60%;
+  border-radius:8px;
+  border:1px solid #ccc;
+}
 
-    #category-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
-      margin: 15px;
-    }
+.search-box button{
+  background:#806250;
+  color:white;
+  border:none;
+  border-radius:8px;
+  padding:10px 16px;
+  cursor:pointer;
+}
 
-    #category-buttons button {
-      background: #8c6954;
-      color: white;
-      border: none;
-      border-radius: 10px;
-      padding: 8px 14px;
-      cursor: pointer;
-      transition: 0.2s;
-    }
+#category-buttons{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:10px;
+  margin:15px;
+}
 
-    #category-buttons button:hover {
-      background: #6b4e3d;
-      transform: scale(1.05);
-    }
+#category-buttons button{
+  background:#8c6954;
+  color:white;
+  border:none;
+  border-radius:10px;
+  padding:8px 14px;
+  cursor:pointer;
+}
 
-    /* 🟢 NUEVO DISEÑO RESPONSIVE AUTOMÁTICO */
-    #product-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 15px;
-      padding: 15px;
-    }
+#product-list{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+  gap:15px;
+  padding:15px;
+}
 
-    .item {
-      background: rgba(255,255,255,0.95);
-      border-radius: 12px;
-      width: 100%;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-      overflow: hidden;
-    }
+.item{
+  background:rgba(255,255,255,.95);
+  border-radius:12px;
+  box-shadow:0 2px 6px rgba(0,0,0,.2);
+  overflow:hidden;
+}
 
-    .item img {
-      width: 100%;
-      height: auto;
-      aspect-ratio: 1 / 1; /* Imagen cuadrada auto */
-      object-fit: cover;
-    }
+.item img{
+  width:100%;
+  aspect-ratio:1/1;
+  object-fit:cover;
+}
 
-    .item h3 { margin: 8px; }
-    .item p { margin: 0 8px 10px; }
-    .price { font-weight: bold; margin: 0 8px 10px; display: block; }
-    .msg { padding: 20px; color: #a00; }
+.price{
+  font-weight:bold;
+  margin:8px;
+  display:block;
+}
 
-    /* Flecha subir */
-    #btnUp {
-      position: fixed;
-      bottom: 25px;
-      right: 25px;
-      background: #8c6954;
-      color: white;
-      border: none;
-      border-radius: 50%;
-      width: 45px;
-      height: 45px;
-      font-size: 22px;
-      cursor: pointer;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.3);
-      display: none;
-      transition: 0.3s;
-    }
+.msg{
+  padding:20px;
+  color:#a00;
+}
 
-    #btnUp:hover {
-      background: #6b4e3d;
-      transform: scale(1.1);
-    }
-  </style>
+#btnUp{
+  position:fixed;
+  bottom:25px;
+  right:25px;
+  background:#8c6954;
+  color:white;
+  border:none;
+  border-radius:50%;
+  width:45px;
+  height:45px;
+  font-size:22px;
+  display:none;
+  cursor:pointer;
+}
+</style>
 </head>
+
 <body>
 
-  <header>
-    <img src="img/french99.jpg" alt="Tilo Café">
-  </header>
+<header>
+  <img src="img/french99.jpg" alt="Tilo Café">
+</header>
 
-  <div class="banner" id="banner-text">¡Bienvenidos a Tilo Café French!</div>
+<div class="banner" id="banner-text">¡Bienvenidos a Tilo Café French!</div>
 
-  <!-- 🌍 Selector de idioma -->
-  <div id="languageSwitcher">
-    <button id="btn-es" class="lang-btn">🇪🇸 Español</button>
-    <button id="btn-en" class="lang-btn">🇬🇧 English</button>
-    <button id="btn-pt" class="lang-btn">🇧🇷 Português</button>
-  </div>
+<div id="languageSwitcher">
+  <button id="btn-es" class="lang-btn">🇪🇸 Español</button>
+  <button id="btn-en" class="lang-btn">🇬🇧 English</button>
+  <button id="btn-pt" class="lang-btn">🇧🇷 Português</button>
+</div>
 
-  <!-- 🔍 Buscador -->
-  <div class="search-box">
-    <input id="search" type="text" placeholder="Buscar por nombre, descripción o categoría...">
-    <button id="btnSearch">Buscar</button>
-  </div>
+<div class="search-box">
+  <input id="search" type="text" placeholder="Buscar por nombre, descripción o categoría...">
+  <button id="btnSearch">Buscar</button>
+</div>
 
-  <!-- 🔘 Categorías -->
-  <div id="category-buttons"></div>
-
-  <!-- 🛒 Productos -->
-  <div id="product-list"></div>
-
-  <!-- ⬆️ Flecha para subir -->
-  <button id="btnUp">⬆️</button>
+<div id="category-buttons"></div>
+<div id="product-list"></div>
+<button id="btnUp">⬆️</button>
 
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const USER = 'tilo-restocafe';
-    const REPO = 'cartafrench';
-    let idiomaActual = localStorage.getItem('idioma') || 'es';
+document.addEventListener('DOMContentLoaded', () => {
 
-    const btnEs = document.getElementById('btn-es');
-    const btnEn = document.getElementById('btn-en');
-    const btnPt = document.getElementById('btn-pt');
-    const banner = document.getElementById('banner-text');
-    const categoryContainer = document.getElementById('category-buttons');
-    const productList = document.getElementById('product-list');
-    const searchInput = document.getElementById('search');
-    const btnSearch = document.getElementById('btnSearch');
-    const btnUp = document.getElementById('btnUp');
+const USER = 'tilo-restocafe';
+const REPO = 'cartafrench';
+let idiomaActual = localStorage.getItem('idioma') || 'es';
 
-    let productos = [];
+const btnEs = document.getElementById('btn-es');
+const btnEn = document.getElementById('btn-en');
+const btnPt = document.getElementById('btn-pt');
+const banner = document.getElementById('banner-text');
+const categoryContainer = document.getElementById('category-buttons');
+const productList = document.getElementById('product-list');
+const searchInput = document.getElementById('search');
+const btnSearch = document.getElementById('btnSearch');
+const btnUp = document.getElementById('btnUp');
 
-    function actualizarBotones() {
-      btnEs.classList.toggle('active', idiomaActual === 'es');
-      btnEn.classList.toggle('active', idiomaActual === 'en');
-      btnPt.classList.toggle('active', idiomaActual === 'pt');
+let productos = [];
 
-      if (idiomaActual === 'es') banner.textContent = "¡Bienvenidos a Tilo Café French!";
-      if (idiomaActual === 'en') banner.textContent = "Welcome to Tilo Café French!";
-      if (idiomaActual === 'pt') banner.textContent = "Bem-vindo ao Tilo Café French!";
-    }
+/* SCROLL SUAVE */
+function scrollToProducts(){
+  const yOffset = -20;
+  const y = productList.getBoundingClientRect().top + window.pageYOffset + yOffset;
+  window.scrollTo({ top:y, behavior:"smooth" });
+}
 
-    async function load() {
-    actualizarBotones();
+/* NORMALIZAR TEXTO */
+function limpiarTexto(texto){
+  return texto.toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g,"");
+}
 
-    let filename = "productos.json";
-    if (idiomaActual === "en") filename = "productos-en.json";
-    if (idiomaActual === "pt") filename = "productos-port.json";
+/* CARGAR PRODUCTOS */
+async function load(){
+  actualizarBotones();
 
-    /* 🚀 URL SIN BLOQUEO (jsDelivr) */
-    const RAW_URL = `https://raw.githubusercontent.com/${USER}/${REPO}/main/${filename}`;
+  let archivo="productos.json";
+  if(idiomaActual==="en") archivo="productos-en.json";
+  if(idiomaActual==="pt") archivo="productos-port.json";
 
-    try {
-      const res = await fetch(RAW_URL, { cache: "no-store" });
-      if (!res.ok) throw new Error("Error cargando productos");
+  const URL=`https://raw.githubusercontent.com/${USER}/${REPO}/main/${archivo}`;
 
-      const data = await res.json();
+  try{
+    const res=await fetch(URL,{cache:"no-store"});
+    const data=await res.json();
 
-      productos = data.map(p => ({
-        nombre:
-          idiomaActual === "es" ? (p.nombre || p.nome) :
-          idiomaActual === "en" ? (p.name || p.nome) :
-          p.nome,
+    productos=data.map(p=>({
+      nombre:p.nombre||p.name||p.nome,
+      descripcion:p.descripcion||p.description||p.descricao,
+      precio:p.precio||p.price||p.preco,
+      imagen:p.imagen||p.image||p.imagem,
+      categoria:p.categoria||p.category
+    }));
 
-        descripcion:
-          idiomaActual === "es" ? (p.descripcion || p.descricao) :
-          idiomaActual === "en" ? (p.description || p.descricao) :
-          p.descricao,
+    renderCategorias();
+    render(productos);
 
-        precio: p.precio || p.preco || p.price,
-        imagen: p.imagen || p.imagem || p.image,
-
-        categoria:
-          idiomaActual === "es" ? p.categoria :
-          idiomaActual === "en" ? (p.category || p.categoria) :
-          p.categoria
-      }));
-
-      renderCategories();
-      renderProducts("Todos");
-
-    } catch (e) {
-      console.error(e);
-      productList.innerHTML = `<div class="msg">⚠️ No se pudieron cargar los productos.</div>`;
-    }
+  }catch{
+    productList.innerHTML=`<div class="msg">⚠️ No se pudieron cargar los productos.</div>`;
   }
+}
 
-  function renderCategories() {
-    const categorias = ["Todos", ...new Set(productos.map(p => p.categoria).filter(Boolean))];
-    categoryContainer.innerHTML = "";
-    categorias.forEach(cat => {
-      const btn = document.createElement("button");
-      btn.textContent = cat;
-      btn.addEventListener("click", () => {
-        renderProducts(cat);
-        scrollToProducts();
-      });
-      categoryContainer.appendChild(btn);
-    });
+/* RENDER */
+function render(arr){
+  productList.innerHTML="";
+  if(arr.length===0){
+    productList.innerHTML=`<div class="msg">🔍 No se encontraron resultados.</div>`;
+    return;
   }
-
-  function renderProducts(categoria) {
-    productList.innerHTML = "";
-    const lista = categoria === "Todos" ? productos : productos.filter(p => p.categoria === categoria);
-
-    if (lista.length === 0) {
-      productList.innerHTML = `<div class="msg">No hay productos disponibles.</div>`;
-      return;
-    }
-
-    lista.forEach(p => {
-      const div = document.createElement("div");
-      div.className = "item";
-      div.innerHTML = `
+  arr.forEach(p=>{
+    productList.innerHTML+=`
+      <div class="item">
         <img src="${p.imagen}" alt="${p.nombre}">
         <h3>${p.nombre}</h3>
-        <p>${p.descripcion || ""}</p>
-        <span class="price">$${p.precio}</span>`;
-      productList.appendChild(div);
-    });
-  }
+        <p>${p.descripcion||""}</p>
+        <span class="price">$${p.precio}</span>
+      </div>`;
+  });
+}
 
-  function buscar() {
-    const q = searchInput.value.toLowerCase().trim();
-    const res = productos.filter(p =>
-      p.nombre.toLowerCase().includes(q) ||
-      (p.descripcion || "").toLowerCase().includes(q) ||
-      p.categoria.toLowerCase().includes(q)
-    );
+function renderCategorias(){
+  const categorias=["Todos",...new Set(productos.map(p=>p.categoria).filter(Boolean))];
+  categoryContainer.innerHTML="";
+  categorias.forEach(cat=>{
+    const btn=document.createElement("button");
+    btn.textContent=cat;
+    btn.onclick=()=>{
+      if(cat==="Todos") render(productos);
+      else render(productos.filter(p=>p.categoria===cat));
+      scrollToProducts();
+    };
+    categoryContainer.appendChild(btn);
+  });
+}
 
-    if (res.length === 0) {
-      productList.innerHTML = `<div class="msg">🔍 No se encontraron resultados.</div>`;
-      return;
-    }
+/* BUSCADOR */
+function filtrar(){
+  const texto=limpiarTexto(searchInput.value);
+  return productos.filter(p=>{
+    return limpiarTexto(p.nombre||"").includes(texto) ||
+           limpiarTexto(p.descripcion||"").includes(texto) ||
+           limpiarTexto(p.categoria||"").includes(texto);
+  });
+}
 
-    productList.innerHTML = "";
-    res.forEach(p => {
-      const div = document.createElement("div");
-      div.className = "item";
-      div.innerHTML = `
-        <img src="${p.imagen}" alt="${p.nombre}">
-        <h3>${p.nombre}</h3>
-        <p>${p.descripcion || ""}</p>
-        <span class="price">$${p.precio}</span>`;
-      productList.appendChild(div);
-    });
+/* FILTRA EN VIVO */
+searchInput.addEventListener("input",()=>{
+  render(filtrar());
+});
 
+/* BAJA SOLO CON BOTÓN O ENTER */
+btnSearch.addEventListener("click",()=>{
+  render(filtrar());
+  scrollToProducts();
+});
+
+searchInput.addEventListener("keydown",e=>{
+  if(e.key==="Enter"){
+    render(filtrar());
     scrollToProducts();
   }
+});
 
-  btnEs.addEventListener("click", () => { idiomaActual = "es"; localStorage.setItem("idioma", "es"); load(); });
-  btnEn.addEventListener("click", () => { idiomaActual = "en"; localStorage.setItem("idioma", "en"); load(); });
-  btnPt.addEventListener("click", () => { idiomaActual = "pt"; localStorage.setItem("idioma", "pt"); load(); });
+/* IDIOMA */
+function actualizarBotones(){
+  btnEs.classList.toggle("active",idiomaActual==="es");
+  btnEn.classList.toggle("active",idiomaActual==="en");
+  btnPt.classList.toggle("active",idiomaActual==="pt");
 
-  btnSearch.addEventListener("click", buscar);
-  searchInput.addEventListener("keydown", e => { if (e.key === "Enter") buscar(); });
+  if(idiomaActual==="es") banner.textContent="¡Bienvenidos a Tilo Café French!";
+  if(idiomaActual==="en") banner.textContent="Welcome to Tilo Café French!";
+  if(idiomaActual==="pt") banner.textContent="Bem-vindo ao Tilo Café French!";
+}
 
-  window.addEventListener("scroll", () => {
-    btnUp.style.display = window.scrollY > 300 ? "block" : "none";
-  });
+btnEs.onclick=()=>{idiomaActual="es";localStorage.setItem("idioma","es");load();};
+btnEn.onclick=()=>{idiomaActual="en";localStorage.setItem("idioma","en");load();};
+btnPt.onclick=()=>{idiomaActual="pt";localStorage.setItem("idioma","pt");load();};
 
-  btnUp.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
+/* BOTÓN SUBIR */
+window.addEventListener("scroll",()=>{
+  btnUp.style.display=window.scrollY>300?"block":"none";
+});
+btnUp.onclick=()=>window.scrollTo({top:0,behavior:"smooth"});
 
-  load();
+load();
+
 });
 </script>
 
