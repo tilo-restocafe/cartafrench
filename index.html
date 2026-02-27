@@ -135,11 +135,69 @@ header img{
   display:none;
   cursor:pointer;
 }
+  /* ================= TELEPROMPTER ================= */
+
+#teleprompter{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  background:rgba(0,0,0,.92);
+  color:#fff;
+  z-index:2000;
+  padding:12px 16px;
+  font-family:'Playfair Display',serif;
+  overflow:hidden;
+  border-bottom:1px solid rgba(255,255,255,.15);
+}
+
+#tele-wrapper{
+  overflow:hidden;
+  white-space:nowrap;
+  width:100%;
+}
+
+#tele-track{
+  display:inline-block;
+  white-space:nowrap;
+  will-change:transform;
+}
+
+/* Espacio para que no tape el contenido */
+body{
+  padding-top:60px;
+}
+
+/* Degradado en bordes */
+#teleprompter::before,
+#teleprompter::after{
+  content:"";
+  position:absolute;
+  top:0;
+  width:60px;
+  height:100%;
+  pointer-events:none;
+}
+
+#teleprompter::before{
+  left:0;
+  background:linear-gradient(to right, rgba(0,0,0,.95), transparent);
+}
+
+#teleprompter::after{
+  right:0;
+  background:linear-gradient(to left, rgba(0,0,0,.95), transparent);
+}
 </style>
 </head>
 
 <body>
-
+<!-- TELEPROMPTER -->
+<div id="teleprompter">
+  <div id="tele-wrapper">
+    <div id="tele-track">Cargando sugerencias...</div>
+  </div>
+</div>
 <header>
   <img src="img/french99.jpg" alt="Tilo Café">
 </header>
@@ -218,7 +276,8 @@ async function load(){
 
     renderCategorias();
     render(productos);
-
+const sugerencias = productos.slice(0,5).map(p => p.nombre).join(" ✦ ");
+iniciarTeleprompter("Hoy te recomendamos: " + sugerencias);
   }catch{
     productList.innerHTML=`<div class="msg">⚠️ No se pudieron cargar los productos.</div>`;
   }
@@ -305,7 +364,26 @@ window.addEventListener("scroll",()=>{
   btnUp.style.display=window.scrollY>300?"block":"none";
 });
 btnUp.onclick=()=>window.scrollTo({top:0,behavior:"smooth"});
+/* ================= TELEPROMPTER JS ================= */
 
+const teleTrack = document.getElementById("tele-track");
+
+function iniciarTeleprompter(texto){
+  teleTrack.innerHTML = texto + " ✦ " + texto;
+
+  let position = 0;
+
+  function animar(){
+    position -= 1;
+    if(Math.abs(position) > teleTrack.offsetWidth / 2){
+      position = 0;
+    }
+    teleTrack.style.transform = `translateX(${position}px)`;
+    requestAnimationFrame(animar);
+  }
+
+  animar();
+}
 load();
 
 });
