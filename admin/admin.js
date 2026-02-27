@@ -1,57 +1,155 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin - Mozo Digital</title>
-  <link rel="stylesheet" href="admin.css">
-</head>
-<body>
+const USER = "tilo-restocafe";
+const REPO = "cartafrench";
+const FILE_PATH = "sugerencias.json";
+const BRANCH = "main";
 
-<div class="layout">
+let TOKEN = localStorage.getItem("github_token");
+let shaActual = null;
+let jsonCompleto = {};
 
-  <-- PANEL IZQUIERDO -->
-  <div class="panel">
+const textarea = document.getElementById("editor");
+const btnGuardar = document.getElementById("guardar");
+const estado = document.getElementById("estado");
+const idiomaSelect = document.getElementById("idiomaSelect");
+const nombreLocalInput = document.getElementById("nombreLocal");
 
-    <h2>📝 Mozo Digital</h2>
+/* ============================= */
+/* TOKEN */
+/* ============================= */
+function pedirToken() {
+  if (!TOKEN) {
+    TOKEN = prompt("Pegá tu token de GitHub:");
+    if (TOKEN) localStorage.setItem("github_token", TOKEN);
+  }
+}
 
-    <label>Nombre del local</label>
-    <input type="text" id="nombreLocal" placeholder="Ej: Tilo Café">
+/* ============================= */
+/* UTF8 */
+/* ============================= */
+function decodeUTF8(base64) {
+  return new TextDecoder("utf-8").decode(
+    Uint8Array.from(atob(base64), c => c.charCodeAt(0))
+  );
+}
 
-    <label>Idioma</label>
-    <select id="idiomaSelect">
-      <option value="es">Español</option>
-      <option value="en">English</option>
-      <option value="pt">Português</option>
-    </select>
+function encodeUTF8(str) {
+  const bytes = new TextEncoder().encode(str);
+  let binary = "";
+  bytes.forEach(b => binary += String.fromCharCode(b));
+  return btoa(binary);
+}
 
-    <label>Sugerencias (una por línea)</label>
-    <textarea id="editor"></textarea>
+/* ============================= */
+/* CARGAR */
+/* ============================= */
+async function cargarJSON() {
 
-    <div class="emoji-list">
-      <button type="button">☕</button>
-      <button type="button">🥐</button>
-      <button type="button">🍰</button>
-      <button type="button">🍔</button>
-      <button type="button">🍺</button>
-      <button type="button">🎉</button>
-      <button type="button">🔥</button>
-      <button type="button">❤️</button>
-    </div>
+  pedirToken();
+  if (!TOKEN) return;
 
-    <button id="guardar">Guardar cambios</button>
-    <small id="estado"></small>
+  estado.textContent = "Cargando...";
 
-  </div>
+  const url = `https://api.github.com/repos/${USER}/${REPO}/contents/${FILE_PATH}`;
 
-  <!-- PREVIEW DERECHO -->
-  <div class="preview">
-    <iframe id="preview" src="../index.html"></iframe>
-  </div>
+  const res = await fetch(url, {
+    headers: { Authorization: `token ${TOKEN}` }
+  });
 
-</div>
+  const data = await res.json();
+  shaActual = data.sha;
 
-<script src="admin.js"></script>
+  jsonCompleto = JSON.parse(decodeUTF8(data.content));
 
-</body>
-</html>
+  nombreLocalInput.value = jsonCompleto.config?.nombreLocal || "";
+
+  mostrarIdioma();
+
+  estado.textContent = "Cargado ✅";
+}
+
+/* ============================= */
+/* MOSTRAR SOLO IDIOMA */
+/* ============================= */
+function mostrarIdioma() {
+
+  const idioma = idiomaSelect.value;
+  const lista = jsonCompleto[idioma] || [];
+
+  textarea.value = lista.join("\n");
+}
+
+/* ============================= */
+/* GUARDAR */
+/* ============================= */
+async function guardarJSON() {
+
+  const idioma = idiomaSelect.value;
+
+  const lineas = textarea.value
+    .split("\n")
+    .map(l => l.trim())
+    .filter(l => l.length > 0);
+
+  jsonCompleto[idioma] = lineas;
+
+  jsonCompleto.config = {
+    ...jsonCompleto.config,
+    nombreLocal: nombreLocalInput.value
+  };
+
+  estado.textContent = "Guardando...";
+
+  const contenidoBase64 = encodeUTF8(
+    JSON.stringify(jsonCompleto, null, 2)
+  );
+
+  const url = `https://api.github.com/repos/${USER}/${REPO}/contents/${FILE_PATH}`;
+
+  const res = await fetch(url, {
+    method: "PUT",
+    headers: {
+      Authorization: `token ${TOKEN}`,
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      message: `Actualización ${idioma}`,
+      content: contenidoBase64,
+      sha: shaActual,
+      branch: BRANCH
+    })
+  });
+
+  if (res.ok) {
+    estado.textContent = "Guardado ✅";
+    cargarJSON();
+  } else {
+    estado.textContent = "Error ❌";
+  }
+}
+
+/* ============================= */
+/* EVENTOS */
+/* ============================= */
+btnGuardar.addEventListener("click", guardarJSON);
+idiomaSelect.addEventListener("change", mostrarIdioma);
+
+document.querySelectorAll(".emoji-list button").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const start = textarea.selectionStart;
+    const end = textarea.selectionEnd;
+    const emoji = btn.textContent;
+
+    textarea.value =
+      textarea.value.substring(0, start) +
+      emoji +
+      textarea.value.substring(end);
+
+    textarea.focus();
+    textarea.selectionStart = textarea.selectionEnd = start + emoji.length;
+  });
+});
+
+/* ============================= */
+/* INICIAR */
+/* ============================= */
+cargarJSON();
