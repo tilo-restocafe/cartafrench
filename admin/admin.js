@@ -49,7 +49,7 @@ async function cargarJSON() {
 
   estado.textContent = "Cargando...";
 
-  const url = `https://api.github.com/repos/${USER}/${REPO}/contents/${FILE_PATH}`;
+   const URL=`https://raw.githubusercontent.com/${USER}/${REPO}/main/${archivo}`;
 
   const res = await fetch(url, {
     headers: { Authorization: `token ${TOKEN}` }
@@ -103,7 +103,7 @@ async function guardarJSON() {
     JSON.stringify(jsonCompleto, null, 2)
   );
 
-  const url = `https://api.github.com/repos/${USER}/${REPO}/contents/${FILE_PATH}`;
+   const URL=`https://raw.githubusercontent.com/${USER}/${REPO}/main/${archivo}`;
 
   const res = await fetch(url, {
     method: "PUT",
@@ -153,3 +153,4 @@ document.querySelectorAll(".emoji-list button").forEach(btn => {
 /* INICIAR */
 /* ============================= */
 cargarJSON();
+
