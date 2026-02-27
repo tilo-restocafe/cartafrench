@@ -365,9 +365,26 @@ window.addEventListener("scroll",()=>{
   btnUp.style.display=window.scrollY>300?"block":"none";
 });
 btnUp.onclick=()=>window.scrollTo({top:0,behavior:"smooth"});
-/* ================= TELEPROMPTER JS ================= */
+/* ================= TELEPROMPTER DINÁMICO ================= */
 
 const teleTrack = document.getElementById("tele-track");
+
+async function cargarSugerencias(){
+  try{
+    const URL = `https://raw.githubusercontent.com/${USER}/${REPO}/main/sugerencias.json`;
+    const res = await fetch(URL,{cache:"no-store"});
+    const data = await res.json();
+
+    if(!data.length) return;
+
+    const textos = data.map(s => s.texto).join(" ✦ ");
+    iniciarTeleprompter(textos);
+
+  }catch(e){
+    teleTrack.innerHTML = "Bienvenidos a Tilo Café ✦ Gracias por visitarnos";
+    iniciarTeleprompter(teleTrack.innerHTML);
+  }
+}
 
 function iniciarTeleprompter(texto){
   teleTrack.innerHTML = texto + " ✦ " + texto;
@@ -376,7 +393,7 @@ function iniciarTeleprompter(texto){
 
   function animar(){
     position -= 1;
-    if(Math.abs(position) > teleTrack.offsetWidth / 2){
+    if(Math.abs(position) > teleTrack.scrollWidth / 2){
       position = 0;
     }
     teleTrack.style.transform = `translateX(${position}px)`;
