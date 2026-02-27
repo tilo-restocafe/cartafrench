@@ -235,17 +235,77 @@ const productList = document.getElementById('product-list');
 const searchInput = document.getElementById('search');
 const btnSearch = document.getElementById('btnSearch');
 const btnUp = document.getElementById('btnUp');
+const teleTrack = document.getElementById("tele-track");
 
 let productos = [];
 
-/* SCROLL SUAVE */
+/* ================= TELEPROMPTER ================= */
+
+function saludoSegunHora(){
+  const hora = new Date().getHours();
+
+  if(idiomaActual==="es"){
+    if(hora<12) return "☀️ Buenos días";
+    if(hora<19) return "🌤️ Buenas tardes";
+    return "🌙 Buenas noches";
+  }
+  if(idiomaActual==="en"){
+    if(hora<12) return "☀️ Good morning";
+    if(hora<19) return "🌤️ Good afternoon";
+    return "🌙 Good evening";
+  }
+  if(idiomaActual==="pt"){
+    if(hora<12) return "☀️ Bom dia";
+    if(hora<19) return "🌤️ Boa tarde";
+    return "🌙 Boa noite";
+  }
+}
+
+async function cargarTeleprompter(){
+  try{
+    const res = await fetch(`https://raw.githubusercontent.com/${USER}/${REPO}/main/sugerencias.json`,{cache:"no-store"});
+    const data = await res.json();
+    const sugerencias = data[idiomaActual] || [];
+
+    const textoFinal = saludoSegunHora()+" — "+sugerencias.join("   ✦   ");
+
+    teleTrack.innerHTML = textoFinal + "   ✦   " + textoFinal;
+
+    iniciarScroll();
+
+  }catch{
+    teleTrack.textContent="Bienvenidos a Tilo Café ☕";
+  }
+}
+
+function iniciarScroll(){
+  const velocidad = 60;
+  const ancho = teleTrack.offsetWidth / 2;
+  const duracion = ancho / velocidad;
+
+  teleTrack.style.animation = "none";
+
+  setTimeout(()=>{
+    teleTrack.style.animation = `scrollTele ${duracion}s linear infinite`;
+  },50);
+}
+
+const style = document.createElement("style");
+style.innerHTML = `
+@keyframes scrollTele{
+  from{transform:translateX(0)}
+  to{transform:translateX(-50%)}
+}`;
+document.head.appendChild(style);
+
+/* ================= FUNCIONES ORIGINALES ================= */
+
 function scrollToProducts(){
   const yOffset = -20;
   const y = productList.getBoundingClientRect().top + window.pageYOffset + yOffset;
   window.scrollTo({ top:y, behavior:"smooth" });
 }
 
-/* NORMALIZAR TEXTO */
 function limpiarTexto(texto){
   return texto.toLowerCase()
     .normalize("NFD")
@@ -254,6 +314,7 @@ function limpiarTexto(texto){
 
 /* CARGAR PRODUCTOS */
 async function load(){
+
   actualizarBotones();
 
   let archivo="productos.json";
@@ -276,13 +337,12 @@ async function load(){
 
     renderCategorias();
     render(productos);
+    cargarTeleprompter();   // 👈 ACÁ ESTABA LO QUE FALTABA
 
   }catch{
     productList.innerHTML=`<div class="msg">⚠️ No se pudieron cargar los productos.</div>`;
   }
 }
-  const sugerencias = productos.slice(0,5).map(p => p.nombre).join(" ✦ ");
-iniciarTeleprompter("Hoy te recomendamos: " + sugerencias);
 
 /* RENDER */
 function render(arr){
@@ -327,17 +387,8 @@ function filtrar(){
   });
 }
 
-/* FILTRA EN VIVO */
-searchInput.addEventListener("input",()=>{
-  render(filtrar());
-});
-
-/* BAJA SOLO CON BOTÓN O ENTER */
-btnSearch.addEventListener("click",()=>{
-  render(filtrar());
-  scrollToProducts();
-});
-
+searchInput.addEventListener("input",()=>render(filtrar()));
+btnSearch.addEventListener("click",()=>{ render(filtrar()); scrollToProducts(); });
 searchInput.addEventListener("keydown",e=>{
   if(e.key==="Enter"){
     render(filtrar());
@@ -365,43 +416,7 @@ window.addEventListener("scroll",()=>{
   btnUp.style.display=window.scrollY>300?"block":"none";
 });
 btnUp.onclick=()=>window.scrollTo({top:0,behavior:"smooth"});
-/* ================= TELEPROMPTER DINÁMICO ================= */
 
-const teleTrack = document.getElementById("tele-track");
-
-async function cargarSugerencias(){
-  try{
-    const URL = `https://raw.githubusercontent.com/${USER}/${REPO}/main/sugerencias.json`;
-    const res = await fetch(URL,{cache:"no-store"});
-    const data = await res.json();
-
-    if(!data.length) return;
-
-    const textos = data.map(s => s.texto).join(" ✦ ");
-    iniciarTeleprompter(textos);
-
-  }catch(e){
-    teleTrack.innerHTML = "Bienvenidos a Tilo Café ✦ Gracias por visitarnos";
-    iniciarTeleprompter(teleTrack.innerHTML);
-  }
-}
-
-function iniciarTeleprompter(texto){
-  teleTrack.innerHTML = texto + " ✦ " + texto;
-
-  let position = 0;
-
-  function animar(){
-    position -= 1;
-    if(Math.abs(position) > teleTrack.scrollWidth / 2){
-      position = 0;
-    }
-    teleTrack.style.transform = `translateX(${position}px)`;
-    requestAnimationFrame(animar);
-  }
-
-  animar();
-}
 load();
 
 });
