@@ -276,12 +276,13 @@ async function load(){
 
     renderCategorias();
     render(productos);
-const sugerencias = productos.slice(0,5).map(p => p.nombre).join(" ✦ ");
-iniciarTeleprompter("Hoy te recomendamos: " + sugerencias);
+
   }catch{
     productList.innerHTML=`<div class="msg">⚠️ No se pudieron cargar los productos.</div>`;
   }
 }
+  const sugerencias = productos.slice(0,5).map(p => p.nombre).join(" ✦ ");
+iniciarTeleprompter("Hoy te recomendamos: " + sugerencias);
 
 /* RENDER */
 function render(arr){
