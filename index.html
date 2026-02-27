@@ -279,6 +279,287 @@ function render(arr){
 }
 
 /* BUSCADOR PRO */
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tilo Café French</title>
+
+<style>
+body{
+  font-family:'Segoe UI',sans-serif;
+  background:url("img/Fondo1.jpg") repeat;
+  background-size:cover;
+  margin:0;
+  padding-top:60px;
+  text-align:center;
+  color:#45270a;
+}
+
+/* TELEPROMPTER */
+#teleprompter{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  background:rgba(0,0,0,.92);
+  color:#fff;
+  z-index:2000;
+  padding:12px 16px;
+  overflow:hidden;
+  font-family:Georgia,serif;
+}
+
+#tele-wrapper{
+  overflow:hidden;
+  white-space:nowrap;
+  width:100%;
+}
+
+#tele-track{
+  display:inline-block;
+  white-space:nowrap;
+  will-change:transform;
+}
+
+@keyframes scrollText{
+  from{transform:translateX(0)}
+  to{transform:translateX(-50%)}
+}
+
+header img{
+  width:100%;
+  height:250px;
+  object-fit:cover;
+}
+
+.banner{
+  background:rgba(255,255,255,.85);
+  padding:10px;
+  font-size:1.3em;
+  border-radius:8px;
+  display:inline-block;
+  margin:10px auto;
+}
+
+#languageSwitcher{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  margin:10px 0;
+}
+
+.lang-btn{
+  background:#806250;
+  color:white;
+  border:none;
+  padding:8px 14px;
+  border-radius:8px;
+  cursor:pointer;
+}
+
+.lang-btn.active{
+  background:#a07b68;
+}
+
+.search-box{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  margin:15px;
+}
+
+.search-box input{
+  padding:10px;
+  width:60%;
+  border-radius:8px;
+  border:1px solid #ccc;
+}
+
+#category-buttons{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:10px;
+  margin:15px;
+}
+
+#category-buttons button{
+  background:#8c6954;
+  color:white;
+  border:none;
+  border-radius:10px;
+  padding:8px 14px;
+  cursor:pointer;
+}
+
+#product-list{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+  gap:15px;
+  padding:15px;
+}
+
+.item{
+  background:rgba(255,255,255,.95);
+  border-radius:12px;
+  box-shadow:0 2px 6px rgba(0,0,0,.2);
+  overflow:hidden;
+}
+
+.item img{
+  width:100%;
+  aspect-ratio:1/1;
+  object-fit:cover;
+}
+
+.price{
+  font-weight:bold;
+  margin:8px;
+  display:block;
+}
+
+#btnUp{
+  position:fixed;
+  bottom:25px;
+  right:25px;
+  background:#8c6954;
+  color:white;
+  border:none;
+  border-radius:50%;
+  width:45px;
+  height:45px;
+  font-size:22px;
+  display:none;
+  cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div id="teleprompter">
+  <div id="tele-wrapper">
+    <div id="tele-track">Cargando sugerencias...</div>
+  </div>
+</div>
+
+<header>
+  <img src="img/french99.jpg">
+</header>
+
+<div class="banner">¡Bienvenidos a Tilo Café French!</div>
+
+<div id="languageSwitcher">
+  <button id="btn-es" class="lang-btn">🇪🇸 Español</button>
+  <button id="btn-en" class="lang-btn">🇬🇧 English</button>
+  <button id="btn-pt" class="lang-btn">🇧🇷 Português</button>
+</div>
+
+<div class="search-box">
+  <input id="search" type="text" placeholder="Buscar...">
+</div>
+
+<div id="category-buttons"></div>
+<div id="product-list"></div>
+<button id="btnUp">⬆️</button>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+
+const USER   = location.hostname.split('.')[0];
+const REPO   = location.pathname.split('/')[1];
+const BRANCH = "main";
+
+let idiomaActual = localStorage.getItem('idioma') || 'es';
+
+const banner = document.querySelector('.banner');
+const productList = document.getElementById('product-list');
+const categoryContainer = document.getElementById('category-buttons');
+const searchInput = document.getElementById('search');
+const btnUp = document.getElementById('btnUp');
+const tele = document.getElementById("tele-track");
+
+let productos = [];
+let sugerencias = [];
+
+/* SCROLL AUTOMÁTICO */
+function scrollToProducts(){
+  const yOffset = -80;
+  const y = productList.getBoundingClientRect().top + window.pageYOffset + yOffset;
+  window.scrollTo({ top:y, behavior:"smooth" });
+}
+
+/* TELEPROMPTER */
+function iniciarTeleprompter(){
+  if(!sugerencias.length) return;
+  const sep=" ✦ ";
+  const texto=sugerencias.join(sep)+sep;
+  tele.textContent=texto+texto;
+  requestAnimationFrame(()=>{
+    const ancho=tele.scrollWidth/2;
+    const duracion=ancho/75;
+    tele.style.animation="scrollText linear infinite";
+    tele.style.animationDuration=duracion+"s";
+  });
+}
+
+async function cargarSugerencias(){
+  try{
+    const res=await fetch(`https://raw.githubusercontent.com/${USER}/${REPO}/${BRANCH}/sugerencias.json`,{cache:"no-store"});
+    const data=await res.json();
+    sugerencias=data[idiomaActual]||["Bienvenidos ☕"];
+  }catch{
+    sugerencias=["Bienvenidos ☕"];
+  }
+  iniciarTeleprompter();
+}
+
+/* PRODUCTOS */
+async function load(){
+  await cargarSugerencias();
+
+  let archivo="productos.json";
+  if(idiomaActual==="en") archivo="productos-en.json";
+  if(idiomaActual==="pt") archivo="productos-port.json";
+
+  const res=await fetch(`https://raw.githubusercontent.com/${USER}/${REPO}/${BRANCH}/${archivo}`,{cache:"no-store"});
+  productos=await res.json();
+
+  renderCategorias();
+  render(productos);
+}
+
+function renderCategorias(){
+  const categorias=["Todos",...new Set(productos.map(p=>p.categoria).filter(Boolean))];
+  categoryContainer.innerHTML="";
+  categorias.forEach(cat=>{
+    const btn=document.createElement("button");
+    btn.textContent=cat;
+    btn.onclick=()=>{
+      if(cat==="Todos") render(productos);
+      else render(productos.filter(p=>p.categoria===cat));
+      scrollToProducts();
+    };
+    categoryContainer.appendChild(btn);
+  });
+}
+
+function render(arr){
+  productList.innerHTML="";
+  arr.forEach(p=>{
+    productList.innerHTML+=`
+    <div class="item">
+      <img src="${p.imagen}">
+      <h3>${p.nombre}</h3>
+      <p>${p.descripcion||""}</p>
+      <span class="price">$${p.precio}</span>
+    </div>`;
+  });
+}
+
+/* BUSCADOR PRO */
 searchInput.addEventListener("input",()=>{
   const texto=searchInput.value.toLowerCase()
   .normalize("NFD").replace(/[\u0300-\u036f]/g,"");
@@ -305,3 +586,4 @@ load();
 </script>
 </body>
 </html>
+
