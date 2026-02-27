@@ -3,620 +3,160 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tilo Café French</title>
+<title>Carta Digital</title>
 
 <style>
-body{
-  font-family:'Segoe UI',sans-serif;
-  background:url("img/Fondo1.jpg") repeat;
-  background-size:cover;
-  margin:0;
-  padding-top:60px;
-  text-align:center;
-  color:#45270a;
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
 }
 
-/* TELEPROMPTER */
-#teleprompter{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  background:rgba(0,0,0,.92);
-  color:#fff;
-  z-index:2000;
-  padding:12px 16px;
-  overflow:hidden;
-  font-family:Georgia,serif;
+header {
+  padding: 20px;
+  background: #111;
+  color: white;
+  text-align: center;
 }
 
-#tele-wrapper{
-  overflow:hidden;
-  white-space:nowrap;
-  width:100%;
+.search-box {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 15px;
 }
 
-#tele-track{
-  display:inline-block;
-  white-space:nowrap;
-  will-change:transform;
+.search-box input {
+  padding: 8px;
+  width: 250px;
 }
 
-@keyframes scrollText{
-  from{transform:translateX(0)}
-  to{transform:translateX(-50%)}
+.search-box button {
+  padding: 8px 14px;
+  cursor: pointer;
 }
 
-header img{
-  width:100%;
-  height:250px;
-  object-fit:cover;
+#productos {
+  padding: 20px;
+  display: grid;
+  gap: 15px;
 }
 
-.banner{
-  background:rgba(255,255,255,.85);
-  padding:10px;
-  font-size:1.3em;
-  border-radius:8px;
-  display:inline-block;
-  margin:10px auto;
-}
-
-#languageSwitcher{
-  display:flex;
-  justify-content:center;
-  gap:10px;
-  margin:10px 0;
-}
-
-.lang-btn{
-  background:#806250;
-  color:white;
-  border:none;
-  padding:8px 14px;
-  border-radius:8px;
-  cursor:pointer;
-}
-
-.lang-btn.active{
-  background:#a07b68;
-}
-
-.search-box{
-  display:flex;
-  justify-content:center;
-  gap:10px;
-  margin:15px;
-}
-
-.search-box input{
-  padding:10px;
-  width:60%;
-  border-radius:8px;
-  border:1px solid #ccc;
-}
-
-#category-buttons{
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:10px;
-  margin:15px;
-}
-
-#category-buttons button{
-  background:#8c6954;
-  color:white;
-  border:none;
-  border-radius:10px;
-  padding:8px 14px;
-  cursor:pointer;
-}
-
-#product-list{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
-  gap:15px;
-  padding:15px;
-}
-
-.item{
-  background:rgba(255,255,255,.95);
-  border-radius:12px;
-  box-shadow:0 2px 6px rgba(0,0,0,.2);
-  overflow:hidden;
-}
-
-.item img{
-  width:100%;
-  aspect-ratio:1/1;
-  object-fit:cover;
-}
-
-.price{
-  font-weight:bold;
-  margin:8px;
-  display:block;
-}
-
-#btnUp{
-  position:fixed;
-  bottom:25px;
-  right:25px;
-  background:#8c6954;
-  color:white;
-  border:none;
-  border-radius:50%;
-  width:45px;
-  height:45px;
-  font-size:22px;
-  display:none;
-  cursor:pointer;
+.card {
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 8px;
 }
 </style>
 </head>
 
 <body>
 
-<div id="teleprompter">
-  <div id="tele-wrapper">
-    <div id="tele-track">Cargando sugerencias...</div>
-  </div>
-</div>
-
 <header>
-  <img src="img/french99.jpg">
+  <h1>Nuestra Carta</h1>
 </header>
-
-<div class="banner">¡Bienvenidos a Tilo Café French!</div>
-
-<div id="languageSwitcher">
-  <button id="btn-es" class="lang-btn">🇪🇸 Español</button>
-  <button id="btn-en" class="lang-btn">🇬🇧 English</button>
-  <button id="btn-pt" class="lang-btn">🇧🇷 Português</button>
-</div>
 
 <div class="search-box">
   <input id="search" type="text" placeholder="Buscar...">
+  <button id="btnSearch">Buscar</button>
 </div>
 
-<div id="category-buttons"></div>
-<div id="product-list"></div>
-<button id="btnUp">⬆️</button>
+<div id="productos"></div>
 
 <script>
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
 
-const USER   = location.hostname.split('.')[0];
-const REPO   = location.pathname.split('/')[1];
-const BRANCH = "main";
+  /* UNIVERSAL GITHUB */
+  const USER = location.hostname.split('.')[0];
+  const REPO = location.pathname.split('/')[1];
+  const URL = `https://raw.githubusercontent.com/${USER}/${REPO}/main/productos.json`;
 
-let idiomaActual = localStorage.getItem('idioma') || 'es';
+  const searchInput = document.getElementById("search");
+  const btnSearch = document.getElementById("btnSearch");
+  const contenedor = document.getElementById("productos");
 
-const banner = document.querySelector('.banner');
-const productList = document.getElementById('product-list');
-const categoryContainer = document.getElementById('category-buttons');
-const searchInput = document.getElementById('search');
-const btnUp = document.getElementById('btnUp');
-const tele = document.getElementById("tele-track");
+  let productos = [];
 
-let productos = [];
-let sugerencias = [];
-
-/* SCROLL AUTOMÁTICO */
-function scrollToProducts(){
-  const yOffset = -80;
-  const y = productList.getBoundingClientRect().top + window.pageYOffset + yOffset;
-  window.scrollTo({ top:y, behavior:"smooth" });
-}
-
-/* TELEPROMPTER */
-function iniciarTeleprompter(){
-  if(!sugerencias.length) return;
-  const sep=" ✦ ";
-  const texto=sugerencias.join(sep)+sep;
-  tele.textContent=texto+texto;
-  requestAnimationFrame(()=>{
-    const ancho=tele.scrollWidth/2;
-    const duracion=ancho/75;
-    tele.style.animation="scrollText linear infinite";
-    tele.style.animationDuration=duracion+"s";
-  });
-}
-
-async function cargarSugerencias(){
-  try{
-    const res=await fetch(`https://raw.githubusercontent.com/${USER}/${REPO}/${BRANCH}/sugerencias.json`,{cache:"no-store"});
-    const data=await res.json();
-    sugerencias=data[idiomaActual]||["Bienvenidos ☕"];
-  }catch{
-    sugerencias=["Bienvenidos ☕"];
+  function normalizar(texto) {
+    return texto
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "");
   }
-  iniciarTeleprompter();
-}
 
-/* PRODUCTOS */
-async function load(){
-  await cargarSugerencias();
+  function render(lista) {
+    contenedor.innerHTML = "";
 
-  let archivo="productos.json";
-  if(idiomaActual==="en") archivo="productos-en.json";
-  if(idiomaActual==="pt") archivo="productos-port.json";
+    if (lista.length === 0) {
+      contenedor.innerHTML = "<p>No se encontraron productos</p>";
+      return;
+    }
 
-  const res=await fetch(`https://raw.githubusercontent.com/${USER}/${REPO}/${BRANCH}/${archivo}`,{cache:"no-store"});
-  productos=await res.json();
-
-  renderCategorias();
-  render(productos);
-}
-
-function renderCategorias(){
-  const categorias=["Todos",...new Set(productos.map(p=>p.categoria).filter(Boolean))];
-  categoryContainer.innerHTML="";
-  categorias.forEach(cat=>{
-    const btn=document.createElement("button");
-    btn.textContent=cat;
-    btn.onclick=()=>{
-      if(cat==="Todos") render(productos);
-      else render(productos.filter(p=>p.categoria===cat));
-      scrollToProducts();
-    };
-    categoryContainer.appendChild(btn);
-  });
-}
-
-function render(arr){
-  productList.innerHTML="";
-  arr.forEach(p=>{
-    productList.innerHTML+=`
-    <div class="item">
-      <img src="${p.imagen}">
-      <h3>${p.nombre}</h3>
-      <p>${p.descripcion||""}</p>
-      <span class="price">$${p.precio}</span>
-    </div>`;
-  });
-}
-
-/* BUSCADOR PRO */
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tilo Café French</title>
-
-<style>
-body{
-  font-family:'Segoe UI',sans-serif;
-  background:url("img/Fondo1.jpg") repeat;
-  background-size:cover;
-  margin:0;
-  padding-top:60px;
-  text-align:center;
-  color:#45270a;
-}
-
-/* TELEPROMPTER */
-#teleprompter{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  background:rgba(0,0,0,.92);
-  color:#fff;
-  z-index:2000;
-  padding:12px 16px;
-  overflow:hidden;
-  font-family:Georgia,serif;
-}
-
-#tele-wrapper{
-  overflow:hidden;
-  white-space:nowrap;
-  width:100%;
-}
-
-#tele-track{
-  display:inline-block;
-  white-space:nowrap;
-  will-change:transform;
-}
-
-@keyframes scrollText{
-  from{transform:translateX(0)}
-  to{transform:translateX(-50%)}
-}
-
-header img{
-  width:100%;
-  height:250px;
-  object-fit:cover;
-}
-
-.banner{
-  background:rgba(255,255,255,.85);
-  padding:10px;
-  font-size:1.3em;
-  border-radius:8px;
-  display:inline-block;
-  margin:10px auto;
-}
-
-#languageSwitcher{
-  display:flex;
-  justify-content:center;
-  gap:10px;
-  margin:10px 0;
-}
-
-.lang-btn{
-  background:#806250;
-  color:white;
-  border:none;
-  padding:8px 14px;
-  border-radius:8px;
-  cursor:pointer;
-}
-
-.lang-btn.active{
-  background:#a07b68;
-}
-
-.search-box{
-  display:flex;
-  justify-content:center;
-  gap:10px;
-  margin:15px;
-}
-
-.search-box input{
-  padding:10px;
-  width:60%;
-  border-radius:8px;
-  border:1px solid #ccc;
-}
-
-#category-buttons{
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:10px;
-  margin:15px;
-}
-
-#category-buttons button{
-  background:#8c6954;
-  color:white;
-  border:none;
-  border-radius:10px;
-  padding:8px 14px;
-  cursor:pointer;
-}
-
-#product-list{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
-  gap:15px;
-  padding:15px;
-}
-
-.item{
-  background:rgba(255,255,255,.95);
-  border-radius:12px;
-  box-shadow:0 2px 6px rgba(0,0,0,.2);
-  overflow:hidden;
-}
-
-.item img{
-  width:100%;
-  aspect-ratio:1/1;
-  object-fit:cover;
-}
-
-.price{
-  font-weight:bold;
-  margin:8px;
-  display:block;
-}
-
-#btnUp{
-  position:fixed;
-  bottom:25px;
-  right:25px;
-  background:#8c6954;
-  color:white;
-  border:none;
-  border-radius:50%;
-  width:45px;
-  height:45px;
-  font-size:22px;
-  display:none;
-  cursor:pointer;
-}
-</style>
-</head>
-
-<body>
-
-<div id="teleprompter">
-  <div id="tele-wrapper">
-    <div id="tele-track">Cargando sugerencias...</div>
-  </div>
-</div>
-
-<header>
-  <img src="img/french99.jpg">
-</header>
-
-<div class="banner">¡Bienvenidos a Tilo Café French!</div>
-
-<div id="languageSwitcher">
-  <button id="btn-es" class="lang-btn">🇪🇸 Español</button>
-  <button id="btn-en" class="lang-btn">🇬🇧 English</button>
-  <button id="btn-pt" class="lang-btn">🇧🇷 Português</button>
-</div>
-
-<div class="search-box">
-  <input id="search" type="text" placeholder="Buscar...">
-</div>
-
-<div id="category-buttons"></div>
-<div id="product-list"></div>
-<button id="btnUp">⬆️</button>
-
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-
-const USER   = location.hostname.split('.')[0];
-const REPO   = location.pathname.split('/')[1];
-const BRANCH = "main";
-
-let idiomaActual = localStorage.getItem('idioma') || 'es';
-
-const banner = document.querySelector('.banner');
-const productList = document.getElementById('product-list');
-const categoryContainer = document.getElementById('category-buttons');
-const searchInput = document.getElementById('search');
-const btnUp = document.getElementById('btnUp');
-const tele = document.getElementById("tele-track");
-
-let productos = [];
-let sugerencias = [];
-
-/* SCROLL AUTOMÁTICO */
-function scrollToProducts(){
-  const yOffset = -80;
-  const y = productList.getBoundingClientRect().top + window.pageYOffset + yOffset;
-  window.scrollTo({ top:y, behavior:"smooth" });
-}
-
-/* TELEPROMPTER */
-function iniciarTeleprompter(){
-  if(!sugerencias.length) return;
-  const sep=" ✦ ";
-  const texto=sugerencias.join(sep)+sep;
-  tele.textContent=texto+texto;
-  requestAnimationFrame(()=>{
-    const ancho=tele.scrollWidth/2;
-    const duracion=ancho/75;
-    tele.style.animation="scrollText linear infinite";
-    tele.style.animationDuration=duracion+"s";
-  });
-}
-
-async function cargarSugerencias(){
-  try{
-    const res=await fetch(`https://raw.githubusercontent.com/${USER}/${REPO}/${BRANCH}/sugerencias.json`,{cache:"no-store"});
-    const data=await res.json();
-    sugerencias=data[idiomaActual]||["Bienvenidos ☕"];
-  }catch{
-    sugerencias=["Bienvenidos ☕"];
+    lista.forEach(p => {
+      const card = document.createElement("div");
+      card.className = "card";
+      card.innerHTML = `
+        <h3>${p.nombre}</h3>
+        <p>${p.descripcion || ""}</p>
+        <strong>$${p.precio}</strong>
+      `;
+      contenedor.appendChild(card);
+    });
   }
-  iniciarTeleprompter();
-}
 
-/* PRODUCTOS */
-async function load(){
-  await cargarSugerencias();
+  function filtrarProductos() {
+    const texto = normalizar(searchInput.value);
 
-  let archivo="productos.json";
-  if(idiomaActual==="en") archivo="productos-en.json";
-  if(idiomaActual==="pt") archivo="productos-port.json";
+    return productos.filter(p => {
+      const nombre = normalizar(p.nombre || "");
+      const descripcion = normalizar(p.descripcion || "");
+      const categoria = normalizar(p.categoria || "");
 
-  const res=await fetch(`https://raw.githubusercontent.com/${USER}/${REPO}/${BRANCH}/${archivo}`,{cache:"no-store"});
-  productos=await res.json();
+      return (
+        nombre.includes(texto) ||
+        descripcion.includes(texto) ||
+        categoria.includes(texto)
+      );
+    });
+  }
 
-  renderCategorias();
-  render(productos);
-}
+  function scrollToProducts() {
+    document.getElementById("productos")
+      .scrollIntoView({ behavior: "smooth" });
+  }
 
-function renderCategorias(){
-  const categorias=["Todos",...new Set(productos.map(p=>p.categoria).filter(Boolean))];
-  categoryContainer.innerHTML="";
-  categorias.forEach(cat=>{
-    const btn=document.createElement("button");
-    btn.textContent=cat;
-    btn.onclick=()=>{
-      if(cat==="Todos") render(productos);
-      else render(productos.filter(p=>p.categoria===cat));
-      scrollToProducts();
-    };
-    categoryContainer.appendChild(btn);
+  /* BUSCA MIENTRAS ESCRIBE (NO BAJA) */
+  searchInput.addEventListener("input", () => {
+    render(filtrarProductos());
   });
-}
 
-function render(arr){
-  productList.innerHTML="";
-  arr.forEach(p=>{
-    productList.innerHTML+=`
-    <div class="item">
-      <img src="${p.imagen}">
-      <h3>${p.nombre}</h3>
-      <p>${p.descripcion||""}</p>
-      <span class="price">$${p.precio}</span>
-    </div>`;
-  });
-}
-
-/* BUSCADOR PRO */
-const btnSearch = document.getElementById("btnSearch");
-
-/* FUNCIÓN QUE FILTRA */
-function filtrarProductos() {
-
-  const texto = searchInput.value
-    .toLowerCase()
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "");
-
-  return productos.filter(p => {
-
-    const nombre = (p.nombre || "")
-      .toLowerCase()
-      .normalize("NFD")
-      .replace(/[\u0300-\u036f]/g, "");
-
-    const descripcion = (p.descripcion || "")
-      .toLowerCase()
-      .normalize("NFD")
-      .replace(/[\u0300-\u036f]/g, "");
-
-    const categoria = (p.categoria || "")
-      .toLowerCase()
-      .normalize("NFD")
-      .replace(/[\u0300-\u036f]/g, "");
-
-    return (
-      nombre.includes(texto) ||
-      descripcion.includes(texto) ||
-      categoria.includes(texto)
-    );
-  });
-}
-
-/* 🔎 BUSCA MIENTRAS ESCRIBE (NO BAJA) */
-searchInput.addEventListener("input", () => {
-  const filtrados = filtrarProductos();
-  render(filtrados);
-});
-
-/* 🔽 SOLO BAJA CUANDO TOCA BUSCAR */
-btnSearch.addEventListener("click", () => {
-  const filtrados = filtrarProductos();
-  render(filtrados);
-  scrollToProducts();
-});
-
-/* ⌨ ENTER TAMBIÉN BAJA */
-searchInput.addEventListener("keydown", (e) => {
-  if (e.key === "Enter") {
-    const filtrados = filtrarProductos();
-    render(filtrados);
+  /* BOTÓN BAJA */
+  btnSearch.addEventListener("click", () => {
+    render(filtrarProductos());
     scrollToProducts();
-  }
+  });
+
+  /* ENTER BAJA */
+  searchInput.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+      render(filtrarProductos());
+      scrollToProducts();
+    }
+  });
+
+  /* CARGAR PRODUCTOS */
+  fetch(URL)
+    .then(res => res.json())
+    .then(data => {
+      productos = data;
+      render(productos);
+    })
+    .catch(err => {
+      contenedor.innerHTML = "Error cargando productos";
+      console.error(err);
+    });
+
 });
 </script>
+
 </body>
 </html>
-
