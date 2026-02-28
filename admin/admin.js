@@ -1,5 +1,8 @@
-.const USER = "tilo-restocafe";
-const REPO = "cartafrench";
+const host = window.location.hostname;
+const pathParts = window.location.pathname.split("/");
+
+const USER = host.split(".")[0];   // usuario
+const REPO = pathParts[1];         // nombre del repo
 const FILE_PATH = "sugerencias.json";
 const BRANCH = "main";
 
