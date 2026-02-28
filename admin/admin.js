@@ -1,4 +1,4 @@
-const USER = "tilo-restocafe";
+.const USER = "tilo-restocafe";
 const REPO = "cartafrench";
 const FILE_PATH = "sugerencias.json";
 const BRANCH = "main";
@@ -49,7 +49,7 @@ async function cargarJSON() {
 
   estado.textContent = "Cargando...";
 
-   const URL=`https://raw.githubusercontent.com/${USER}/${REPO}/main/${archivo}`;
+  const url = `https://api.github.com/repos/${USER}/${REPO}/contents/${FILE_PATH}`;
 
   const res = await fetch(url, {
     headers: { Authorization: `token ${TOKEN}` }
@@ -124,12 +124,32 @@ async function guardarJSON() {
     cargarJSON();
   } else {
     estado.textContent = "Error ❌";
-    console.error(await res.text());
   }
 }
+
+/* ============================= */
+/* EVENTOS */
+/* ============================= */
+btnGuardar.addEventListener("click", guardarJSON);
+idiomaSelect.addEventListener("change", mostrarIdioma);
+
+document.querySelectorAll(".emoji-list button").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const start = textarea.selectionStart;
+    const end = textarea.selectionEnd;
+    const emoji = btn.textContent;
+
+    textarea.value =
+      textarea.value.substring(0, start) +
+      emoji +
+      textarea.value.substring(end);
+
+    textarea.focus();
+    textarea.selectionStart = textarea.selectionEnd = start + emoji.length;
+  });
+});
+
 /* ============================= */
 /* INICIAR */
 /* ============================= */
 cargarJSON();
-
-
