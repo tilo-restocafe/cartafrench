@@ -262,43 +262,37 @@ function render(lista){
     tdCat.appendChild(cat);
     tr.appendChild(tdCat);
 
-    // precio
-    const tdPrecio = document.createElement('td');
-    const precio = document.createElement('input');
-    precio.type = 'text';
-    precio.value = p.precio || '';
-    precio.oninput = e => { const idx = findIndexById(p.id); if(idx !== -1) productos[idx].precio = e.target.value; };
-    tdPrecio.appendChild(precio);
-    tr.appendChild(tdPrecio);
+   // precio
+const tdPrecio = document.createElement('td');
+const precio = document.createElement('input');
+precio.type = 'text';
+precio.value = p.precio || '';
 
-    // acciones
-    const tdAcc = document.createElement('td');
-    tdAcc.className = 'rowActions';
+precio.oninput = e => { 
+  const idx = findIndexById(p.id); 
+  if(idx !== -1) productos[idx].precio = e.target.value; 
+};
 
-    const b1 = document.createElement('button');
-    b1.textContent = "Guardar";
-    b1.onclick = () => guardarFilaPorId(p.id);
+// 👇 TAB baja al precio de la fila siguiente
+precio.addEventListener("keydown", function(e){
+  if(e.key === "Tab" && !e.shiftKey){
+    e.preventDefault();
 
-    const b2 = document.createElement('button');
-    b2.textContent = "Editar";
-    b2.style.background = "#2d87d6";
-    b2.onclick = () => loadIntoFormById(p.id);
+    const filaActual = e.target.closest("tr");
+    const siguienteFila = filaActual.nextElementSibling;
 
-    const b3 = document.createElement('button');
-    b3.textContent = "Eliminar";
-    b3.className = "danger";
-    b3.onclick = () => eliminarProductoPorId(p.id);
+    if(siguienteFila){
+      const inputPrecioSiguiente = siguienteFila.children[4].querySelector("input");
+      if(inputPrecioSiguiente){
+        inputPrecioSiguiente.focus();
+        inputPrecioSiguiente.select();
+      }
+    }
+  }
+});
 
-    tdAcc.appendChild(b1);
-    tdAcc.appendChild(b2);
-    tdAcc.appendChild(b3);
-
-    tr.appendChild(tdAcc);
-    tb.appendChild(tr);
-  });
-}
-
-function findIndexById(id){ return productos.findIndex(x => x.id === id); }
+tdPrecio.appendChild(precio);
+tr.appendChild(tdPrecio);
 
 /**********************************************************
  * Form helpers (ahora cargan por ID y scrollean al form)
