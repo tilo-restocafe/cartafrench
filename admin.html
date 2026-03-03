@@ -293,7 +293,34 @@ precio.addEventListener("keydown", function(e){
 
 tdPrecio.appendChild(precio);
 tr.appendChild(tdPrecio);
+// acciones
+const tdAcc = document.createElement('td');
+tdAcc.className = 'rowActions';
 
+const b1 = document.createElement('button');
+b1.textContent = "Guardar";
+b1.onclick = () => guardarFilaPorId(p.id);
+
+const b2 = document.createElement('button');
+b2.textContent = "Editar";
+b2.style.background = "#2d87d6";
+b2.onclick = () => loadIntoFormById(p.id);
+
+const b3 = document.createElement('button');
+b3.textContent = "Eliminar";
+b3.className = "danger";
+b3.onclick = () => eliminarProductoPorId(p.id);
+
+tdAcc.appendChild(b1);
+tdAcc.appendChild(b2);
+tdAcc.appendChild(b3);
+
+tr.appendChild(tdAcc);
+tb.appendChild(tr);
+
+}); // 👈 CIERRA el forEach
+
+} // 👈 CIERRA render()
 /**********************************************************
  * Form helpers (ahora cargan por ID y scrollean al form)
  **********************************************************/
