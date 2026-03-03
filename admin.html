@@ -161,8 +161,11 @@ function toggleTokenVisibility(){ const inp = document.getElementById('token'); 
  **********************************************************/
 function extractNumberFromProdId(id){ if(!id) return null; const m = String(id).match(/(\d+)\s*$/); if(m) return parseInt(m[1],10); return null; }
 function generateNextProdId(){ let max = 0; for(const p of productos){ const n = extractNumberFromProdId(p.id || ''); if(Number.isFinite(n) && n > max) max = n; } const next = max + 1; return 'prod' + String(next).padStart(4, '0'); }
-function sanitizePrice(v){ if(v===undefined||v===null) return ''; const only = String(v).replace(/[^\d]/g,''); return only || ''; }
-
+function sanitizePrice(v){ if(v===undefined||v===null) return ''; const only = String(v).replace(/[^\d]/g,''); return only || ''; 
+}
+function findIndexById(id){
+  return productos.findIndex(p => p.id === id);
+}
 /**********************************************************
  * Ordenar campos por idioma (ES id al final, EN id primero, PT id al final)
  **********************************************************/
