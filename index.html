@@ -213,6 +213,7 @@ body{
 <div class="search-box">
   <input id="search" type="text" placeholder="Buscar por nombre, descripción o categoría...">
   <button id="btnSearch">Buscar</button>
+  <button id="btnVoice">🎤</button>
 </div>
 
 <div id="category-buttons"></div>
@@ -234,6 +235,7 @@ const categoryContainer = document.getElementById('category-buttons');
 const productList = document.getElementById('product-list');
 const searchInput = document.getElementById('search');
 const btnSearch = document.getElementById('btnSearch');
+const btnVoice = document.getElementById('btnVoice');  
 const btnUp = document.getElementById('btnUp');
 const teleTrack = document.getElementById("tele-track");
 
@@ -395,6 +397,44 @@ searchInput.addEventListener("keydown",e=>{
     scrollToProducts();
   }
 });
+/* ================= BUSQUEDA POR VOZ ================= */
+
+const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+if (SpeechRecognition) {
+
+  const recognition = new SpeechRecognition();
+  function idiomaVoz(){
+  if(idiomaActual==="es") return "es-AR";// español argentina
+  if(idiomaActual==="en") return "en-US";
+  if(idiomaActual==="pt") return "pt-BR";
+}
+recognition.lang = idiomaVoz();
+  recognition.continuous = false;
+  recognition.interimResults = false;
+
+  btnVoice.addEventListener("click", () => {
+    recognition.start();
+    btnVoice.textContent = "🎙️";
+  });
+
+  recognition.addEventListener("result", (event) => {
+    const textoVoz = event.results[0][0].transcript;
+    
+    searchInput.value = textoVoz;
+    render(filtrar());
+    scrollToProducts();
+
+    btnVoice.textContent = "🎤";
+  });
+
+  recognition.addEventListener("end", () => {
+    btnVoice.textContent = "🎤";
+  });
+
+} else {
+  btnVoice.style.display = "none";
+}  
 
 /* IDIOMA */
 function actualizarBotones(){
