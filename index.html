@@ -183,6 +183,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const productList = document.getElementById('product-list');
   const teleTrack = document.getElementById("tele-track");
   const searchInput = document.getElementById('search');
+  const btnSearch = document.getElementById('btnSearch');
+  const btnVoice = document.getElementById('btnVoice');
   let productos = [];
 
   // --- MODAL FUNCTIONS ---
@@ -190,12 +192,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const modal = document.getElementById('modalTele');
     const contenido = document.getElementById('modal-content-text');
     const textoSucio = teleTrack.innerText;
-    
-    // Extraer sugerencias limpias
     const partes = textoSucio.split(' — ');
     const sugerenciasTexto = partes[1] ? partes[1].split('   ✦   ')[0] : textoSucio;
     const lista = sugerenciasTexto.split('   ✦   ');
-    
     contenido.innerHTML = "<ul>" + lista.map(s => `<li style="margin-bottom:10px">${s}</li>`).join('') + "</ul>";
     modal.style.display = 'flex';
   }
@@ -204,7 +203,6 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('modalTele').style.display = 'none';
   }
 
-  // Cerrar si clican fuera de la caja blanca
   window.onclick = function(event) {
     if (event.target == document.getElementById('modalTele')) cerrarModal();
   }
@@ -243,7 +241,6 @@ document.addEventListener('DOMContentLoaded', () => {
       const res = await fetch(`https://raw.githubusercontent.com/${USER}/${REPO}/main/${archivo}`,{cache:"no-store"});
       const data = await res.json();
       
-      // Estandarización para evitar "undefined"
       productos = data.map(p => ({
         nombre: p.nombre || p.name || p.nome,
         descripcion: p.descripcion || p.description || p.descricao,
@@ -260,6 +257,10 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function render(arr){
+    if(arr.length === 0) {
+        productList.innerHTML = `<p style="color: white; grid-column: 1/-1;">No se encontraron resultados.</p>`;
+        return;
+    }
     productList.innerHTML = arr.map(p => `
       <div class="item">
         <img src="${p.imagen}" alt="${p.nombre}">
@@ -281,6 +282,50 @@ document.addEventListener('DOMContentLoaded', () => {
     const filtrados = cat === "Todos" ? productos : productos.filter(p => p.categoria === cat);
     render(filtrados);
     window.scrollTo({ top: productList.offsetTop - 80, behavior: "smooth" });
+  }
+
+  // --- LÓGICA DE BÚSQUEDA ---
+  function filtrar() {
+    const q = searchInput.value.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    const f = productos.filter(p => {
+      const nombre = (p.nombre || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+      const desc = (p.descripcion || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+      const cat = (p.categoria || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+      return nombre.includes(q) || desc.includes(q) || cat.includes(q);
+    });
+    render(f);
+  }
+
+  searchInput.addEventListener('input', filtrar);
+  btnSearch.onclick = () => {
+    filtrar();
+    window.scrollTo({ top: productList.offsetTop - 80, behavior: "smooth" });
+  };
+  searchInput.onkeydown = (e) => {
+    if (e.key === 'Enter') {
+      filtrar();
+      window.scrollTo({ top: productList.offsetTop - 80, behavior: "smooth" });
+    }
+  };
+
+  // --- BÚSQUEDA POR VOZ ---
+  const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+  if (SpeechRecognition) {
+    const recognition = new SpeechRecognition();
+    recognition.onstart = () => { btnVoice.textContent = "🛑"; };
+    recognition.onend = () => { btnVoice.textContent = "🎤"; };
+    recognition.onresult = (event) => {
+      const voiceText = event.results[0][0].transcript;
+      searchInput.value = voiceText;
+      filtrar();
+      window.scrollTo({ top: productList.offsetTop - 80, behavior: "smooth" });
+    };
+    btnVoice.onclick = () => {
+      recognition.lang = idiomaActual === 'es' ? 'es-AR' : (idiomaActual === 'en' ? 'en-US' : 'pt-BR');
+      recognition.start();
+    };
+  } else {
+    btnVoice.style.display = 'none';
   }
 
   function actualizarInterfaz(){
