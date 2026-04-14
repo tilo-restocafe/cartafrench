@@ -312,8 +312,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
   if (SpeechRecognition) {
     const recognition = new SpeechRecognition();
-    recognition.onstart = () => { btnVoice.textContent = "🛑"; };
-    recognition.onend = () => { btnVoice.textContent = "🎤"; };
+    recognition.onstart = () => { btnVoice.textContent = "🛑 Listening..."; };
+    recognition.onend = () => { btnVoice.textContent = "🗣️🎤"; };
     recognition.onresult = (event) => {
       const voiceText = event.results[0][0].transcript;
       searchInput.value = voiceText;
