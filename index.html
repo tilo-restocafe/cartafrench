@@ -9,21 +9,25 @@
   <style>
     #category-buttons {
   display: flex;
-  flex-wrap: nowrap; /* Para que no se amontonen hacia abajo */
-  overflow-x: auto;  /* Scroll horizontal si hay muchas categorías */
+  flex-wrap: nowrap;
+  overflow-x: auto;
   justify-content: flex-start;
   gap: 12px;
-  margin: 10px 0;
   padding: 10px;
-  position: sticky;  /* Se queda pegado arriba */
-  top: 50px;        /* Justo debajo del teleprompter */
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(5px);
-  z-index: 1500;
+  
+  /* Esto lo fija arriba */
+  position: sticky;
+  top: 50px; /* Se pega justo debajo del teleprompter */
+  
+  /* Fondo sólido para que no se vea lo que pasa por detrás */
+  background-color: #fff; 
+  border-bottom: 1px solid #ddd;
+  
+  z-index: 1000; /* Asegura que esté sobre los platos */
   -webkit-overflow-scrolling: touch;
 }
 
-/* Ocultar la barra de scroll para que se vea más limpio */
+/* Para que no se vea la barra de scroll horizontal y quede más limpio */
 #category-buttons::-webkit-scrollbar {
   display: none;
 }
@@ -65,17 +69,16 @@
 
     /* ================= MODAL TELEPROMPTER ================= */
     #modalTele {
-      display: none;
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.85);
-      z-index: 9999;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-      box-sizing: border-box;
-    }
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.85);
+  z-index: 9999; /* Mucho más alto que los botones */
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
 
     .modal-content {
       background: #fff;
@@ -296,13 +299,16 @@ document.addEventListener('DOMContentLoaded', () => {
     `).join('');
   }
 
-  window.filtrarCat = function(cat, btn){
+ window.filtrarCat = function(cat, btn){
     document.querySelectorAll("#category-buttons button").forEach(b => b.classList.remove("active-cat"));
     btn.classList.add("active-cat");
     const filtrados = cat === "Todos" ? productos : productos.filter(p => p.categoria === cat);
     render(filtrados);
-    window.scrollTo({ top: productList.offsetTop - 80, behavior: "smooth" });
-  }
+    
+    // El -110 es para compensar el alto del teleprompter + los botones
+    const offset = productList.offsetTop - 110; 
+    window.scrollTo({ top: offset, behavior: "smooth" });
+}
 
   // --- LÓGICA DE BÚSQUEDA ---
   function filtrar() {
