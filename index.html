@@ -7,6 +7,26 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
 
   <style>
+    #category-buttons {
+  display: flex;
+  flex-wrap: nowrap; /* Para que no se amontonen hacia abajo */
+  overflow-x: auto;  /* Scroll horizontal si hay muchas categorías */
+  justify-content: flex-start;
+  gap: 12px;
+  margin: 10px 0;
+  padding: 10px;
+  position: sticky;  /* Se queda pegado arriba */
+  top: 50px;        /* Justo debajo del teleprompter */
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(5px);
+  z-index: 1500;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Ocultar la barra de scroll para que se vea más limpio */
+#category-buttons::-webkit-scrollbar {
+  display: none;
+}
     body {
       font-family: 'Poppins', sans-serif;
       background: url("img/Fondo1.jpg") repeat;
