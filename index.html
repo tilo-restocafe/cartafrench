@@ -239,7 +239,7 @@ document.addEventListener('DOMContentLoaded', () => {
     try {
       const res = await fetch(`https://raw.githubusercontent.com/${USER}/${REPO}/main/${archivo}`,{cache:"no-store"});
       const data = await res.json();
-
+      
       productos = data.map(p => ({
         nombre: p.nombre || p.name || p.nome,
         descripcion: p.descripcion || p.description || p.descricao,
@@ -280,7 +280,7 @@ document.addEventListener('DOMContentLoaded', () => {
     btn.classList.add("active-cat");
     const filtrados = cat === "Todos" ? productos : productos.filter(p => p.categoria === cat);
     render(filtrados);
-
+    
     // El -110 es para compensar el alto del teleprompter + los botones
     const offset = productList.offsetTop - 110; 
     window.scrollTo({ top: offset, behavior: "smooth" });
@@ -335,7 +335,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if(idiomaActual==="es") b.textContent="¡Bienvenidos a Tilo Café French!";
     if(idiomaActual==="en") b.textContent="Welcome to Tilo Café French!";
     if(idiomaActual==="pt") b.textContent="Bem-vindo ao Tilo Café French!";
-
+    
     document.getElementById('btn-es').classList.toggle("active", idiomaActual==="es");
     document.getElementById('btn-en').classList.toggle("active", idiomaActual==="en");
     document.getElementById('btn-pt').classList.toggle("active", idiomaActual==="pt");
@@ -354,4 +354,4 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 </body>
-</html>lo quiero asi pero solo con los emojis agregar
+</html>.....pergunta inportante esto no molesta me admin para cambiar los precios ???
