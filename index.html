@@ -72,60 +72,51 @@
       to { transform: scale(1); opacity: 1; }
     }
 
-   /* Contenedor de botones para que no se amontonen */
-#category-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 12px;
-    margin: 18px;
-}
+    /* ================= CATEGORÍAS ANIMADAS ================= */
+    #category-buttons { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin: 18px; }
 
-/* Estilo base Pro */
-#category-buttons button {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 10px 18px;
-    border-radius: 12px;
-    font-size: 14px;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    border: 1px solid #ddd;
-    background: #fff;
-    color: #45270a;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-}
+    #category-buttons button {
+      background: linear-gradient(135deg, #976b4c, #604535);
+      color: #fff;
+      border: none;
+      border-radius: 999px;
+      padding: 10px 22px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      animation: latidoSutil 3s infinite ease-in-out;
+    }
 
-/* El botón de PROMOCIONES con el Pulso Dorado */
-.btn-promo {
-    border: 2px solid #d4af37 !important;
-    background: #fffdf0 !important;
-    animation: pulsoDorado 2s infinite;
-    font-weight: 700 !important;
-}
+    #category-buttons button::after {
+      content: "";
+      position: absolute;
+      top: -50%; left: -60%;
+      width: 20%; height: 200%;
+      background: rgba(255, 255, 255, 0.2);
+      transform: rotate(30deg);
+      animation: brilloBarrido 4s infinite;
+    }
 
-@keyframes pulsoDorado {
-    0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.5); transform: scale(1); }
-    70% { box-shadow: 0 0 0 10px rgba(212, 175, 55, 0); transform: scale(1.05); }
-    100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); transform: scale(1); }
-}
+    @keyframes latidoSutil {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
 
-/* Botón activo (Cuando el cliente elige una categoría) */
-#category-buttons button.active-cat {
-    background: #603d24;
-    color: #fff;
-    border-color: #603d24;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(96, 61, 36, 0.3);
-}
+    @keyframes brilloBarrido {
+      0% { left: -60%; }
+      20% { left: 120%; }
+      100% { left: 120%; }
+    }
 
-/* Ajuste para que los iconos se vean un poco más grandes */
-#category-buttons button span {
-    font-size: 18px;
-}
+    #category-buttons button.active-cat {
+      background: linear-gradient(135deg, #8c6954, #45270a);
+      animation: none;
+      transform: scale(1.1);
+    }
+
     /* ================= HEADER Y OTROS ================= */
     header { height: 220px; overflow: hidden; }
     header img { width: 100%; height: 100%; object-fit: cover; }
@@ -248,7 +239,7 @@ document.addEventListener('DOMContentLoaded', () => {
     try {
       const res = await fetch(`https://raw.githubusercontent.com/${USER}/${REPO}/main/${archivo}`,{cache:"no-store"});
       const data = await res.json();
-      
+
       productos = data.map(p => ({
         nombre: p.nombre || p.name || p.nome,
         descripcion: p.descripcion || p.description || p.descricao,
@@ -278,36 +269,10 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function renderCategorias(){
-    // Este es el "cerebro" de los iconos
-    const iconos = {
-        "CAFETERÍA": "☕",
-        "PROMOCIONES": "⭐",
-        "COMIDAS": "🍽️",
-        "REFRESCOS": "🥤",
-        "SÁNDWICHES": "🥪",
-        "PICADAS": "🧀",
-        "POSTRES": "🍰",
-        "TRAGOS": "🍸",
-        "EVENTOS": "🎉",
-        "Todos": "📋"
-    };
-
     const cats = ["Todos", ...new Set(productos.map(p => p.categoria).filter(Boolean))];
-    
-    categoryContainer.innerHTML = cats.map(cat => {
-        const nombreCat = cat.toUpperCase();
-        const icono = iconos[nombreCat] || "✨"; // Pone un destello si no encuentra la categoría
-        
-        // Detecta si es promociones para aplicar el efecto de pulso
-        const claseExtra = nombreCat === "PROMOCIONES" ? "btn-promo" : "";
-        const claseActiva = cat === "Todos" ? "active-cat" : "";
-
-        return `
-          <button class="${claseActiva} ${claseExtra}" onclick="filtrarCat('${cat}', this)">
-            <span>${icono}</span> ${cat}
-          </button>
-        `;
-    }).join('');
+    categoryContainer.innerHTML = cats.map(cat => `
+      <button class="${cat==="Todos"?'active-cat':''}" onclick="filtrarCat('${cat}', this)">${cat}</button>
+    `).join('');
   }
 
  window.filtrarCat = function(cat, btn){
@@ -315,7 +280,7 @@ document.addEventListener('DOMContentLoaded', () => {
     btn.classList.add("active-cat");
     const filtrados = cat === "Todos" ? productos : productos.filter(p => p.categoria === cat);
     render(filtrados);
-    
+
     // El -110 es para compensar el alto del teleprompter + los botones
     const offset = productList.offsetTop - 110; 
     window.scrollTo({ top: offset, behavior: "smooth" });
@@ -370,7 +335,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if(idiomaActual==="es") b.textContent="¡Bienvenidos a Tilo Café French!";
     if(idiomaActual==="en") b.textContent="Welcome to Tilo Café French!";
     if(idiomaActual==="pt") b.textContent="Bem-vindo ao Tilo Café French!";
-    
+
     document.getElementById('btn-es').classList.toggle("active", idiomaActual==="es");
     document.getElementById('btn-en').classList.toggle("active", idiomaActual==="en");
     document.getElementById('btn-pt').classList.toggle("active", idiomaActual==="pt");
